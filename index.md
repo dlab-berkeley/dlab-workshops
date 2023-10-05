@@ -3,7 +3,6 @@ layout: index
 title: D-Lab Workshops
 ---
 <!-- Will be always rendered as plaintext, doesn't use markdown syntax -->
-The materials here represent current workshops taught at the Social Sciences D-Lab.
 
 
 <div class="mt-5 w-100 jumbotron mx-auto">
