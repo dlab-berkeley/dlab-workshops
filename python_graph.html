@@ -233,8 +233,12 @@
         ],
         layout: {
             name: 'preset'
-        }
+        },
+        userPanningEnabled: false,  // Disable panning
+        userZoomingEnabled: false,  // Disable zooming
+
     });
+    cy.nodes().ungrabify();
 
     // Add hover event listeners
     cy.on('mouseover', 'node', function(event) {
@@ -290,6 +294,7 @@
         }
 
         dfs(startNode);
+        
     });
 </script>
 </body>
