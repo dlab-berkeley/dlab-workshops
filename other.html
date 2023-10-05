@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html class="w-100 h-100">
 
-<!--
-	Based on content Designed and Developed for DSEP Modules @ UC Berkeley
-	@author Tony Zhao
-	@site tonyzhao.org
- -->
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,6 +11,8 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon-16x16.png">
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<!-- Fontawesome JS -->
 	<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
 	
@@ -33,7 +30,7 @@
 	<a
 		class="navbar-brand"
 		
-			href="#"
+			href="index.html"
 		>
 		D-Lab Workshops
 	</a>
@@ -47,13 +44,10 @@
 				<li class="nav-item">
 					<a class="nav-link active" href="index.html">Home</a>
 				<li class="nav-item">
-					<a class="nav-link" href="guide">Guide</a>
+					<a class="nav-link" href="library.html">Library</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="library">Library</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="about">About</a>
+					<a class="nav-link" target="_blank" href="https://dlab.berkeley.edu/">About D-Lab</a>
 				</li>
 			
 		</ul>
@@ -66,7 +60,7 @@
 	<div class="row mx-auto w-100 mt-5 justify-content-md-center">
 		<div class="col-md-offset-2 col-md-8 mt-5 text-center">
 			<h5 class="display-5">
-				Click below to see which workshop is best for you!
+				Click below to see which D-Lab workshop is best for you!
 			</h5>
 			<p>
 				<!-- Will be always rendered as plaintext, doesn't use markdown syntax -->
@@ -89,7 +83,7 @@
 
 
 		<!-- Featured Module Block -->
-		<div class="card border-info content">
+		<div class="card border-info content toggle-content">
 			<div class="row card-body">
 				<!-- Title Column -->
 				<div class="d-flex justify-content-center flex-column col-md-3">
@@ -136,7 +130,7 @@
 		<blockquote class="display-5 clickable">"I want to learn about the command line and version control with Git."</blockquote>
 
 		<!-- Featured Module Block -->
-		<div class="card border-info content">
+		<div class="card border-info content toggle-content">
 			<div class="row card-body">
 				<!-- Title Column -->
 				<div class="d-flex justify-content-center flex-column col-md-3">
@@ -184,7 +178,7 @@
 
 
 		<!-- Featured Module Block -->
-		<div class="card border-info content">
+		<div class="card border-info content toggle-content">
 			<div class="row card-body">
 				<!-- Title Column -->
 				<div class="d-flex justify-content-center flex-column col-md-3">
@@ -229,7 +223,7 @@
 		</div>
 
 		<!-- Featured Module Block -->
-		<div class="card border-info content">
+		<div class="card border-info content toggle-content">
 			<div class="row card-body">
 				<!-- Title Column -->
 				<div class="d-flex justify-content-center flex-column col-md-3">
@@ -276,7 +270,7 @@
 	<blockquote class="display-5 clickable">"I want to learn about Institutional Board Review (IRB) procedures."</blockquote>
 
 	<!-- Featured Module Block -->
-	<div class="card border-info content">
+	<div class="card border-info content toggle-content">
 		<div class="row card-body">
 			<!-- Title Column -->
 			<div class="d-flex justify-content-center flex-column col-md-3">
@@ -319,11 +313,54 @@
 		</div>
 	</div>
 
+
+		<!-- LEVEL -->
+		<blockquote class="display-5 clickable">I want to learn how to make surveys."</blockquote>
+
+
+		<!-- Featured Module Block -->
+		<div class="card border-info content toggle-content">
+			<div class="row card-body">
+				<!-- Title Column -->
+				<div class="d-flex justify-content-center flex-column col-md-3">
+					<h4 class="card-title">Qualtrics Fundamentals</h4>
+					<p class="lead">Data collection and survey design</p>
+				</div>
+				<!-- Paragraph Column -->
+				<div class="d-flex justify-content-center flex-column col-md-6">
+					<p class="card-text">
+						<p>This workshop will introduce Qualtrics with an orientation to the main interfaces for web survey design, sample management, corresponding with sample members, and exporting data.
+						</p>
+					</div>
+
+						<!-- Link Column -->
+						<div class="d-flex justify-content-center pb-4 flex-column col-md-3">
+							<div class="btn-group-vertical my-3">
+
+									<a
+										class="btn btn-primary"
+										tabindex="0"
+										href="https://github.com/dlab-berkeley/Qualtrics-Fundamentals">
+										<i class="fab fa-github"></i> Github
+									</a>
+
+									<a
+										class="btn btn-primary"
+										tabindex="0"
+										href="https://drive.google.com/drive/folders/1Q_t-U_S6tjUG6kgiAY7iGt9AsDt-9xUL?usp=sharing">
+										<i class="fas fa-book"></i> Slides
+									</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
 	<!-- LEVEL -->
 	<blockquote class="display-5 clickable">"I want to learn about qualitative coding."</blockquote>
 
 	<!-- Featured Module Block -->
-	<div class="card border-info content">
+	<div class="card border-info content toggle-content">
 		<div class="row card-body">
 			<!-- Title Column -->
 			<div class="d-flex justify-content-center flex-column col-md-3">
@@ -367,39 +404,38 @@
 	</div>
 	<!-- End Content -->
 
+	<a href="https://dlab.berkeley.edu/training/upcoming-workshops"><button type="button" class="btn btn-success">Book a workshop!</button></a>
+	</div>
+</div>
 
 	<script>
-	  document.querySelectorAll("blockquote.display-5.clickable").forEach((clickableElement) => {
-	    clickableElement.addEventListener("click", function () {
-	      // Find the next sibling element which has the class "card border-info"
-	      let currentElement = clickableElement.nextElementSibling;
+		$(document).ready(function () {
+			let currentlyOpen = null;
 
-	      while (currentElement) {
-	        if (currentElement.classList.contains("card")) {
-	          // Toggle the display of the associated "card border-info" div
-	          currentElement.style.display = currentElement.style.display === "block" ? "none" : "block";
-	        }
-	        currentElement = currentElement.nextElementSibling;
+			$("blockquote.display-5.clickable").each(function (index, clickableElement) {
+				$(clickableElement).click(function () {
+					let currentElements = $(clickableElement).nextUntil("blockquote").filter('.toggle-content');
 
-	        // Stop the loop if you find another "display-5 clickable" element
-	        if (currentElement && currentElement.classList.contains("display-5") && currentElement.classList.contains("clickable")) {
-	          break;
-	        }
-	      }
-	    });
-	  });
+					// Hide the currently open content blocks if they are not the ones being clicked
+					if (currentlyOpen !== null && currentlyOpen.get(0) !== currentElements.get(0)) {
+						$(currentlyOpen).slideUp();
+					}
+
+					if (currentElements.is(":visible")) {
+						$(currentElements).slideUp();
+						currentlyOpen = null;
+					} else {
+						$(currentElements).slideDown();
+						currentlyOpen = currentElements;
+					}
+				});
+			});
+		});
 	</script>
 
-			</p>
-			<a href="https://dlab.berkeley.edu/training/upcoming-workshops"><button type="button" class="btn btn-success">Book a workshop!</button></a>
-		</div>
-	</div>
-
-	<!-- End Content -->
 
 
 <!-- Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
