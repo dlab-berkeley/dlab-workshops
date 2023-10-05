@@ -33,7 +33,6 @@ github_username:  jekyll
 theme: minima
 plugins:
   - jekyll-feed
-source: _pages
 
 
 # Exclude from processing.
