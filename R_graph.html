@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<html class="w-100 h-100">
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,148 +6,71 @@
     <title>Interactive Workshop Flowchart</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.19.0/cytoscape.min.js"></script>
     <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
-	<!-- Fontawesome JS -->
 	<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
-	
-	<!-- Custom CSS -->
-	
 	<link rel="stylesheet" href="static/stylesheets/style.css">
-
     <style>
         #cy {
             width: 100%;
             height: 600px;
             border: 1px solid #ccc;
         }
-
         #prerequisites {
             margin-top: 20px;
             padding: 10px;
             text-align: center;
             background-color: #2C3E50;
             color: #FFFFFF;
-            font-family: 'Roboto', sans-serif; 
-            font-size: 15px; 
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
         }
-        h1 {
+        h2 {
             text-align: center;
             margin-bottom: 20px;
-            font-family: 'Roboto', sans-serif; 
-
+            font-family: 'Roboto', sans-serif;
         }
     </style>
 </head>
-
-
 <body class="w-100 h-100">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top borderless">
+        <a class="navbar-brand" href="index.html">D-Lab Workshops</a>
+        <button class="navbar-toggler borderless" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="library.html">Library</a></li>
+                <li class="nav-item"><a class="nav-link" target="_blank" href="https://dlab.berkeley.edu/">About D-Lab</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    
-    	<!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top borderless">
-            <a
-                class="navbar-brand"
-                
-                    href="index.html"
-                >
-                D-Lab Workshops
-            </a>
-            <button class="navbar-toggler borderless" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        
-            <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav ml-auto">
-                    
-                        <li class="nav-item">
-                            <a class="nav-link active" href="index.html">Home</a>
-                        <li class="nav-item">
-                            <a class="nav-link" href="library.html">Library</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" target="_blank" href="https://dlab.berkeley.edu/">About D-Lab</a>
-                        </li>
-                    
-                </ul>
-            </div>
-        </nav>
-<!-- End of Navbar -->
+    <h2 style="text-align: center; padding-top: 70px;">D-Lab R Workshops</h2>
 
-<h2 style="text-align: center; padding-top: 70px;">D-Lab Python Workshops</h2>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <div id="cy"></div>
+    </div>
 
-<div style="display: flex; justify-content: center; align-items: center;">
-    <div id="cy"></div>
-</div>
+    <div id="prerequisites">Click on a workshop to see its prerequisites.</div>
 
-<div id="prerequisites">Click on a workshop to see its prerequisites.</div>
+    <div style="text-align: center; padding-top: 20px;">
+        <a href="r.html"><button type="button" class="btn btn-warning">Return to default view</button></a>
+        <a href="https://dlab.berkeley.edu/training/upcoming-workshops"><button type="button" class="btn btn-info">Book a workshop!</button></a>
+    </div>
 
-<div style="text-align: center; padding-top: 20px;">
-    <a href="python.html"><button type="button" class="btn btn-warning">Return to default view</button></a>
-    <a href="https://dlab.berkeley.edu/training/upcoming-workshops"><button type="button" class="btn btn-info">Book a workshop!</button></a>
+    <script>
+        const elements = [
+            { data: { id: 'A', name: 'R Fundamentals' }, position: { x: 400, y: 0 } },
+            { data: { id: 'B', name: 'R Data Wrangling and Manipulation' }, position: { x: 400, y: 200 } },
+            { data: { id: 'C', name: 'R Machine Learning' }, position: { x: 200, y: 400 } },
+            { data: { id: 'D', name: 'R Deep Learning' }, position: { x: 400, y: 400 } },
+            { data: { id: 'E', name: 'R Geospatial Fundamentals' }, position: { x: 600, y: 400 } },
+            { data: { source: 'A', target: 'B' } },
+            { data: { source: 'B', target: 'C' } },
+            { data: { source: 'B', target: 'D' } },
+            { data: { source: 'B', target: 'E' } }
+        ];
 
-</div>
-
-
-<script>
-    const yPositions = {
-        'Python Fundamentals': 0,
-        'Python Intermediate': 1,
-        'Python Data Visualization': 2,
-        'Python Data Wrangling': 2,
-        'Python Web APIs': 3,
-        'Python Web Scraping': 3,
-        'Python Text Analysis': 3,
-        'Python Geospatial Fundamentals': 3,
-        'Python Machine Learning': 4,
-        'Python Deep Learning': 5
-    };
-
-    let xCounts = {};
-    for (let workshop in yPositions) {
-        let y = yPositions[workshop];
-        if (!(y in xCounts)) {
-            xCounts[y] = 0;
-        }
-        xCounts[y]++;
-    }
-
-    let xPositions = {};
-    let xOffsets = {};
-    let spreadMultiplier = 1.5;
-
-    for (let workshop in yPositions) {
-        let y = yPositions[workshop];
-        if (!(y in xOffsets)) {
-            xOffsets[y] = -xCounts[y] / 2 * spreadMultiplier;
-        }
-        let xOffsetIncrement = y === 2 ? spreadMultiplier : 1;
-        xPositions[workshop] = xOffsets[y];
-        xOffsets[y] += xOffsetIncrement;
-    }
-    xPositions['Python Geospatial Fundamentals'] = 1;
-
-
-    const elements = [
-        { data: { id: 'A', name: 'Python Fundamentals' }, position: { x: xPositions['Python Fundamentals'] * 200, y: yPositions['Python Fundamentals'] * 150 } },
-        { data: { id: 'B', name: 'Python Intermediate' }, position: { x: xPositions['Python Intermediate'] * 200, y: yPositions['Python Intermediate'] * 150 } },
-        { data: { id: 'C', name: 'Python Data Visualization' }, position: { x: xPositions['Python Data Visualization'] * 200, y: yPositions['Python Data Visualization'] * 150 } },
-        { data: { id: 'D', name: 'Python Data Wrangling' }, position: { x: xPositions['Python Data Wrangling'] * 200, y: yPositions['Python Data Wrangling'] * 150 } },
-        { data: { id: 'E', name: 'Python Web APIs' }, position: { x: xPositions['Python Web APIs'] * 200, y: yPositions['Python Web APIs'] * 150 } },
-        { data: { id: 'F', name: 'Python Web Scraping' }, position: { x: xPositions['Python Web Scraping'] * 200, y: yPositions['Python Web Scraping'] * 150 } },
-        { data: { id: 'G', name: 'Python Text Analysis' }, position: { x: xPositions['Python Text Analysis'] * 200, y: yPositions['Python Text Analysis'] * 150 } },
-        { data: { id: 'H', name: 'Python Geospatial Fundamentals' }, position: { x: xPositions['Python Geospatial Fundamentals'] * 150, y: yPositions['Python Geospatial Fundamentals'] * 150 } },
-        { data: { id: 'I', name: 'Python Machine Learning' }, position: { x: xPositions['Python Machine Learning'] * 200, y: yPositions['Python Machine Learning'] * 150 } },
-        { data: { id: 'J', name: 'Python Deep Learning' }, position: { x: xPositions['Python Deep Learning'] * 200, y: yPositions['Python Deep Learning'] * 150 } },
-        // Edges
-        { data: { source: 'A', target: 'B' } },
-        { data: { source: 'B', target: 'C' } },
-        { data: { source: 'B', target: 'D' } },
-        { data: { source: 'B', target: 'E' } },
-        { data: { source: 'B', target: 'F' } },
-        { data: { source: 'D', target: 'G' } },  
-        { data: { source: 'D', target: 'H' } },  
-        { data: { source: 'D', target: 'I' } },  
-        { data: { source: 'I', target: 'J' } }
-    ];
 
     const cy = cytoscape({
         container: document.getElementById('cy'),
