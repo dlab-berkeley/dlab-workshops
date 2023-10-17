@@ -24,7 +24,11 @@ h3 {
 	margin-top: 3rem !important;
 }
 
-
+.btn-bigger {
+	padding: 8px 20px; /* Increase padding */
+	font-size: 20px; /* Increase font size */
+  }
+  
 .card {
 		border: 1px solid #17a2b8;
 		margin-bottom: 10px;
