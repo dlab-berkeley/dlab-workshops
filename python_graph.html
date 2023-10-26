@@ -93,14 +93,14 @@
     const yPositions = {
         'Python Fundamentals': 0,
         'Python Intermediate': 1,
-        'Python Data Visualization': 2,
-        'Python Data Wrangling': 2,
-        'Python Web APIs': 3,
-        'Python Web Scraping': 3,
-        'Python Text Analysis': 3,
-        'Python Geospatial Fundamentals': 3,
-        'Python Machine Learning': 4,
-        'Python Deep Learning': 5
+        'Python Data Visualization': 1,
+        'Python Data Wrangling': 1,
+        'Python Web APIs': 2,
+        'Python Web Scraping': 2,
+        'Python Text Analysis': 2,
+        'Python Geospatial Fundamentals': 2,
+        'Python Machine Learning': 3,
+        'Python Deep Learning': 4
     };
 
     let xCounts = {};
@@ -130,19 +130,19 @@
 
     const elements = [
         { data: { id: 'A', name: 'Python Fundamentals' }, position: { x: xPositions['Python Fundamentals'] * 200, y: yPositions['Python Fundamentals'] * 150 } },
-        { data: { id: 'B', name: 'Python Intermediate' }, position: { x: xPositions['Python Intermediate'] * 200, y: yPositions['Python Intermediate'] * 150 } },
+        { data: { id: 'B', name: 'Python Intermediate' }, position: { x: xPositions['Python Intermediate'] * 220, y: yPositions['Python Intermediate'] * 150 } },
         { data: { id: 'C', name: 'Python Data Visualization' }, position: { x: xPositions['Python Data Visualization'] * 200, y: yPositions['Python Data Visualization'] * 150 } },
-        { data: { id: 'D', name: 'Python Data Wrangling' }, position: { x: xPositions['Python Data Wrangling'] * 200, y: yPositions['Python Data Wrangling'] * 150 } },
+        { data: { id: 'D', name: 'Python Data Wrangling' }, position: { x: xPositions['Python Data Wrangling'] * 100, y: yPositions['Python Data Wrangling'] * 150 } },
         { data: { id: 'E', name: 'Python Web APIs' }, position: { x: xPositions['Python Web APIs'] * 200, y: yPositions['Python Web APIs'] * 150 } },
         { data: { id: 'F', name: 'Python Web Scraping' }, position: { x: xPositions['Python Web Scraping'] * 200, y: yPositions['Python Web Scraping'] * 150 } },
         { data: { id: 'G', name: 'Python Text Analysis' }, position: { x: xPositions['Python Text Analysis'] * 200, y: yPositions['Python Text Analysis'] * 150 } },
-        { data: { id: 'H', name: 'Python Geospatial Fundamentals' }, position: { x: xPositions['Python Geospatial Fundamentals'] * 150, y: yPositions['Python Geospatial Fundamentals'] * 150 } },
+        { data: { id: 'H', name: 'Python Geospatial Fundamentals' }, position: { x: xPositions['Python Geospatial Fundamentals'] * 200 + 50, y: yPositions['Python Geospatial Fundamentals'] * 150 } },
         { data: { id: 'I', name: 'Python Machine Learning' }, position: { x: xPositions['Python Machine Learning'] * 200, y: yPositions['Python Machine Learning'] * 150 } },
         { data: { id: 'J', name: 'Python Deep Learning' }, position: { x: xPositions['Python Deep Learning'] * 200, y: yPositions['Python Deep Learning'] * 150 } },
         // Edges
         { data: { source: 'A', target: 'B' } },
-        { data: { source: 'B', target: 'C' } },
-        { data: { source: 'B', target: 'D' } },
+        { data: { source: 'A', target: 'C' } },
+        { data: { source: 'A', target: 'D' } },
         { data: { source: 'B', target: 'E' } },
         { data: { source: 'B', target: 'F' } },
         { data: { source: 'D', target: 'G' } },  
