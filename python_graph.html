@@ -91,9 +91,9 @@
 
 <script>
     const yPositions = {
-        'Python Fundamentals': 0,
+        'Python Fundamentals 1-3': 0,
         'Python Data Visualization': 1,
-        'Python Intermediate': 1,
+        'Python Fundamentals 4-6': 1,
         'Python Data Wrangling': 1,
         'Python Web APIs': 2,
         'Python Web Scraping': 2,
@@ -131,8 +131,8 @@
 
 
     const elements = [
-        { data: { id: 'A', name: 'Python Fundamentals' }, position: { x: xPositions['Python Fundamentals'] * 200, y: yPositions['Python Fundamentals'] * 150 } },
-        { data: { id: 'B', name: 'Python Intermediate' }, position: { x: xPositions['Python Intermediate'] * 200, y: yPositions['Python Intermediate'] * 150 } },
+        { data: { id: 'A', name: 'Python Fundamentals 1-3' }, position: { x: xPositions['Python Fundamentals 1-3'] * 200, y: yPositions['Python Fundamentals 1-3'] * 150 } },
+        { data: { id: 'B', name: 'Python Fundamentals 4-6' }, position: { x: xPositions['Python Fundamentals 4-6'] * 200, y: yPositions['Python Fundamentals 4-6'] * 150 } },
         { data: { id: 'C', name: 'Python Data Visualization' }, position: { x: xPositions['Python Data Visualization'] * 200, y: yPositions['Python Data Visualization'] * 150 } },
         { data: { id: 'D', name: 'Python Data Wrangling' }, position: { x: xPositions['Python Data Wrangling'] * 100, y: yPositions['Python Data Wrangling'] * 150 } },
         { data: { id: 'E', name: 'Python Web APIs' }, position: { x: xPositions['Python Web APIs'] * 200, y: yPositions['Python Web APIs'] * 150 } },
@@ -151,7 +151,7 @@
         { data: { source: 'D', target: 'H' } },
         { data: { source: 'D', target: 'I' } },
         { data: { source: 'I', target: 'J' } },
-        // New edges to indicate dependencies on Intermediate for nodes G, H, I, J
+        // New edges to indicate dependencies on Fundamentals 4-6 for nodes G, H, I, J
         { data: { source: 'B', target: 'G' } },
         { data: { source: 'B', target: 'H' } },
         { data: { source: 'B', target: 'I' } },
