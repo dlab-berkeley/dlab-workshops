@@ -1,0 +1,63 @@
+---
+layout: default
+title: AI Workshops
+permalink: /ai
+---
+
+<div class="container mt-5 pt-5">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="mb-4">AI Workshops</h1>
+      <p class="lead">Learn to work effectively with AI tools, large language models, and AI-assisted coding for research and development.</p>
+      
+      <div class="mb-4">
+        <span class="badge badge-success">Introductory</span>
+        <span class="badge badge-warning">Intermediate</span>
+        <span class="badge badge-danger">Advanced</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    {% assign ai_workshops = "" | split: "" %}
+    {% for workshop in site.data.workshops.workshops %}
+      {% if workshop.category == 'ai' %}
+        {% assign ai_workshops = ai_workshops | push: workshop %}
+      {% elsif workshop.category contains 'ai' and workshop.category.size > 1 %}
+        {% for cat in workshop.category %}
+          {% if cat == 'ai' %}
+            {% assign ai_workshops = ai_workshops | push: workshop %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+    
+    {% comment %} Sort by difficulty: introductory, intermediate, advanced {% endcomment %}
+    {% assign introductory_workshops = ai_workshops | where: "level", "introductory" %}
+    {% assign intermediate_workshops = ai_workshops | where: "level", "intermediate" %}
+    {% assign advanced_workshops = ai_workshops | where: "level", "advanced" %}
+    
+    {% for workshop in introductory_workshops %}
+      {% include workshop-card.html workshop=workshop %}
+    {% endfor %}
+    {% for workshop in intermediate_workshops %}
+      {% include workshop-card.html workshop=workshop %}
+    {% endfor %}
+    {% for workshop in advanced_workshops %}
+      {% include workshop-card.html workshop=workshop %}
+    {% endfor %}
+  </div>
+  
+  <div class="row mt-4">
+    <div class="col-12">
+      <h2>Learning About AI</h2>
+      <p>These workshops cover the fundamentals of artificial intelligence, from understanding LLMs like ChatGPT to practical applications in research and coding.</p>
+      
+      <div class="alert alert-info">
+        <h5>💡 Getting Started with AI</h5>
+        <p>New to AI? Start with <strong>Demystifying AI</strong> to understand the fundamentals, then explore <strong>Prompt Engineering</strong> to learn how to effectively communicate with AI tools.</p>
+      </div>
+    </div>
+  </div>
+</div>

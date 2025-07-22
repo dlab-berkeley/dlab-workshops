@@ -1,0 +1,367 @@
+# D-Lab Workshops Data File
+# Updated from CSV data
+# Last updated: 2025-07-22 16:11:13
+
+workshops:
+- title: 'Python Data Visualization: Parts 1-2'
+  category: python
+  level: intermediate
+  github_url: https://github.com/dlab-berkeley/Python-Data-Visualization
+  description: This workshop provides an introduction to visualization with Python.
+    We will cover visualization principles and plotting with Matplotlib and Seaborn.
+  prerequisites:
+  - Python Fundamentals
+  duration: 120 minutes
+  parts:
+  - name: Parts 1-2
+  datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FPython-Data-Visualization&urlpath=tree%2FPython-Data-Visualization%2F
+  binder_url: https://mybinder.org/v2/gh/dlab-berkeley/Python-Data-Visualization/main
+- title: Command Line Fundamentals
+  category: other
+  level: introductory
+  github_url: https://github.com/dlab-berkeley/Command-Line-Fundamentals
+  description: In this workshop, we provide a basic introduction to how to interact
+    with your computer via terminal. We are going to focus on Bash or Zsh.
+  prerequisites: []
+  duration: 90 minutes
+- title: Python GPT Fundamentals
+  category: [python, ai]
+  level: introductory
+  github_url: https://github.com/dlab-berkeley/GPT-Fundamentals/
+  description: This workshop offers a general introduction to the GPT (Generative Pretrained Transformers) model. No technical background is required.
+  prerequisites: []
+  duration: 120 minutes
+  datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2F&urlpath=tree%2F%2F
+  binder_url: https://mybinder.org/v2/gh/dlab-berkeley//main
+- title: LLMs for Exploratory Research
+  category: ai
+  level: introductory
+  github_url: https://github.com/dlab-berkeley/LLMs-Exploratory-Research/
+  description: In this workshop, we will explore different chatbots powered by LLMs, beyond just ChatGPT. Our main goal will be to understand how LLMs can be used by researchers to conduct early-stage (or exploratory) research.
+  prerequisites: []
+  duration: 90 minutes
+- title: 'Python Fundamentals: Parts 1-3'
+  category: python
+  level: introductory
+  github_url: https://github.com/dlab-berkeley/Python-Fundamentals
+  description: This three-part interactive workshop series is designed for beginners
+    with little to no programming experience, providing a comprehensive introduction
+    to Python programming and foundational data analysis.
+  prerequisites: []
+  duration: 120 minutes
+  parts:
+  - name: Parts 1-3
+  datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FPython-Fundamentals&urlpath=tree%2FPython-Fundamentals%2F
+  binder_url: https://mybinder.org/v2/gh/dlab-berkeley/Python-Fundamentals/main
+- title: 'Python Fundamentals: Parts 4-6'
+  category: python
+  level: introductory
+  github_url: https://github.com/dlab-berkeley/Python-Fundamentals
+  description: "This three-part interactive workshop series is a follow-up to D-Lab's Python Fundamentals: Parts 1-3 and will complete your introduction to Python programming for people with little or no previous programming experience."
+  prerequisites:
+  - Python Fundamentals Parts 1-3
+  duration: 120 minutes
+  parts:
+  - name: Parts 4-6
+  datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FPython-Fundamentals&urlpath=tree%2FPython-Fundamentals%2F
+  binder_url: https://mybinder.org/v2/gh/dlab-berkeley/Python-Fundamentals/main
+- title: Python Web APIs
+  category: python
+  level: intermediate
+  github_url: https://github.com/dlab-berkeley/Python-Web-APIs
+  description: This workshop covers how to extract data from the web with APIs using Python. APIs are often official services offered by companies and other entities, which allow you to directly query their servers in order to retrieve their data.
+  prerequisites:
+  - Python Fundamentals
+  duration: 120 minutes
+  datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FPython-Web-APIs&urlpath=tree%2FPython-Web-APIs%2F
+  binder_url: https://mybinder.org/v2/gh/dlab-berkeley/Python-Web-APIs/main
+- title: Python Web Scraping
+  category: python
+  level: intermediate
+  github_url: https://github.com/dlab-berkeley/Python-Web-Scraping
+  description: This workshop covers how to scrape data from the web using Python. Web scraping involves downloading a webpage's source code and sifting through the material to extract desired data, and is typically only done when Web APIs are not available.
+  prerequisites:
+  - Python Fundamentals 
+  duration: 120 minutes
+  datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FPython-Web-Scraping&urlpath=tree%2FPython-Web-Scraping%2F
+  binder_url: https://mybinder.org/v2/gh/dlab-berkeley/Python-Web-Scraping/main
+- title: Python SQL Fundamentals
+  category: other
+  level: introductory
+  github_url: https://github.com/dlab-berkeley/Python-SQL-Fundamentals
+  description: This workshop introduces the fundamentals of SQL, with a focus on using
+    SQLite (the most ubiquitous database on the planet) for data science tasks. 
+  prerequisites:
+  - Python Fundamentals Python Data Wrangling
+  - Python Machine Learning Fundamentals
+  duration: 120 minutes
+  datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FPython-SQL-Fundamentals&urlpath=tree%2FPython-SQL-Fundamentals%2F
+  binder_url: https://mybinder.org/v2/gh/dlab-berkeley/Python-SQL-Fundamentals/main
+- title: 'Python Data Wrangling and Manipulation with Pandas: Parts 1-2'
+  category: python
+  level: intermediate
+  github_url: https://github.com/dlab-berkeley/Python-Data-Wrangling
+  description: This workshop provides an introduction to data wrangling and manipulation
+    in Python. Our main focus is manipulating data frames, the most common data structure for representing tabular data.
+  prerequisites:
+  - Python Fundamentals
+  duration: 90 minutes
+  parts:
+  - name: Parts 1-2
+  datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FPython-Data-Wrangling&urlpath=tree%2FPython-Data-Wrangling%2F
+  binder_url: https://mybinder.org/v2/gh/dlab-berkeley/Python-Data-Wrangling/main
+- title: Python Deep Learning
+  category: python
+  level: advanced
+  github_url: https://github.com/dlab-berkeley/Python-Deep-Learning
+  description: In this workshop, we will convey the basics of deep learning in Python
+    using keras on image datasets. 
+  prerequisites:
+  - Python Fundamentals 
+  - Python Data Wrangling
+  - Python Machine Learning Fundamentals
+  duration: 180 minutes
+  datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FPython-Deep-Learning&urlpath=tree%2FPython-Deep-Learning%2F
+  binder_url: https://mybinder.org/v2/gh/dlab-berkeley/Python-Deep-Learning/main
+- title: MaxQDA Fundamentals
+  category: other
+  level: introductory
+  github_url: https://github.com/dlab-berkeley/MAXQDA-Fundamentals
+  description: This two-hour introductory workshop will teach you MaxQDA from scratch
+    with clear introductions, concise examples, and support documents. 
+  prerequisites: []
+  duration: 120 minutes
+- title: 'Python Machine Learning Fundamentals: Parts 1-2'
+  category: python
+  level: intermediate
+  github_url: https://github.com/dlab-berkeley/Python-Machine-Learning-Fundamentals
+  description: This workshop introduces students to scikit-learn, the popular machine
+    learning library in Python, as well as the auto-ML library built on top of scikit-learn.
+  prerequisites:
+  - Python Fundamentals 1-3
+  - Python Fundamentals 4-6
+  - Python Data Wrangling
+  duration: 180 minutes
+  parts:
+  - name: Parts 1-2
+  datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FPython-Machine-Learning-Fundamentals&urlpath=tree%2FPython-Machine-Learning-Fundamentals%2F
+  binder_url: https://mybinder.org/v2/gh/dlab-berkeley/Python-Machine-Learning-Fundamentals/main
+- title: 'Stata Fundamentals: Parts 1-3'
+  category: other
+  level: introductory
+  github_url: https://github.com/dlab-berkeley/stata-fundamentals
+  description: This workshop is a three-part introductory series that will teach you
+    Stata from scratch with clear introductions, concise examples, and support documents.
+  prerequisites: []
+  duration: 180 minutes
+  parts:
+  - name: Parts 1-3
+- title: 'Excel Data Analysis: Introduction'
+  category: other
+  level: introductory
+  github_url: https://github.com/dlab-berkeley/Excel-Fundamentals
+  description: This is a three-hour introductory workshop that will provide an overview
+    of Excel, with no prior experience assumed. 
+  prerequisites: []
+  duration: 180 minutes
+- title: 'Excel Data Analysis: Charts, Pivot Tables, and VLOOKUP'
+  category: other
+  level: intermediate
+  github_url: https://github.com/dlab-berkeley/Excel-Fundamentals
+  description: This three-hour workshop will cover charts in more detail, review pivot
+    tables, and work through at least one further challenge problem for functions.
+  prerequisites:
+  - Excel Data Analysis: Introduction
+  duration: 180 minutes
+- title: Institutional Review Board (IRB) Fundamentals
+  category: other
+  level: introductory
+  github_url: https://github.com/dlab-berkeley/IRB-Fundamentals
+  description: Are you starting a research project at UC Berkeley that involves human
+    subjects? If so, one of the first steps you will need to take is getting IRB approval.
+  prerequisites: []
+  duration: 120 minutes
+- title: Qualtrics Fundamentals
+  category: other
+  level: intermediate
+  github_url: https://github.com/dlab-berkeley/Qualtrics-Fundamentals
+  description: Qualtrics is a powerful online tool available to Berkeley community
+    members that can be used for a range of data collection activities.
+  prerequisites: []
+  duration: 120 minutes
+- title: 'R Fundamentals: Parts 1-4'
+  category: r
+  level: introductory
+  github_url: https://github.com/dlab-berkeley/R-Fundamentals
+  description: This interactive workshop series is your complete introduction to programming
+    in R for people with little or no previous programming experience. 
+  prerequisites: []
+  duration: 120 minutes
+  parts:
+  - name: Parts 1-4
+  datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FR-Fundamentals&urlpath=rstudio%2F
+  binder_url: https://mybinder.org/v2/gh/dlab-berkeley/R-Fundamentals/main
+- title: 'R Machine Learning with tidymodels: Parts 1-2'
+  category: r
+  level: advanced
+  github_url: https://github.com/dlab-berkeley/R-Machine-Learning
+  description: This two-part workshop provides an introduction to machine learning
+    algorithms using the tidymodels package. 
+  prerequisites:
+  - R Fundamentals
+  - R Data Wrangling
+  duration: 120 minutes
+  parts:
+  - name: Parts 1-2
+  datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FR-Machine-Learning&urlpath=rstudio%2F
+  binder_url: https://mybinder.org/v2/gh/dlab-berkeley/R-Machine-Learning/main
+- title: R Data Visualization
+  category: r
+  level: intermediate
+  github_url: https://github.com/dlab-berkeley/R-Data-Visualization
+  description: In this workshop, we provide an introduction to data visualization
+    in R.  
+  prerequisites:
+  - R Fundamentals
+  - R Data Wrangling
+  duration: 180 minutes
+  datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FR-Data-Visualization&urlpath=rstudio%2F
+  binder_url: https://mybinder.org/v2/gh/dlab-berkeley/R-Data-Visualization/main
+- title: 'Python Geospatial Fundamentals: Parts 1-2'
+  category: python
+  level: intermediate
+  github_url: https://github.com/dlab-berkeley/Python-Geospatial-Fundamentals/
+  description: This workshop is the first one of the two-part series on using Python
+    for fundamental geospatial analysis and visualization.
+    will be a
+  prerequisites:
+  - Python Fundamentals
+  - Python Data Wrangling
+  duration: 120 minutes
+  parts:
+  - name: Parts 1-2
+  datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2F&urlpath=tree%2F%2F
+  binder_url: https://mybinder.org/v2/gh/dlab-berkeley//main
+- title: R Census Data Fundamentals
+  category: r
+  level: introductory
+  github_url: https://github.com/dlab-berkeley/R-Census-Data
+  description: In this workshop, we provide an overview of conducting U.S. Census
+    data analysis and visualization in R. 
+  prerequisites:
+  - R Fundamentals
+  duration: 120 minutes
+  datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FR-Census-Data&urlpath=rstudio%2F
+  binder_url: https://mybinder.org/v2/gh/dlab-berkeley/R-Census-Data/main
+- title: 'R Data Wrangling and Manipulation: Parts 1-2'
+  category: r
+  level: intermediate
+  github_url: https://github.com/dlab-berkeley/R-Data-Wrangling
+  description: In this workshop, we provide practical guidance on data wrangling using
+    R's tidyverse.
+  prerequisites:
+  - R Fundamentals
+  duration: 120 minutes
+  parts:
+  - name: Parts 1-2
+  datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FR-Data-Wrangling&urlpath=rstudio%2F
+  binder_url: https://mybinder.org/v2/gh/dlab-berkeley/R-Data-Wrangling/main
+- title: R Copilot Assisted Coding Workshop
+  category: [r, ai]
+  level: introductory
+  github_url: https://github.com/dlab-berkeley/R-Copilot-Assisted-Coding-Works
+  description: This workshop provides a beginner-friendly introduction to coding with
+    GitHub Copilot, a popular AI coding assistant. 
+  prerequisites:
+  - R Fundamentals
+  duration: 120 minutes
+  datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FR-Copilot-Assisted-Coding-Works&urlpath=rstudio%2F
+  binder_url: https://mybinder.org/v2/gh/dlab-berkeley/R-Copilot-Assisted-Coding-Works/main
+- title: 'R Geospatial Fundamentals: Parts 1-2'
+  category: r
+  level: introductory
+  github_url: https://github.com/dlab-berkeley/R-Geospatial-Fundamentals
+  description: In this 2-part workshop series, we will provide an introduction to spatial analyses in R. We discuss the benefits of the additional 'location' component that defines spatial data and how spatial dataframes organize this information.
+  prerequisites:
+  - R Fundamentals 
+  - R Data Visualization
+  - R Data Wrangling
+  duration: 120 minutes
+  parts:
+  - name: Parts 1-2
+  datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FR-Geospatial-Fundamentals&urlpath=rstudio%2F
+  binder_url: https://mybinder.org/v2/gh/dlab-berkeley/R-Geospatial-Fundamentals/main
+- title: Github Fundamentals
+  category: other
+  level: introductory
+  github_url: https://github.com/dlab-berkeley/
+  description: In this workshop, you will learn the basics to understand and use Git, including working with the popular "social coding" website GitHub through the Github Desktop app. 
+  prerequisites: []
+  duration: 120 minutes
+- title: Git Fundamentals
+  category: other
+  level: introductory
+  github_url: https://github.com/dlab-berkeley/Git-Fundamentals
+  description: This introductory workshop covers basics of Git using command line.
+    We will cover key concepts and workflows, including version control, repository
+    creation, branching, merging, and collaboration. 
+  prerequisites:
+  - Co
+  duration: 120 minutes
+- title: Demystifying AI
+  category: ai
+  level: introductory
+  github_url: https://github.com/dlab-berkeley/Demystifying_AI
+  description: This engaging and beginner-friendly workshop offers a clear introduction
+    to the fundamental concepts underlying modern AI tools like ChatGPT. 
+  prerequisites: []
+  duration: 120 minutes
+- title: 'Python NLP Fundamentals: Parts 1-3'
+  category: python
+  level: intermediate
+  github_url: https://github.com/dlab-berkeley/Python-NLP-Fundamentals
+  description: This 3-part workshop will prepare participants to move forward with
+    research using Natural Language Processing (NL), with a special focus on social
+    science applications.
+  prerequisites:
+  - Python Fundamentals Python Data Wrangling
+  - Python Machine Learning Fundamentals
+  duration: 120 minutes
+  parts:
+  - name: Parts 1-3
+  datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FPython-NLP-Fundamentals&urlpath=tree%2FPython-NLP-Fundamentals%2F
+  binder_url: https://mybinder.org/v2/gh/dlab-berkeley/Python-NLP-Fundamentals/main
+- title: R SQL Fundamentals
+  category: other
+  level: introductory
+  github_url: https://github.com/dlab-berkeley/R-SQL-Fundamentals
+  description: In this workshop, we provide an introduction to using SQL to query
+    and retrieve data from relational databases in R. 
+  prerequisites:
+  - R Fundamentals
+  duration: 120 minutes
+  datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FR-SQL-Fundamentals&urlpath=rstudio%2F
+  binder_url: https://mybinder.org/v2/gh/dlab-berkeley/R-SQL-Fundamentals/main
+- title: Prompt Engineering
+  category: ai
+  level: introductory
+  github_url: https://github.com/dlab-berkeley/prompt-engineering
+  description: In this beginner-friendly workshop, we provide an introduction to prompt
+    engineering using LLM chatbots like OpenAI's ChatGPT, Anthropic's Claude and Google's
+    Gemini.
+  prerequisites: []
+  duration: 60 minutes
+- title: Python SQL Intermediate
+  category: other
+  level: intermediate
+  github_url: https://github.com/dlab-berkeley/Python-SQL-Intermediate
+  description: This intermediate SQL workshop builds on foundational skills to deepen
+    your ability to work with relational databases in Python. 
+  prerequisites:
+  - SQL Fundamentals
+  duration: 120 minutes
+  datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FPython-SQL-Intermediate&urlpath=tree%2FPython-SQL-Intermediate%2F
+  binder_url: https://mybinder.org/v2/gh/dlab-berkeley/Python-SQL-Intermediate/main
+last_updated: '2025-07-22T16:11:13.344380'
+source: CSV Import
+total_workshops: 36
