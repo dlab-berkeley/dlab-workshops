@@ -60,3 +60,35 @@
   padding: 2rem 0;
   margin-bottom: 2rem;
 }
+
+/* Workshop card styles */
+.workshop-card {
+  background: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.workshop-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* Badge styles */
+.badge-pill {
+  padding: 0.4em 0.8em;
+  font-weight: 500;
+}
+
+/* Workshop page hero sections */
+.workshop-page-header {
+  background-color: #f8f9fa;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .workshop-links .btn {
+    margin-bottom: 0.25rem;
+  }
+}
