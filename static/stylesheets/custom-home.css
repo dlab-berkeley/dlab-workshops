@@ -51,6 +51,7 @@
 .homepage-hero {
   background-color: #f8f9fa;
   margin-bottom: 2rem;
+  margin-top: 80px; /* Push banner below fixed navbar */
   overflow: hidden;
 }
 
