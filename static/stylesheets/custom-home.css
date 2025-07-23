@@ -1,0 +1,62 @@
+/* Custom styles for homepage */
+
+/* Add gradient background to category cards */
+.category-card {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Add icons or emojis to categories */
+.category-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+/* Python icon */
+.python-icon::before {
+  content: "🐍";
+}
+
+/* R icon */
+.r-icon::before {
+  content: "📊";
+}
+
+/* AI icon */
+.ai-icon::before {
+  content: "🤖";
+}
+
+/* Other icon */
+.other-icon::before {
+  content: "🛠️";
+}
+
+/* Alternative: Use Berkeley colors */
+.berkeley-blue {
+  color: #003262;
+}
+
+.berkeley-gold {
+  color: #FDB515;
+}
+
+/* Add subtle pattern background */
+.homepage-hero {
+  background-color: #f8f9fa;
+  background-image: 
+    linear-gradient(30deg, #f0f0f0 12%, transparent 12.5%, transparent 87%, #f0f0f0 87.5%, #f0f0f0),
+    linear-gradient(150deg, #f0f0f0 12%, transparent 12.5%, transparent 87%, #f0f0f0 87.5%, #f0f0f0),
+    linear-gradient(30deg, #f0f0f0 12%, transparent 12.5%, transparent 87%, #f0f0f0 87.5%, #f0f0f0),
+    linear-gradient(150deg, #f0f0f0 12%, transparent 12.5%, transparent 87%, #f0f0f0 87.5%, #f0f0f0);
+  background-size: 80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}

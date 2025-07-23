@@ -3,12 +3,17 @@ layout: default
 title: D-Lab Workshops
 ---
 
-<div class="container mt-5 pt-5">
-  <div class="text-center mb-4">
-    <img src="static/images/logo-2023.png" alt="D-Lab Logo" width="200px">
+<div class="homepage-hero">
+  <div class="container pt-5">
+    <div class="text-center mb-4">
+      <img src="static/images/logo-2023.png" alt="D-Lab Logo" width="200px">
+    </div>
+    
+    <h4 class="text-center mb-4">What do you want to learn?</h4>
   </div>
-  
-  <h4 class="text-center mb-4">What do you want to learn?</h4>
+</div>
+
+<div class="container">
   
   <div class="row justify-content-center mb-4">
     {% assign python_count = 0 %}
@@ -63,8 +68,9 @@ title: D-Lab Workshops
     {% endfor %}
     
     <div class="col-lg-3 col-md-6 col-sm-6 mb-3">
-      <div class="card h-100 text-center border-dark">
+      <div class="card h-100 text-center border-0 shadow-sm category-card">
         <div class="card-body d-flex flex-column">
+          <div class="category-icon python-icon"></div>
           <h5 class="card-title text-dark">Python</h5>
           <p class="card-text">{{ python_count }} workshops available</p>
           <p class="small text-muted flex-grow-1">Data science, machine learning, and web development</p>
@@ -74,8 +80,9 @@ title: D-Lab Workshops
     </div>
     
     <div class="col-lg-3 col-md-6 col-sm-6 mb-3">
-      <div class="card h-100 text-center border-dark">
+      <div class="card h-100 text-center border-0 shadow-sm category-card">
         <div class="card-body d-flex flex-column">
+          <div class="category-icon r-icon"></div>
           <h5 class="card-title text-dark">R</h5>
           <p class="card-text">{{ r_count }} workshops available</p>
           <p class="small text-muted flex-grow-1">Statistical analysis and data visualization</p>
@@ -85,8 +92,9 @@ title: D-Lab Workshops
     </div>
     
     <div class="col-lg-3 col-md-6 col-sm-6 mb-3">
-      <div class="card h-100 text-center border-dark">
+      <div class="card h-100 text-center border-0 shadow-sm category-card">
         <div class="card-body d-flex flex-column">
+          <div class="category-icon ai-icon"></div>
           <h5 class="card-title text-dark">AI</h5>
           <p class="card-text">{{ ai_count }} workshops available</p>
           <p class="small text-muted flex-grow-1">Working with AI tools and large language models</p>
@@ -96,8 +104,9 @@ title: D-Lab Workshops
     </div>
     
     <div class="col-lg-3 col-md-6 col-sm-6 mb-3">
-      <div class="card h-100 text-center border-dark">
+      <div class="card h-100 text-center border-0 shadow-sm category-card">
         <div class="card-body d-flex flex-column">
+          <div class="category-icon other-icon"></div>
           <h5 class="card-title text-dark">Other</h5>
           <p class="card-text">{{ other_count }} workshops available</p>
           <p class="small text-muted flex-grow-1">Git, SQL, Excel, and specialized tools</p>
