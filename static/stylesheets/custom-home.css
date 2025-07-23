@@ -63,13 +63,14 @@
 
 /* Workshop card styles */
 .workshop-card {
-  background: #ffffff;
+  background: #f8f9fa;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .workshop-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  background: #ffffff;
 }
 
 /* Badge styles */
