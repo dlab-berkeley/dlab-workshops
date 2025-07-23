@@ -47,18 +47,18 @@
   color: #FDB515;
 }
 
-/* Add subtle pattern background */
+/* Homepage hero section */
 .homepage-hero {
   background-color: #f8f9fa;
-  background-image: 
-    linear-gradient(30deg, #f0f0f0 12%, transparent 12.5%, transparent 87%, #f0f0f0 87.5%, #f0f0f0),
-    linear-gradient(150deg, #f0f0f0 12%, transparent 12.5%, transparent 87%, #f0f0f0 87.5%, #f0f0f0),
-    linear-gradient(30deg, #f0f0f0 12%, transparent 12.5%, transparent 87%, #f0f0f0 87.5%, #f0f0f0),
-    linear-gradient(150deg, #f0f0f0 12%, transparent 12.5%, transparent 87%, #f0f0f0 87.5%, #f0f0f0);
-  background-size: 80px 140px;
-  background-position: 0 0, 0 0, 40px 70px, 40px 70px;
-  padding: 2rem 0;
   margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+/* Make banner full width */
+.homepage-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Workshop card styles */
