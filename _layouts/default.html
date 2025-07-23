@@ -1,16 +1,78 @@
 <!DOCTYPE html>
 <html class="w-100 h-100">
 
-{% include head.html %}
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{ page.title | default: "D-Lab Workshops" }}</title>
+	<link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon-16x16.png">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
+	<!-- Fontawesome JS -->
+	<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+	
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="static/stylesheets/style.css">
+</head>
 
 <body class="w-100 h-100">
 
-	{% include navbar.html %}
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top borderless">
+		<a class="navbar-brand" href="index.html">D-Lab Workshops</a>
+		<button class="navbar-toggler borderless" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarColor01">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="guide.html">Guide</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="library.html">Library</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="about.html">About</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!-- End of Navbar -->
 
 	<!-- Content -->
 	{{ content }}
 	<!-- End Content -->
 
-	{% include footer.html %}
+	<!--Footer-->
+	<footer class="page-footer font-small blue pt-4 mt-4">
+		<div class="container-fluid text-center text-md-center">
+			<div class="row justify-content-md-center">
+				<div class="col-md-offset-3 col-md-6">
+					<h5>Follow Us</h5>
+					<h1>
+						<a class="ml-auto mr-2" href=""><i class="fas fa-home"></i></a>
+						<a class="mx-2" href=""><i class="fab fa-github"></i></a>
+						<a class="mr-auto ml-2" href="mailto:your-email@example.com"><i class="fas fa-envelope"></i></a>
+					</h1>
+				</div>
+			</div>
+		</div>
+		<!--Copyright-->
+		<div class="footer-copyright py-3 text-center">
+			
+		</div>
+	</footer>
+	<!-- End Footer -->
+
+	<!-- Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 </html>
