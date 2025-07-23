@@ -18,6 +18,11 @@ group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
 end
 
+# Security updates
+gem "rexml", ">= 3.3.6"
+gem "addressable", ">= 2.8.6"
+gem "webrick", ">= 1.8.2"
+
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
 platforms :mingw, :x64_mingw, :mswin, :jruby do
