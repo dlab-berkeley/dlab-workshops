@@ -1,0 +1,99 @@
+# Workshop Title Mappings
+# Maps Jekyll workshop titles to EventSpark titles
+# Use lowercase for comparison
+
+mappings:
+  # Python workshops
+  "python fundamentals: parts 1-3":
+    - "python fundamentals: parts 1-3"
+    - "python fundamentals"
+    - "python fundamentals (parts 1-3)"
+  
+  "python fundamentals: parts 4-6":
+    - "python fundamentals: parts 4-6"
+    - "python fundamentals (parts 4-6)"
+  
+  "python data wrangling and manipulation with pandas: parts 1-2":
+    - "python data wrangling"
+    - "python data wrangling: parts 1-2"
+    - "data wrangling with pandas"
+  
+  "python data visualization: parts 1-2":
+    - "python data visualization"
+    - "python visualization"
+    - "data visualization with python"
+  
+  "python machine learning fundamentals: parts 1-2":
+    - "python machine learning"
+    - "machine learning with python"
+    - "python ml fundamentals"
+  
+  "python web apis":
+    - "python apis"
+    - "python web apis"
+    - "apis with python"
+  
+  "python apis for large language models":
+    - "python apis for large language models"
+    - "python llm apis"
+    - "llm apis with python"
+  
+  # R workshops
+  "r fundamentals: parts 1-4":
+    - "r fundamentals: parts 1-4"
+    - "r fundamentals"
+    - "r fundamentals (parts 1-4)"
+  
+  "r data wrangling and manipulation: parts 1-2":
+    - "r data wrangling"
+    - "data wrangling with r"
+    - "r tidyverse"
+  
+  "r data visualization":
+    - "r visualization"
+    - "data visualization with r"
+    - "r ggplot"
+  
+  "r machine learning with tidymodels: parts 1-2":
+    - "r machine learning"
+    - "machine learning with r"
+    - "r tidymodels"
+  
+  # AI workshops
+  "ai-assisted coding with r":
+    - "ai-assisted coding with r"
+    - "r copilot"
+    - "copilot with r"
+    - "ai coding r"
+  
+  "ai-assisted coding with python":
+    - "ai-assisted coding with python"
+    - "python copilot"
+    - "copilot with python"
+    - "ai coding python"
+  
+  "python gpt fundamentals":
+    - "gpt fundamentals"
+    - "chatgpt fundamentals"
+    - "llm fundamentals"
+  
+  "prompt engineering":
+    - "prompt engineering"
+    - "prompting workshop"
+    - "ai prompting"
+  
+  # Other workshops
+  "git fundamentals":
+    - "git fundamentals"
+    - "git basics"
+    - "introduction to git"
+  
+  "github fundamentals":
+    - "github fundamentals"
+    - "github basics"
+    - "introduction to github"
+  
+  "command line fundamentals":
+    - "command line"
+    - "bash fundamentals"
+    - "terminal basics"
