@@ -244,7 +244,7 @@ workshops:
   binder_url: https://mybinder.org/v2/gh/dlab-berkeley//main
 - title: R Census Data Fundamentals
   category: r
-  level: introductory
+  level: intermediate
   github_url: https://github.com/dlab-berkeley/R-Census-Data
   description: In this workshop, we provide an overview of conducting U.S. Census
     data analysis and visualization in R. 
@@ -266,7 +266,7 @@ workshops:
   - name: Parts 1-2
   datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FR-Data-Wrangling&urlpath=rstudio%2F
   binder_url: https://mybinder.org/v2/gh/dlab-berkeley/R-Data-Wrangling/main
-- title: R Copilot Assisted Coding Workshop
+- title: AI-Assisted Coding with R
   category: [r, ai]
   level: introductory
   github_url: https://github.com/dlab-berkeley/R-Copilot-Assisted-Coding-Works
@@ -277,9 +277,20 @@ workshops:
   duration: 120 minutes
   datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FR-Copilot-Assisted-Coding-Works&urlpath=rstudio%2F
   binder_url: https://mybinder.org/v2/gh/dlab-berkeley/R-Copilot-Assisted-Coding-Works/main
+- title: AI-Assisted Coding with Python
+  category: [python, ai]
+  level: introductory
+  github_url: https://github.com/dlab-berkeley/Python-Copilot-Assisted-Coding-Works
+  description: This workshop provides a beginner-friendly introduction to coding with
+    GitHub Copilot, a popular AI coding assistant. 
+  prerequisites:
+  - Python Fundamentals
+  duration: 120 minutes
+  datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FPython-Copilot-Assisted-Coding-Works&urlpath=tree%2FPython-Copilot-Assisted-Coding-Works%2F
+  binder_url: https://mybinder.org/v2/gh/dlab-berkeley/Python-Copilot-Assisted-Coding-Works/main
 - title: 'R Geospatial Fundamentals: Parts 1-2'
   category: r
-  level: introductory
+  level: intermediate
   github_url: https://github.com/dlab-berkeley/R-Geospatial-Fundamentals
   description: In this 2-part workshop series, we will provide an introduction to spatial analyses in R. We discuss the benefits of the additional 'location' component that defines spatial data and how spatial dataframes organize this information.
   prerequisites:
@@ -364,4 +375,4 @@ workshops:
   binder_url: https://mybinder.org/v2/gh/dlab-berkeley/Python-SQL-Intermediate/main
 last_updated: '2025-07-22T16:11:13.344380'
 source: CSV Import
-total_workshops: 36
+total_workshops: 37
