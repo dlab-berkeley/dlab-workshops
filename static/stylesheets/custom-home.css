@@ -2,7 +2,7 @@
 
 /* Fix homepage banner positioning below navbar */
 .homepage-hero {
-  margin-top: 56px; /* Account for fixed navbar height */
+  margin-top: 80px !important; /* Account for fixed navbar height + padding */
 }
 
 /* Add gradient background to category cards */
