@@ -42,7 +42,7 @@ workshops:
   duration: 90 minutes
 - title: Python APIs for Large Language Models
   category: [python, ai]
-  level: introductory
+  level: intermediate
   github_url: https://github.com/dlab-berkeley/Python-APIs-for-Large-Language-Models
   description: In this hands-on workshop, you will learn how to use Python to call LLM APIs and get structured responses for research applications.
   prerequisites:
