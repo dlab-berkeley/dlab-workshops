@@ -184,6 +184,15 @@ def main():
     
     print(f"Fetched {len(raw_data)} rows from Google Sheet")
     
+    # Debug: Print first few rows
+    print("First 3 rows of raw data:")
+    for i, row in enumerate(raw_data[:3]):
+        print(f"Row {i+1}: {row}")
+    
+    # Debug: Print column names
+    if raw_data:
+        print(f"Available columns: {list(raw_data[0].keys())}")
+    
     # Parse and transform data
     workshops = parse_workshop_data(raw_data)
     
