@@ -1,5 +1,10 @@
 /* Custom styles for homepage */
 
+/* Fix homepage banner positioning below navbar */
+.homepage-hero {
+  margin-top: 56px; /* Account for fixed navbar height */
+}
+
 /* Add gradient background to category cards */
 .category-card {
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
