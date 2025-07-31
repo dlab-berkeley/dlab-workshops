@@ -11,10 +11,18 @@
 {% comment %} Separate workshops into active and inactive {% endcomment %}
 {% for workshop in workshops %}
   {% assign is_active = false %}
+  {% assign workshop_title_lower = workshop.title | downcase %}
   
   {% comment %} Check if workshop is in upcoming workshops {% endcomment %}
   {% for upcoming in site.data.upcoming_workshops.workshops %}
-    {% if upcoming.title == workshop.title %}
+    {% assign upcoming_title_lower = upcoming.title | downcase %}
+    {% if upcoming_title_lower == workshop_title_lower %}
+      {% assign is_active = true %}
+      {% break %}
+    {% elsif upcoming_title_lower contains workshop_title_lower %}
+      {% assign is_active = true %}
+      {% break %}
+    {% elsif workshop_title_lower contains upcoming_title_lower %}
       {% assign is_active = true %}
       {% break %}
     {% endif %}

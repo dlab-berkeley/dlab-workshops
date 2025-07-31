@@ -4,9 +4,10 @@
 (function() {
   'use strict';
 
-  // Configuration
-  const UPCOMING_WORKSHOPS_URL = 'data/upcoming_workshops.json';
-  const WORKSHOP_MAPPINGS_URL = 'data/workshop_mappings.yml';
+  // Configuration - detect base URL
+  const baseUrl = window.location.pathname.includes('/dlab-workshops/') ? '/dlab-workshops' : '';
+  const UPCOMING_WORKSHOPS_URL = baseUrl + '/data/upcoming_workshops.json';
+  const WORKSHOP_MAPPINGS_URL = baseUrl + '/data/workshop_mappings.yml';
 
   // Cache for performance
   let workshopData = null;
@@ -88,6 +89,7 @@
     return title.toLowerCase()
       .replace(/[^a-z0-9\s]/g, '')
       .replace(/\s+/g, ' ')
+      .replace(/parts\s+\d+[-–]\d+/g, 'parts')  // Normalize "Parts 1-3" to just "parts"
       .trim();
   }
 
