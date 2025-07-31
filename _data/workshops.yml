@@ -40,6 +40,16 @@ workshops:
   description: In this workshop, we will explore different chatbots powered by LLMs, beyond just ChatGPT. Our main goal will be to understand how LLMs can be used by researchers to conduct early-stage (or exploratory) research.
   prerequisites: []
   duration: 90 minutes
+- title: Python APIs for Large Language Models
+  category: [python, ai]
+  level: introductory
+  github_url: https://github.com/dlab-berkeley/Python-APIs-for-Large-Language-Models
+  description: In this hands-on workshop, you will learn how to use Python to call LLM APIs and get structured responses for research applications.
+  prerequisites:
+  - Python Fundamentals
+  duration: 120 minutes
+  datahub_url: http://dlab.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FPython-APIs-for-Large-Language-Models&urlpath=lab%2Ftree%2FPython-APIs-for-Large-Language-Models%2F
+  binder_url: https://mybinder.org/v2/gh/dlab-berkeley/Python-APIs-for-Large-Language-Models/HEAD
 - title: 'Python Fundamentals: Parts 1-3'
   category: python
   level: introductory
