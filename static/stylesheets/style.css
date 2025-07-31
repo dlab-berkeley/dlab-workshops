@@ -34,6 +34,60 @@ h3 {
 		margin-bottom: 10px;
 }
 
+/* Workshop card styles */
+.workshop-card {
+    transition: all 0.3s ease;
+}
+
+.workshop-card[data-active="true"] {
+    border: 2px solid #28a745 !important;
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.2) !important;
+}
+
+/* Upcoming session badges */
+.upcoming-session-badge {
+    min-height: 24px;
+}
+
+.upcoming-session-badge.loading {
+    opacity: 0.5;
+}
+
+.badge-upcoming {
+    background-color: #28a745;
+    color: white;
+    font-size: 0.75rem;
+}
+
+.badge-upcoming-soon {
+    background-color: #ffc107;
+    color: #212529;
+    font-size: 0.75rem;
+}
+
+.badge-no-sessions {
+    background-color: #6c757d;
+    color: white;
+    font-size: 0.75rem;
+}
+
+/* Register button */
+.btn-register {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+}
+
+.btn-register:hover {
+    background-color: #218838;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
 .content {
 		display: none;
 		overflow: hidden;

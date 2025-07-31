@@ -1,0 +1,124 @@
+---
+layout: default
+title: Available Now
+permalink: /available-now
+---
+
+<div class="container mt-5 pt-5">
+  <div class="row mb-3">
+    <div class="col-12">
+      <a href="index.html" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> Back to Home
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h1 class="mb-4">
+        <i class="fas fa-calendar-check text-success"></i> Available Now
+      </h1>
+      <p class="lead">Workshops with upcoming sessions you can register for today!</p>
+      
+      {% if site.data.upcoming_workshops.workshops.size > 0 %}
+        <div class="alert alert-success">
+          <i class="fas fa-info-circle"></i> <strong>{{ site.data.upcoming_workshops.total_workshops }} workshops</strong> currently have sessions available for registration.
+        </div>
+        
+        <p class="text-muted mb-4">
+          Last updated: {{ site.data.upcoming_workshops.last_updated | date: "%B %d, %Y at %I:%M %p" }}
+        </p>
+      {% endif %}
+    </div>
+  </div>
+  
+  {% if site.data.upcoming_workshops.workshops.size > 0 %}
+    <div class="row">
+      {% comment %} Group workshops by title to avoid duplicates {% endcomment %}
+      {% assign unique_workshops = "" | split: "" %}
+      {% assign processed_titles = "" | split: "" %}
+      
+      {% for upcoming in site.data.upcoming_workshops.workshops %}
+        {% unless processed_titles contains upcoming.title %}
+          {% comment %} Find matching workshop in main catalog {% endcomment %}
+          {% for workshop in site.data.workshops.workshops %}
+            {% if workshop.title == upcoming.title %}
+              {% assign unique_workshops = unique_workshops | push: workshop %}
+              {% assign processed_titles = processed_titles | push: upcoming.title %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+        {% endunless %}
+      {% endfor %}
+      
+      {% comment %} Display all unique active workshops {% endcomment %}
+      {% for workshop in unique_workshops %}
+        {% include workshop-card.html workshop=workshop %}
+      {% endfor %}
+    </div>
+    
+    <div class="row mt-5">
+      <div class="col-12">
+        <h3>Upcoming Session Schedule</h3>
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Workshop</th>
+                <th>Date & Time</th>
+                <th>Instructor</th>
+                <th>Location</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for session in site.data.upcoming_workshops.workshops %}
+                <tr>
+                  <td><strong>{{ session.title }}</strong></td>
+                  <td>
+                    {{ session.datetime_iso | date: "%B %d, %Y" }}<br>
+                    <small class="text-muted">{{ session.datetime_iso | date: "%I:%M %p" }}</small>
+                  </td>
+                  <td>{{ session.instructor | default: "TBA" }}</td>
+                  <td>{{ session.location | default: "Online" }}</td>
+                  <td>
+                    {% if session.registration_url %}
+                      <a href="{{ session.registration_url }}" class="btn btn-sm btn-success" target="_blank">
+                        <i class="fas fa-user-plus"></i> Register
+                      </a>
+                    {% else %}
+                      <span class="text-muted">Registration TBA</span>
+                    {% endif %}
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <div class="row">
+      <div class="col-12">
+        <div class="alert alert-info">
+          <h4><i class="fas fa-info-circle"></i> No Workshops Currently Scheduled</h4>
+          <p class="mb-2">There are no workshops with upcoming sessions at this time.</p>
+          <p class="mb-0">Please check back later or browse our <a href="index.html">full workshop catalog</a> to see all available materials.</p>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  
+  <div class="row mt-5">
+    <div class="col-12">
+      <div class="card bg-light">
+        <div class="card-body">
+          <h5 class="card-title">Stay Updated</h5>
+          <p class="card-text">Want to be notified when new workshop sessions are scheduled?</p>
+          <a href="https://dlab.berkeley.edu/subscribe" class="btn btn-primary" target="_blank">
+            <i class="fas fa-envelope"></i> Subscribe to Updates
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

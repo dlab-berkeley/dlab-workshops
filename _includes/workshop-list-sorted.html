@@ -1,0 +1,73 @@
+{% comment %}
+  Workshop list with active/upcoming workshops sorted first
+  Parameters:
+    - workshops: array of workshops to display
+    - category: optional category filter
+{% endcomment %}
+
+{% assign active_workshops = "" | split: "" %}
+{% assign inactive_workshops = "" | split: "" %}
+
+{% comment %} Separate workshops into active and inactive {% endcomment %}
+{% for workshop in workshops %}
+  {% assign is_active = false %}
+  
+  {% comment %} Check if workshop is in upcoming workshops {% endcomment %}
+  {% for upcoming in site.data.upcoming_workshops.workshops %}
+    {% if upcoming.title == workshop.title %}
+      {% assign is_active = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  
+  {% if is_active %}
+    {% assign active_workshops = active_workshops | push: workshop %}
+  {% else %}
+    {% assign inactive_workshops = inactive_workshops | push: workshop %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} Display active workshops first {% endcomment %}
+{% if active_workshops.size > 0 %}
+  <div class="row mb-4">
+    <div class="col-12">
+      <h3 class="text-success">
+        <i class="fas fa-calendar-check"></i> Currently Available
+      </h3>
+      <p class="text-muted">These workshops have upcoming sessions you can register for.</p>
+    </div>
+  </div>
+  <div class="row">
+    {% for workshop in active_workshops %}
+      {% include workshop-card.html workshop=workshop %}
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% comment %} Display inactive workshops {% endcomment %}
+{% if inactive_workshops.size > 0 %}
+  <div class="row mb-4 mt-5">
+    <div class="col-12">
+      <h3>
+        <i class="fas fa-archive"></i> Workshop Catalog
+      </h3>
+      <p class="text-muted">These workshops are not currently scheduled but materials are available.</p>
+    </div>
+  </div>
+  <div class="row">
+    {% comment %} Sort by difficulty: introductory, intermediate, advanced {% endcomment %}
+    {% assign intro_workshops = inactive_workshops | where: "level", "introductory" %}
+    {% assign intermediate_workshops = inactive_workshops | where: "level", "intermediate" %}
+    {% assign advanced_workshops = inactive_workshops | where: "level", "advanced" %}
+    
+    {% for workshop in intro_workshops %}
+      {% include workshop-card.html workshop=workshop %}
+    {% endfor %}
+    {% for workshop in intermediate_workshops %}
+      {% include workshop-card.html workshop=workshop %}
+    {% endfor %}
+    {% for workshop in advanced_workshops %}
+      {% include workshop-card.html workshop=workshop %}
+    {% endfor %}
+  </div>
+{% endif %}

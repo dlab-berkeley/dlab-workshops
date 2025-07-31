@@ -12,6 +12,23 @@ title: D-Lab Workshops
 
 <div class="container">
   
+  {% if site.data.upcoming_workshops.workshops.size > 0 %}
+  <div class="row justify-content-center my-4">
+    <div class="col-12">
+      <div class="alert alert-success text-center" role="alert">
+        <h4 class="alert-heading">
+          <i class="fas fa-calendar-check"></i> {{ site.data.upcoming_workshops.total_workshops }} Workshops Available Now!
+        </h4>
+        <p class="mb-2">Register for upcoming workshop sessions happening soon.</p>
+        <hr>
+        <a href="available-now.html" class="btn btn-success btn-lg">
+          <i class="fas fa-list"></i> View All Available Workshops
+        </a>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  
   <div class="row justify-content-center mb-4">
     {% assign python_count = 0 %}
     {% assign r_count = 0 %}

@@ -25,36 +25,21 @@ permalink: /R
     </div>
   </div>
   
-  <div class="row">
-    {% assign r_workshops = "" | split: "" %}
-    {% for workshop in site.data.workshops.workshops %}
-      {% if workshop.category == 'r' %}
-        {% assign r_workshops = r_workshops | push: workshop %}
-      {% elsif workshop.category contains 'r' and workshop.category.size > 1 %}
-        {% for cat in workshop.category %}
-          {% if cat == 'r' %}
-            {% assign r_workshops = r_workshops | push: workshop %}
-            {% break %}
-          {% endif %}
-        {% endfor %}
-      {% endif %}
-    {% endfor %}
-    
-    {% comment %} Sort by difficulty: introductory, intermediate, advanced {% endcomment %}
-    {% assign introductory_workshops = r_workshops | where: "level", "introductory" %}
-    {% assign intermediate_workshops = r_workshops | where: "level", "intermediate" %}
-    {% assign advanced_workshops = r_workshops | where: "level", "advanced" %}
-    
-    {% for workshop in introductory_workshops %}
-      {% include workshop-card.html workshop=workshop %}
-    {% endfor %}
-    {% for workshop in intermediate_workshops %}
-      {% include workshop-card.html workshop=workshop %}
-    {% endfor %}
-    {% for workshop in advanced_workshops %}
-      {% include workshop-card.html workshop=workshop %}
-    {% endfor %}
-  </div>
+  {% assign r_workshops = "" | split: "" %}
+  {% for workshop in site.data.workshops.workshops %}
+    {% if workshop.category == 'r' %}
+      {% assign r_workshops = r_workshops | push: workshop %}
+    {% elsif workshop.category contains 'r' and workshop.category.size > 1 %}
+      {% for cat in workshop.category %}
+        {% if cat == 'r' %}
+          {% assign r_workshops = r_workshops | push: workshop %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+  
+  {% include workshop-list-sorted.html workshops=r_workshops %}
   
   <div class="row mt-4">
     <div class="col-12">

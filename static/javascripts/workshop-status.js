@@ -121,17 +121,23 @@
   }
 
   function updateWorkshopCard(card, workshop) {
-    // Update badge
-    if (card.classList.contains('upcoming-session-badge')) {
-      card.classList.remove('loading');
+    // Mark the card as active
+    const workshopCard = card.closest('.workshop-card') || card;
+    workshopCard.setAttribute('data-active', 'true');
+    
+    // Find badge container within the card
+    const badgeContainer = workshopCard.querySelector('.upcoming-session-badge');
+    if (badgeContainer) {
+      badgeContainer.classList.remove('loading');
       const badge = createSessionBadge(workshop);
-      card.innerHTML = badge;
+      badgeContainer.innerHTML = badge;
     }
 
-    // Update register button
-    if (card.classList.contains('register-button-container') && workshop.registration_url) {
+    // Find register button container within the card
+    const registerContainer = workshopCard.querySelector('.register-button-container');
+    if (registerContainer && workshop.registration_url) {
       const button = createRegisterButton(workshop);
-      card.innerHTML = button;
+      registerContainer.innerHTML = button;
     }
   }
 
