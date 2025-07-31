@@ -77,42 +77,57 @@ def fetch_google_sheet_data(sheet_id: str, range_name: str = 'A:Z') -> List[Dict
 def parse_workshop_data(raw_data: List[Dict]) -> List[Dict]:
     """
     Parse and transform raw Google Sheets data into workshop format
-    Expected columns: title, date, time, registration_url, instructor, location
+    Expected columns from Salesforce export:
+    - evsprk__Event_Title__c: Workshop title
+    - evsprk__Start_Date__c: Start date (YYYY-MM-DD)
+    - evsprk__Event_Homepage_Link__c: HTML link containing registration URL
     """
     workshops = []
     
     for row in raw_data:
         try:
-            # Skip empty rows
-            if not row.get('title'):
+            # Skip empty rows or inactive workshops
+            if not row.get('evsprk__Event_Title__c') or row.get('evsprk__Stage__c') != 'Active':
                 continue
             
-            # Parse date and time
-            date_str = row.get('date', '')
-            time_str = row.get('time', '')
+            # Get workshop title
+            title = row.get('evsprk__Event_Title__c', '').strip()
             
-            # Combine date and time into ISO format
-            if date_str and time_str:
-                # Assuming date format is MM/DD/YYYY and time is HH:MM AM/PM
-                datetime_str = f"{date_str} {time_str}"
-                workshop_datetime = datetime.strptime(datetime_str, "%m/%d/%Y %I:%M %p")
-                workshop_datetime = workshop_datetime.replace(tzinfo=timezone.utc)
-            else:
-                continue  # Skip if no date/time
+            # Parse date (format: YYYY-MM-DD)
+            date_str = row.get('evsprk__Start_Date__c', '')
+            if not date_str:
+                continue
+            
+            # Convert date to datetime (assuming workshops are during business hours)
+            workshop_date = datetime.strptime(date_str, "%Y-%m-%d")
+            # Set a default time of 9 AM PST (5 PM UTC)
+            workshop_datetime = workshop_date.replace(hour=17, minute=0, tzinfo=timezone.utc)
+            
+            # Extract registration URL from HTML link
+            registration_url = ''
+            homepage_link = row.get('evsprk__Event_Homepage_Link__c', '')
+            if homepage_link:
+                # Extract URL from HTML anchor tag
+                import re
+                url_match = re.search(r'href="([^"]+)"', homepage_link)
+                if url_match:
+                    registration_url = url_match.group(1)
             
             workshop = {
-                'title': row.get('title', ''),
+                'title': title,
                 'datetime_iso': workshop_datetime.isoformat(),
-                'registration_url': row.get('registration_url', ''),
-                'instructor': row.get('instructor', ''),
-                'location': row.get('location', 'Online'),
-                'description': row.get('description', '')
+                'registration_url': registration_url,
+                'date': workshop_date.strftime("%b %d, %Y"),
+                'time': 'See event page for details',
+                'location': 'Online',
+                'instructor': 'D-Lab Staff'
             }
             
             workshops.append(workshop)
             
         except Exception as e:
             print(f"Error parsing workshop row: {e}")
+            print(f"Row data: {row}")
             continue
     
     # Sort by date
