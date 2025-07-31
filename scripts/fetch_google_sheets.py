@@ -137,7 +137,7 @@ def parse_workshop_data(raw_data: List[Dict]) -> List[Dict]:
 
 def update_upcoming_workshops(workshops: List[Dict], output_path: Path):
     """
-    Update the upcoming_workshops.json file
+    Update the upcoming_workshops.json file in both _data and data directories
     """
     data = {
         'last_updated': datetime.now(timezone.utc).isoformat(),
@@ -148,11 +148,20 @@ def update_upcoming_workshops(workshops: List[Dict], output_path: Path):
     # Create directory if it doesn't exist
     output_path.parent.mkdir(parents=True, exist_ok=True)
     
-    # Write JSON file
+    # Write JSON file to _data directory (for Jekyll)
     with open(output_path, 'w') as f:
         json.dump(data, f, indent=2)
     
     print(f"Updated {output_path} with {len(workshops)} workshops")
+    
+    # Also update the public data directory (for JavaScript)
+    public_data_path = output_path.parent.parent / 'data' / 'upcoming_workshops.json'
+    public_data_path.parent.mkdir(parents=True, exist_ok=True)
+    
+    with open(public_data_path, 'w') as f:
+        json.dump(data, f, indent=2)
+    
+    print(f"Updated {public_data_path} with {len(workshops)} workshops")
 
 def main():
     """
