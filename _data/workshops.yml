@@ -171,7 +171,7 @@ workshops:
   description: This three-hour workshop will cover charts in more detail, review pivot
     tables, and work through at least one further challenge problem for functions.
   prerequisites:
-  - Excel Data Analysis: Introduction
+  - Excel Data Analysis Introduction
   duration: 180 minutes
 - title: Institutional Review Board (IRB) Fundamentals
   category: other
