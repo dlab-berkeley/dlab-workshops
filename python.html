@@ -25,21 +25,7 @@ permalink: /python
     </div>
   </div>
   
-  {% assign python_workshops = "" | split: "" %}
-  {% for workshop in site.data.workshops.workshops %}
-    {% if workshop.category == 'python' %}
-      {% assign python_workshops = python_workshops | push: workshop %}
-    {% elsif workshop.category contains 'python' and workshop.category.size > 1 %}
-      {% for cat in workshop.category %}
-        {% if cat == 'python' %}
-          {% assign python_workshops = python_workshops | push: workshop %}
-          {% break %}
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-  {% endfor %}
-  
-  {% include workshop-list-sorted.html workshops=python_workshops %}
+  {% include workshop-list-sorted.html workshops=site.data.workshops.workshops category="python" %}
   
   <div class="row mt-4">
     <div class="col-12">
