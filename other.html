@@ -25,21 +25,7 @@ permalink: /other
     </div>
   </div>
   
-  {% assign other_workshops = "" | split: "" %}
-  {% for workshop in site.data.workshops.workshops %}
-    {% if workshop.category == 'other' %}
-      {% assign other_workshops = other_workshops | push: workshop %}
-    {% elsif workshop.category contains 'other' and workshop.category.size > 1 %}
-      {% for cat in workshop.category %}
-        {% if cat == 'other' %}
-          {% assign other_workshops = other_workshops | push: workshop %}
-          {% break %}
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-  {% endfor %}
-  
-  {% include workshop-list-sorted.html workshops=other_workshops %}
+  {% include workshop-list-sorted.html category='other' %}
   
   <div class="row mt-4">
     <div class="col-12">
