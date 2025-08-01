@@ -68,21 +68,12 @@
   function findMatchingWorkshop(cardTitle) {
     if (!workshopData || !workshopData.workshops) return null;
 
-    // Direct title match first
+    // Only use exact title matching to prevent false positives
     let match = workshopData.workshops.find(w => 
-      normalizeTitle(w.title) === normalizeTitle(cardTitle)
+      w.title.toLowerCase().trim() === cardTitle.toLowerCase().trim()
     );
 
-    if (match) return match;
-
-    // Try fuzzy matching
-    for (const workshop of workshopData.workshops) {
-      if (titlesMatch(cardTitle, workshop.title)) {
-        return workshop;
-      }
-    }
-
-    return null;
+    return match;
   }
 
   function normalizeTitle(title) {
