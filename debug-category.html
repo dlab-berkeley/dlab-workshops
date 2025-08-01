@@ -1,0 +1,25 @@
+---
+layout: default
+title: Debug Category Filtering
+---
+
+<div class="container mt-5 pt-5">
+  <h1>Debug Category Filtering</h1>
+  
+  <h2>All Workshops</h2>
+  <p>Total workshops: {{ site.data.workshops.workshops.size }}</p>
+  
+  <h2>Category Test</h2>
+  {% assign python_count = 0 %}
+  {% for workshop in site.data.workshops.workshops %}
+    {% if workshop.category == "python" %}
+      <p>✅ Exact match: {{ workshop.title }} (category: {{ workshop.category }})</p>
+      {% assign python_count = python_count | plus: 1 %}
+    {% elsif workshop.category contains "python" %}
+      <p>🔍 Contains match: {{ workshop.title }} (category: {{ workshop.category | join: ", " }})</p>
+      {% assign python_count = python_count | plus: 1 %}
+    {% endif %}
+  {% endfor %}
+  
+  <p><strong>Total Python workshops found: {{ python_count }}</strong></p>
+</div>
