@@ -5,53 +5,21 @@
     - category: optional category filter
 {% endcomment %}
 
-{% assign active_workshops = "" | split: "" %}
-{% assign inactive_workshops = "" | split: "" %}
-
-<!-- Debug: Check upcoming workshops data -->
-<div class="alert alert-info">
-  <small>Debug: {{ site.data.upcoming_workshops.workshops.size }} upcoming workshops found</small>
-  <br><small>Upcoming titles: 
-  {% for upcoming in site.data.upcoming_workshops.workshops %}
-    "{{ upcoming.title }}"{% unless forloop.last %}, {% endunless %}
-  {% endfor %}
-  </small>
-</div>
-
-{% comment %} Separate workshops into active and inactive {% endcomment %}
+{% comment %} Count active workshops first {% endcomment %}
+{% assign active_count = 0 %}
 {% for workshop in workshops %}
-  {% assign is_active = false %}
   {% assign workshop_title_lower = workshop.title | downcase %}
-  
-  {% comment %} Check if workshop is in upcoming workshops {% endcomment %}
   {% for upcoming in site.data.upcoming_workshops.workshops %}
     {% assign upcoming_title_lower = upcoming.title | downcase %}
-    {% if upcoming_title_lower == workshop_title_lower %}
-      {% assign is_active = true %}
-      {% break %}
-    {% elsif upcoming_title_lower contains workshop_title_lower %}
-      {% assign is_active = true %}
-      {% break %}
-    {% elsif workshop_title_lower contains upcoming_title_lower %}
-      {% assign is_active = true %}
+    {% if upcoming_title_lower == workshop_title_lower or upcoming_title_lower contains workshop_title_lower or workshop_title_lower contains upcoming_title_lower %}
+      {% assign active_count = active_count | plus: 1 %}
       {% break %}
     {% endif %}
   {% endfor %}
-  
-  {% if is_active %}
-    {% assign active_workshops = active_workshops | push: workshop %}
-  {% else %}
-    {% assign inactive_workshops = inactive_workshops | push: workshop %}
-  {% endif %}
 {% endfor %}
 
-{% comment %} Debug: Show active/inactive counts {% endcomment %}
-<div class="alert alert-warning">
-  <small>Debug: {{ active_workshops.size }} active, {{ inactive_workshops.size }} inactive workshops</small>
-</div>
-
 {% comment %} Display active workshops first {% endcomment %}
-{% if active_workshops.size > 0 %}
+{% if active_count > 0 %}
   <div class="row mb-4">
     <div class="col-12">
       <h3 class="text-success">
@@ -61,36 +29,56 @@
     </div>
   </div>
   <div class="row">
-    {% for workshop in active_workshops %}
-      {% include workshop-card.html workshop=workshop %}
+    {% for workshop in workshops %}
+      {% assign is_active = false %}
+      {% assign workshop_title_lower = workshop.title | downcase %}
+      
+      {% for upcoming in site.data.upcoming_workshops.workshops %}
+        {% assign upcoming_title_lower = upcoming.title | downcase %}
+        {% if upcoming_title_lower == workshop_title_lower or upcoming_title_lower contains workshop_title_lower or workshop_title_lower contains upcoming_title_lower %}
+          {% assign is_active = true %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+      
+      {% if is_active %}
+        {% include workshop-card.html workshop=workshop %}
+      {% endif %}
     {% endfor %}
   </div>
 {% endif %}
 
 {% comment %} Display inactive workshops {% endcomment %}
-{% if inactive_workshops.size > 0 %}
-  <div class="row mb-4 mt-5">
-    <div class="col-12">
-      <h3>
-        <i class="fas fa-archive"></i> Workshop Catalog
-      </h3>
-      <p class="text-muted">These workshops are not currently scheduled but materials are available.</p>
-    </div>
+<div class="row mb-4 mt-5">
+  <div class="col-12">
+    <h3>
+      <i class="fas fa-archive"></i> Workshop Catalog
+    </h3>
+    <p class="text-muted">These workshops are not currently scheduled but materials are available.</p>
   </div>
-  <div class="row">
-    {% comment %} Sort by difficulty: introductory, intermediate, advanced {% endcomment %}
-    {% assign intro_workshops = inactive_workshops | where: "level", "introductory" %}
-    {% assign intermediate_workshops = inactive_workshops | where: "level", "intermediate" %}
-    {% assign advanced_workshops = inactive_workshops | where: "level", "advanced" %}
-    
-    {% for workshop in intro_workshops %}
-      {% include workshop-card.html workshop=workshop %}
+</div>
+<div class="row">
+  {% comment %} Sort by difficulty: introductory, intermediate, advanced {% endcomment %}
+  {% assign difficulty_levels = "introductory,intermediate,advanced" | split: "," %}
+  
+  {% for level in difficulty_levels %}
+    {% for workshop in workshops %}
+      {% assign is_active = false %}
+      {% assign workshop_title_lower = workshop.title | downcase %}
+      
+      {% comment %} Check if workshop is active {% endcomment %}
+      {% for upcoming in site.data.upcoming_workshops.workshops %}
+        {% assign upcoming_title_lower = upcoming.title | downcase %}
+        {% if upcoming_title_lower == workshop_title_lower or upcoming_title_lower contains workshop_title_lower or workshop_title_lower contains upcoming_title_lower %}
+          {% assign is_active = true %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+      
+      {% comment %} Only show inactive workshops in this section {% endcomment %}
+      {% if is_active == false and workshop.level == level %}
+        {% include workshop-card.html workshop=workshop %}
+      {% endif %}
     {% endfor %}
-    {% for workshop in intermediate_workshops %}
-      {% include workshop-card.html workshop=workshop %}
-    {% endfor %}
-    {% for workshop in advanced_workshops %}
-      {% include workshop-card.html workshop=workshop %}
-    {% endfor %}
-  </div>
-{% endif %}
+  {% endfor %}
+</div>
