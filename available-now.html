@@ -65,7 +65,6 @@ permalink: /available-now
               <tr>
                 <th>Workshop</th>
                 <th>Date & Time</th>
-                <th>Instructor</th>
                 <th>Location</th>
                 <th>Action</th>
               </tr>
@@ -78,7 +77,6 @@ permalink: /available-now
                     {{ session.datetime_iso | date: "%B %d, %Y" }}<br>
                     <small class="text-muted">{{ session.datetime_iso | date: "%I:%M %p" }}</small>
                   </td>
-                  <td>{{ session.instructor | default: "TBA" }}</td>
                   <td>{{ session.location | default: "Online" }}</td>
                   <td>
                     {% if session.registration_url %}
@@ -114,8 +112,8 @@ permalink: /available-now
         <div class="card-body">
           <h5 class="card-title">Stay Updated</h5>
           <p class="card-text">Want to be notified when new workshop sessions are scheduled?</p>
-          <a href="https://dlab.berkeley.edu/subscribe" class="btn btn-primary" target="_blank">
-            <i class="fas fa-envelope"></i> Subscribe to Updates
+          <a href="https://berkeley.us10.list-manage.com/subscribe?u=c23010ce537461167ececbcd3&id=422486ff04" class="btn btn-primary" target="_blank">
+            <i class="fas fa-envelope"></i> Join D-Lab's Mailing List
           </a>
         </div>
       </div>
