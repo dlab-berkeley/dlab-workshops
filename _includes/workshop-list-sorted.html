@@ -1,14 +1,16 @@
-{% comment %} Count active workshops first {% endcomment %}
+{% comment %} Count active workshops for given category {% endcomment %}
 {% assign active_count = 0 %}
-{% for workshop in workshops %}
-  {% assign workshop_title_lower = workshop.title | downcase %}
-  {% for upcoming in site.data.upcoming_workshops.workshops %}
-    {% assign upcoming_title_lower = upcoming.title | downcase %}
-    {% if upcoming_title_lower == workshop_title_lower or upcoming_title_lower contains workshop_title_lower or workshop_title_lower contains upcoming_title_lower %}
-      {% assign active_count = active_count | plus: 1 %}
-      {% break %}
-    {% endif %}
-  {% endfor %}
+{% for workshop in site.data.workshops.workshops %}
+  {% if workshop.category == include.category or workshop.category contains include.category %}
+    {% assign workshop_title_lower = workshop.title | downcase %}
+    {% for upcoming in site.data.upcoming_workshops.workshops %}
+      {% assign upcoming_title_lower = upcoming.title | downcase %}
+      {% if upcoming_title_lower == workshop_title_lower or upcoming_title_lower contains workshop_title_lower or workshop_title_lower contains upcoming_title_lower %}
+        {% assign active_count = active_count | plus: 1 %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
 {% endfor %}
 
 {% comment %} Display active workshops first {% endcomment %}
@@ -22,20 +24,22 @@
     </div>
   </div>
   <div class="row">
-    {% for workshop in workshops %}
-      {% assign is_active = false %}
-      {% assign workshop_title_lower = workshop.title | downcase %}
-      
-      {% for upcoming in site.data.upcoming_workshops.workshops %}
-        {% assign upcoming_title_lower = upcoming.title | downcase %}
-        {% if upcoming_title_lower == workshop_title_lower or upcoming_title_lower contains workshop_title_lower or workshop_title_lower contains upcoming_title_lower %}
-          {% assign is_active = true %}
-          {% break %}
+    {% for workshop in site.data.workshops.workshops %}
+      {% if workshop.category == include.category or workshop.category contains include.category %}
+        {% assign is_active = false %}
+        {% assign workshop_title_lower = workshop.title | downcase %}
+        
+        {% for upcoming in site.data.upcoming_workshops.workshops %}
+          {% assign upcoming_title_lower = upcoming.title | downcase %}
+          {% if upcoming_title_lower == workshop_title_lower or upcoming_title_lower contains workshop_title_lower or workshop_title_lower contains upcoming_title_lower %}
+            {% assign is_active = true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+        
+        {% if is_active %}
+          {% include workshop-card.html workshop=workshop %}
         {% endif %}
-      {% endfor %}
-      
-      {% if is_active %}
-        {% include workshop-card.html workshop=workshop %}
       {% endif %}
     {% endfor %}
   </div>
@@ -55,20 +59,22 @@
   {% assign difficulty_levels = "introductory,intermediate,advanced" | split: "," %}
   
   {% for level in difficulty_levels %}
-    {% for workshop in workshops %}
-      {% assign is_active = false %}
-      {% assign workshop_title_lower = workshop.title | downcase %}
-      
-      {% for upcoming in site.data.upcoming_workshops.workshops %}
-        {% assign upcoming_title_lower = upcoming.title | downcase %}
-        {% if upcoming_title_lower == workshop_title_lower or upcoming_title_lower contains workshop_title_lower or workshop_title_lower contains upcoming_title_lower %}
-          {% assign is_active = true %}
-          {% break %}
+    {% for workshop in site.data.workshops.workshops %}
+      {% if workshop.category == include.category or workshop.category contains include.category %}
+        {% assign is_active = false %}
+        {% assign workshop_title_lower = workshop.title | downcase %}
+        
+        {% for upcoming in site.data.upcoming_workshops.workshops %}
+          {% assign upcoming_title_lower = upcoming.title | downcase %}
+          {% if upcoming_title_lower == workshop_title_lower or upcoming_title_lower contains workshop_title_lower or workshop_title_lower contains upcoming_title_lower %}
+            {% assign is_active = true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+        
+        {% if is_active == false and workshop.level == level %}
+          {% include workshop-card.html workshop=workshop %}
         {% endif %}
-      {% endfor %}
-      
-      {% if is_active == false and workshop.level == level %}
-        {% include workshop-card.html workshop=workshop %}
       {% endif %}
     {% endfor %}
   {% endfor %}
