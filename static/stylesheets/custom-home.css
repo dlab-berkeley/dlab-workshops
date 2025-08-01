@@ -104,6 +104,14 @@
   border-bottom: 1px solid #e9ecef;
 }
 
+/* Five column layout for categories on xl screens */
+@media (min-width: 1200px) {
+  .category-row .col-xl {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .workshop-links .btn {
