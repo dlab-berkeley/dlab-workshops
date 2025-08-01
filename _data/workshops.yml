@@ -96,7 +96,7 @@ workshops:
   datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FPython-Web-Scraping&urlpath=tree%2FPython-Web-Scraping%2F
   binder_url: https://mybinder.org/v2/gh/dlab-berkeley/Python-Web-Scraping/main
 - title: Python SQL Fundamentals
-  category: other
+  category: python
   level: introductory
   github_url: https://github.com/dlab-berkeley/Python-SQL-Fundamentals
   description: This workshop introduces the fundamentals of SQL, with a focus on using
@@ -353,7 +353,7 @@ workshops:
   datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FPython-NLP-Fundamentals&urlpath=tree%2FPython-NLP-Fundamentals%2F
   binder_url: https://mybinder.org/v2/gh/dlab-berkeley/Python-NLP-Fundamentals/main
 - title: R SQL Fundamentals
-  category: other
+  category: r
   level: introductory
   github_url: https://github.com/dlab-berkeley/R-SQL-Fundamentals
   description: In this workshop, we provide an introduction to using SQL to query
@@ -373,7 +373,7 @@ workshops:
   prerequisites: []
   duration: 60 minutes
 - title: Python SQL Intermediate
-  category: other
+  category: python
   level: intermediate
   github_url: https://github.com/dlab-berkeley/Python-SQL-Intermediate
   description: This intermediate SQL workshop builds on foundational skills to deepen
