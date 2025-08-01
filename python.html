@@ -25,7 +25,14 @@ permalink: /python
     </div>
   </div>
   
-  {% include workshop-list-sorted.html workshops=site.data.workshops.workshops category="python" %}
+  {% assign python_workshops = site.data.workshops.workshops | where: "category", "python" %}
+  {% for workshop in site.data.workshops.workshops %}
+    {% if workshop.category contains 'python' and workshop.category != 'python' %}
+      {% assign python_workshops = python_workshops | concat: workshop %}
+    {% endif %}
+  {% endfor %}
+  
+  {% include workshop-list-sorted.html workshops=python_workshops %}
   
   <div class="row mt-4">
     <div class="col-12">
