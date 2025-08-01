@@ -29,12 +29,6 @@ jobs:
           ruby-version: '3.1'
           bundler-cache: false
       
-      - name: Debug navbar file
-        run: |
-          echo "=== Current navbar content ==="
-          cat _includes/navbar.html | grep -A5 -B5 "Library\|Catalog"
-          echo "=== End navbar content ==="
-      
       - name: Install dependencies
         run: bundle install
       
