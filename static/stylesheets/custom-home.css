@@ -48,6 +48,12 @@
   display: block;
 }
 
+/* Qualitative icon */
+.qualitative-icon::before {
+  content: "\1F4DD";
+  display: block;
+}
+
 /* Alternative: Use Berkeley colors */
 .berkeley-blue {
   color: #003262;
@@ -60,7 +66,7 @@
 /* Homepage hero section */
 .homepage-hero {
   background-color: #f8f9fa;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   margin-top: 80px; /* Push banner below fixed navbar */
   overflow: hidden;
 }

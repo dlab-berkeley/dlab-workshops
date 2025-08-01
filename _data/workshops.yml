@@ -134,7 +134,7 @@ workshops:
   datahub_url: https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FPython-Deep-Learning&urlpath=tree%2FPython-Deep-Learning%2F
   binder_url: https://mybinder.org/v2/gh/dlab-berkeley/Python-Deep-Learning/main
 - title: MaxQDA Fundamentals
-  category: other
+  category: qualitative
   level: introductory
   github_url: https://github.com/dlab-berkeley/MAXQDA-Fundamentals
   description: This two-hour introductory workshop will teach you MaxQDA from scratch
@@ -192,7 +192,7 @@ workshops:
   prerequisites: []
   duration: 120 minutes
 - title: Qualtrics Fundamentals
-  category: other
+  category: qualitative
   level: intermediate
   github_url: https://github.com/dlab-berkeley/Qualtrics-Fundamentals
   description: Qualtrics is a powerful online tool available to Berkeley community
