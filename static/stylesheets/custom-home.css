@@ -7,7 +7,7 @@
 
 /* Modern flat design for category cards */
 .category-card {
-  background: #ffffff;
+  background: #f8f9fa;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
