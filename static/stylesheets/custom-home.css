@@ -25,25 +25,25 @@
 
 /* Python icon */
 .python-icon::before {
-  content: "🐍";
+  content: "\1F40D";
   display: block;
 }
 
 /* R icon */
 .r-icon::before {
-  content: "📊";
+  content: "\1F4CA";
   display: block;
 }
 
 /* AI icon */
 .ai-icon::before {
-  content: "🤖";
+  content: "\1F916";
   display: block;
 }
 
 /* Other icon */
 .other-icon::before {
-  content: "🛠️";
+  content: "\1F6E0\FE0F";
   display: block;
 }
 
