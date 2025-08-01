@@ -26,21 +26,25 @@
 /* Python icon */
 .python-icon::before {
   content: "🐍";
+  display: block;
 }
 
 /* R icon */
 .r-icon::before {
   content: "📊";
+  display: block;
 }
 
 /* AI icon */
 .ai-icon::before {
   content: "🤖";
+  display: block;
 }
 
 /* Other icon */
 .other-icon::before {
   content: "🛠️";
+  display: block;
 }
 
 /* Alternative: Use Berkeley colors */
