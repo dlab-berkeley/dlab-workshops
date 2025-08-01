@@ -12,7 +12,9 @@
   {% comment %} Check if workshop matches category filter {% endcomment %}
   {% assign include_workshop = false %}
   {% if category %}
-    {% if workshop.category == category or workshop.category contains category %}
+    {% if workshop.category == category %}
+      {% assign include_workshop = true %}
+    {% elsif workshop.category contains category %}
       {% assign include_workshop = true %}
     {% endif %}
   {% else %}
@@ -52,7 +54,9 @@
       {% comment %} Check if workshop matches category filter {% endcomment %}
       {% assign include_workshop = false %}
       {% if category %}
-        {% if workshop.category == category or workshop.category contains category %}
+        {% if workshop.category == category %}
+          {% assign include_workshop = true %}
+        {% elsif workshop.category contains category %}
           {% assign include_workshop = true %}
         {% endif %}
       {% else %}
@@ -97,7 +101,9 @@
       {% comment %} Check if workshop matches category filter {% endcomment %}
       {% assign include_workshop = false %}
       {% if category %}
-        {% if workshop.category == category or workshop.category contains category %}
+        {% if workshop.category == category %}
+          {% assign include_workshop = true %}
+        {% elsif workshop.category contains category %}
           {% assign include_workshop = true %}
         {% endif %}
       {% else %}
