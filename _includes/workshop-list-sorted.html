@@ -1,7 +1,7 @@
 {% comment %} Count active workshops for given category {% endcomment %}
 {% assign active_count = 0 %}
 {% for workshop in site.data.workshops.workshops %}
-  {% if workshop.category == include.category or workshop.category contains include.category %}
+  {% if include.category == nil or workshop.category == include.category or workshop.category contains include.category %}
     {% assign workshop_title_lower = workshop.title | downcase %}
     {% for upcoming in site.data.upcoming_workshops.workshops %}
       {% assign upcoming_title_lower = upcoming.title | downcase %}
@@ -25,7 +25,7 @@
   </div>
   <div class="row">
     {% for workshop in site.data.workshops.workshops %}
-      {% if workshop.category == include.category or workshop.category contains include.category %}
+      {% if include.category == nil or workshop.category == include.category or workshop.category contains include.category %}
         {% assign is_active = false %}
         {% assign workshop_title_lower = workshop.title | downcase %}
         
@@ -60,7 +60,7 @@
   
   {% for level in difficulty_levels %}
     {% for workshop in site.data.workshops.workshops %}
-      {% if workshop.category == include.category or workshop.category contains include.category %}
+      {% if include.category == nil or workshop.category == include.category or workshop.category contains include.category %}
         {% assign is_active = false %}
         {% assign workshop_title_lower = workshop.title | downcase %}
         
