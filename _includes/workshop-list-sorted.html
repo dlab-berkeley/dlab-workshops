@@ -11,6 +11,11 @@
 <!-- Debug: Check upcoming workshops data -->
 <div class="alert alert-info">
   <small>Debug: {{ site.data.upcoming_workshops.workshops.size }} upcoming workshops found</small>
+  <br><small>Upcoming titles: 
+  {% for upcoming in site.data.upcoming_workshops.workshops %}
+    "{{ upcoming.title }}"{% unless forloop.last %}, {% endunless %}
+  {% endfor %}
+  </small>
 </div>
 
 {% comment %} Separate workshops into active and inactive {% endcomment %}
@@ -39,6 +44,11 @@
     {% assign inactive_workshops = inactive_workshops | push: workshop %}
   {% endif %}
 {% endfor %}
+
+{% comment %} Debug: Show active/inactive counts {% endcomment %}
+<div class="alert alert-warning">
+  <small>Debug: {{ active_workshops.size }} active, {{ inactive_workshops.size }} inactive workshops</small>
+</div>
 
 {% comment %} Display active workshops first {% endcomment %}
 {% if active_workshops.size > 0 %}
