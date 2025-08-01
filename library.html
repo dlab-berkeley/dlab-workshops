@@ -26,14 +26,8 @@ permalink: /library
     </div>
   </div>
   
-  <div class="row">
-    {% comment %} Sort all workshops alphabetically by title {% endcomment %}
-    {% assign sorted_workshops = site.data.workshops.workshops | sort: "title" %}
-    
-    {% for workshop in sorted_workshops %}
-      {% include workshop-card.html workshop=workshop %}
-    {% endfor %}
-  </div>
+  {% assign all_workshops = site.data.workshops.workshops %}
+  {% include workshop-list-sorted.html workshops=all_workshops %}
   
   <div class="row mt-5">
     <div class="col-12 text-center">

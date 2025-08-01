@@ -39,20 +39,7 @@ permalink: /python
     {% endif %}
   {% endfor %}
   
-  <!-- Debug: Test basic workshop loading -->
-  <div class="row">
-    <div class="col-12">
-      <p>Debug: Found {{ python_workshops.size }} Python workshops</p>
-      <p>Total workshops in catalog: {{ site.data.workshops.workshops.size }}</p>
-    </div>
-  </div>
-  
-  <!-- Display workshops without sorting -->
-  <div class="row">
-    {% for workshop in python_workshops %}
-      {% include workshop-card.html workshop=workshop %}
-    {% endfor %}
-  </div>
+  {% include workshop-list-sorted.html workshops=python_workshops %}
   
   <div class="row mt-4">
     <div class="col-12">

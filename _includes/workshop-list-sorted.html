@@ -8,6 +8,11 @@
 {% assign active_workshops = "" | split: "" %}
 {% assign inactive_workshops = "" | split: "" %}
 
+<!-- Debug: Check upcoming workshops data -->
+<div class="alert alert-info">
+  <small>Debug: {{ site.data.upcoming_workshops.workshops.size }} upcoming workshops found</small>
+</div>
+
 {% comment %} Separate workshops into active and inactive {% endcomment %}
 {% for workshop in workshops %}
   {% assign is_active = false %}
