@@ -18,6 +18,11 @@
   {% endfor %}
 {% endfor %}
 
+<!-- Debug: Active count -->
+<div class="alert alert-info">
+  <small>Debug: Found {{ active_count }} active workshops out of {{ workshops.size }} total</small>
+</div>
+
 {% comment %} Display active workshops first {% endcomment %}
 {% if active_count > 0 %}
   <div class="row mb-4">
