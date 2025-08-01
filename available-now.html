@@ -75,7 +75,7 @@ permalink: /available-now
                   <td><strong>{{ session.title }}</strong></td>
                   <td>
                     {{ session.datetime_iso | date: "%B %d, %Y" }}<br>
-                    <small class="text-muted">{{ session.datetime_iso | date: "%I:%M %p" }}</small>
+                    <small class="text-muted">{{ session.time }}</small>
                   </td>
                   <td>{{ session.location | default: "Online" }}</td>
                   <td>

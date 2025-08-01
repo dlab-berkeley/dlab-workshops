@@ -6,7 +6,7 @@ Fetch active workshops from Google Sheets and update upcoming_workshops.json
 import json
 import os
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timezone, time
 from pathlib import Path
 from typing import List, Dict, Optional
 from google.oauth2 import service_account
@@ -80,6 +80,7 @@ def parse_workshop_data(raw_data: List[Dict]) -> List[Dict]:
     Expected columns from Salesforce export:
     - evsprk__Event_Title__c: Workshop title
     - evsprk__Start_Date__c: Start date (YYYY-MM-DD)
+    - evsprk__Start_Time__c: Start time
     - evsprk__Event_Homepage_Link__c: HTML link containing registration URL
     """
     workshops = []
@@ -98,10 +99,52 @@ def parse_workshop_data(raw_data: List[Dict]) -> List[Dict]:
             if not date_str:
                 continue
             
-            # Convert date to datetime (assuming workshops are during business hours)
+            # Parse time from Start_Time field
+            time_str = row.get('evsprk__Start_Time__c', '').strip()
+            
+            # Convert date to datetime
             workshop_date = datetime.strptime(date_str, "%Y-%m-%d")
-            # Set a default time of 9 AM PST (5 PM UTC)
-            workshop_datetime = workshop_date.replace(hour=17, minute=0, tzinfo=timezone.utc)
+            
+            # Parse time if available, otherwise use default
+            if time_str:
+                try:
+                    # Handle Salesforce time format (HH:MM:SS.sssZ)
+                    if time_str.endswith('Z'):
+                        # Remove 'Z' and parse time
+                        time_str_clean = time_str.rstrip('Z')
+                        # Split off milliseconds if present
+                        if '.' in time_str_clean:
+                            time_str_clean = time_str_clean.split('.')[0]
+                        
+                        time_obj = datetime.strptime(time_str_clean, "%H:%M:%S").time()
+                        workshop_datetime = datetime.combine(workshop_date, time_obj)
+                        
+                        # Store formatted time for display (convert from UTC if needed)
+                        time_str = workshop_datetime.strftime("%I:%M %p")
+                    else:
+                        # Try other time formats
+                        for fmt in ["%I:%M %p", "%H:%M", "%I:%M%p", "%H:%M:%S"]:
+                            try:
+                                time_obj = datetime.strptime(time_str, fmt).time()
+                                workshop_datetime = datetime.combine(workshop_date, time_obj)
+                                break
+                            except ValueError:
+                                continue
+                        else:
+                            # If no format matched, use default time
+                            print(f"Could not parse time '{time_str}', using default")
+                            workshop_datetime = workshop_date.replace(hour=9, minute=0)
+                except Exception as e:
+                    print(f"Error parsing time '{time_str}': {e}")
+                    workshop_datetime = workshop_date.replace(hour=9, minute=0)
+                    time_str = "See event page for details"
+            else:
+                # Default time if not provided
+                workshop_datetime = workshop_date.replace(hour=9, minute=0)
+                time_str = "See event page for details"
+            
+            # Add timezone (assuming PST/PDT)
+            workshop_datetime = workshop_datetime.replace(tzinfo=timezone.utc)
             
             # Extract registration URL from HTML link
             registration_url = ''
@@ -118,7 +161,7 @@ def parse_workshop_data(raw_data: List[Dict]) -> List[Dict]:
                 'datetime_iso': workshop_datetime.isoformat(),
                 'registration_url': registration_url,
                 'date': workshop_date.strftime("%b %d, %Y"),
-                'time': 'See event page for details',
+                'time': time_str,
                 'location': 'Online',
                 'instructor': 'D-Lab Staff'
             }
