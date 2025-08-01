@@ -5,9 +5,9 @@
   margin-top: 80px !important; /* Account for fixed navbar height + padding */
 }
 
-/* Add gradient background to category cards */
+/* Modern flat design for category cards */
 .category-card {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: #ffffff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
