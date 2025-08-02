@@ -1,36 +1,35 @@
 ---
 layout: default
-title: R Workshops
-permalink: /R
+title: R Workshops - D-Lab
 ---
 
-<div class="container mt-5 pt-5">
-  <div class="row mb-3">
+<div class="container" style="margin-top: 70px;">
+  <div class="row mb-4">
     <div class="col-12">
-      <a href="index.html" class="btn btn-secondary">
-        <i class="fas fa-arrow-left"></i> Back to Home
-      </a>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">R Workshops</li>
+        </ol>
+      </nav>
     </div>
   </div>
-  <div class="row">
+
+  <div class="row mb-4">
     <div class="col-12">
-      <h1 class="mb-4">R Workshops</h1>
-      <p class="lead">Master R programming for statistical analysis, data visualization, and machine learning.</p>
-      
-      <div class="mb-4">
-        <span class="badge badge-success">Introductory</span>
-        <span class="badge badge-warning">Intermediate</span>
-        <span class="badge badge-danger">Advanced</span>
+      <div class="d-flex align-items-center">
+        <i class="fab fa-r-project me-3" style="font-size: 2.5rem; color: #276DC3;"></i>
+        <div>
+          <h1 class="mb-0">R Workshops</h1>
+          <p class="text-muted mb-0">Learn R programming for data analysis and statistics</p>
+        </div>
       </div>
     </div>
   </div>
-  
-  {% include workshop-list-sorted.html category='r' %}
-  
-  <div class="row mt-4">
-    <div class="col-12">
-      <h2>Learning Path</h2>
-      <p>Not sure where to start? Check out our <a href="R_path">R Learning Path</a> for a guided journey through our R workshops.</p>
-    </div>
-  </div>
+
+  {% assign include_category = "r" %}
+  {% assign pathway_url = "R_path.html" %}
+  {% assign pathway_title = "View R Learning Pathways" %}
+  {% include workshop-list-with-pathways.html category=include_category pathway_url=pathway_url pathway_title=pathway_title %}
+
 </div>

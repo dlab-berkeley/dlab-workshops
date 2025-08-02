@@ -1,0 +1,315 @@
+---
+layout: default
+---
+
+{% assign workshop = site.data.workshops.workshops | where: "title", page.workshop_title | first %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <!-- Breadcrumb Navigation -->
+      <nav aria-label="breadcrumb" style="margin-top: 70px;">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{{ '/' | relative_url }}#workshops">Workshops</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{ workshop.title }}</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <!-- Main Workshop Content -->
+      <div class="workshop-header mb-4">
+        <h1 class="display-4 mb-3">{{ workshop.title }}</h1>
+        
+        <div class="workshop-meta d-flex flex-wrap align-items-center mb-3">
+          {% if workshop.level %}
+            {% if workshop.level == 'introductory' %}
+              <span class="badge badge-success badge-pill mr-3 mb-2">
+                <i class="fas fa-seedling"></i> Introductory
+              </span>
+            {% elsif workshop.level == 'intermediate' %}
+              <span class="badge badge-warning badge-pill mr-3 mb-2">
+                <i class="fas fa-layer-group"></i> Intermediate
+              </span>
+            {% elsif workshop.level == 'advanced' %}
+              <span class="badge badge-danger badge-pill mr-3 mb-2">
+                <i class="fas fa-rocket"></i> Advanced
+              </span>
+            {% endif %}
+          {% endif %}
+          
+          <div class="upcoming-session-badge mr-3 mb-2"></div>
+          
+          {% if workshop.duration %}
+            <span class="text-muted mr-3 mb-2">
+              <i class="fas fa-clock"></i> 
+              {% if workshop.title contains "Parts" or workshop.title contains "Part" %}
+                {{ workshop.duration }} per session
+              {% else %}
+                {{ workshop.duration }}
+              {% endif %}
+            </span>
+          {% endif %}
+          
+          {% if workshop.category %}
+            {% assign categories = workshop.category %}
+            {% unless categories.first %}
+              {% assign categories = categories | split: ',' %}
+            {% endunless %}
+            {% for cat in categories %}
+              <span class="badge badge-secondary badge-pill mr-2 mb-2">
+                {% if cat == 'python' %}
+                  <i class="fab fa-python"></i> Python
+                {% elsif cat == 'r' %}
+                  <i class="fab fa-r-project"></i> R
+                {% elsif cat == 'ai' %}
+                  <i class="fas fa-brain"></i> AI
+                {% elsif cat == 'sql' %}
+                  <i class="fas fa-database"></i> SQL
+                {% elsif cat == 'qualitative' %}
+                  <i class="fas fa-comments"></i> Qualitative
+                {% else %}
+                  <i class="fas fa-cog"></i> {{ cat | capitalize }}
+                {% endif %}
+              </span>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Workshop Description -->
+      <div class="workshop-description mb-5">
+        <h2 class="h4 mb-3">About This Workshop</h2>
+        <div class="workshop-content">
+          {% if workshop.full_description %}
+            {{ workshop.full_description | markdownify }}
+          {% else %}
+            {{ workshop.description }}
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Prerequisites Section -->
+      {% if workshop.prerequisites_description %}
+      <div class="workshop-prerequisites mb-5">
+        <h2 class="h4 mb-3">
+          <i class="fas fa-layer-group"></i> What You Should Know First
+        </h2>
+        <div class="prerequisites-content">
+          {% if workshop.prerequisites_description contains "None" or workshop.prerequisites_description contains "none" %}
+            <p>Nothing! No prior knowledge is assumed.</p>
+          {% else %}
+            {{ workshop.prerequisites_description | markdownify }}
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Software Requirements -->
+      {% if workshop.software_requirements %}
+      <div class="workshop-software mb-5">
+        <h2 class="h4 mb-3">
+          <i class="fas fa-laptop-code"></i> Software Requirements
+        </h2>
+        <div class="software-content">
+          {{ workshop.software_requirements | markdownify }}
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Cloud Option -->
+      {% if workshop.cloud_option %}
+      <div class="workshop-cloud mb-5">
+        <h2 class="h4 mb-3">
+          <i class="fas fa-cloud"></i> Cloud Alternative
+        </h2>
+        <div class="cloud-content">
+          {{ workshop.cloud_option | markdownify }}
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Before You Join -->
+      {% if workshop.before_you_join %}
+      <div class="workshop-preparation mb-5">
+        <h2 class="h4 mb-3">
+          <i class="fas fa-info-circle"></i> Before You Join
+        </h2>
+        <div class="preparation-content">
+          {{ workshop.before_you_join | markdownify }}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Sidebar -->
+    <div class="col-lg-4">
+      <div class="workshop-sidebar" data-workshop-title="{{ workshop.title }}">
+        <!-- Action Buttons -->
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Get Started</h5>
+            <div class="register-button-container mb-3"></div>
+            
+            <div class="d-grid gap-2">
+              <a href="{{ workshop.github_url }}" class="btn btn-outline-primary" target="_blank">
+                <i class="fas fa-book-open"></i> Access Materials
+              </a>
+              {% if workshop.slides_url %}
+              <a href="{{ workshop.slides_url }}" class="btn btn-outline-secondary" target="_blank">
+                <i class="fas fa-presentation"></i> View Slides
+              </a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Info -->
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Quick Info</h5>
+            
+            {% if workshop.duration %}
+            <div class="info-item mb-2">
+              <i class="fas fa-clock text-muted"></i>
+              <strong>Duration:</strong> 
+              {% if workshop.title contains "Parts" or workshop.title contains "Part" %}
+                {{ workshop.duration }} per session
+              {% else %}
+                {{ workshop.duration }}
+              {% endif %}
+            </div>
+            {% endif %}
+            
+            {% if workshop.level %}
+            <div class="info-item mb-2">
+              <i class="fas fa-signal text-muted"></i>
+              <strong>Level:</strong> {{ workshop.level | capitalize }}
+            </div>
+            {% endif %}
+            
+            <div class="info-item mb-2">
+              <i class="fab fa-github text-muted"></i>
+              <strong>Materials:</strong> 
+              <a href="{{ workshop.github_url }}" target="_blank">GitHub Repository</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Workshops -->
+        {% if workshop.category %}
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Related Workshops</h5>
+            {% assign related_workshops = site.data.workshops.workshops | where: "category", workshop.category | where_exp: "item", "item.title != workshop.title" | sort: "title" | slice: 0, 3 %}
+            {% if related_workshops.size > 0 %}
+              {% for related in related_workshops %}
+                <div class="related-workshop mb-2">
+                  <a href="{{ '/workshop/' | append: related.title | slugify | relative_url }}" class="text-decoration-none">
+                    <small class="text-muted d-block">{{ related.title }}</small>
+                  </a>
+                </div>
+              {% endfor %}
+            {% else %}
+              <small class="text-muted">No related workshops found.</small>
+            {% endif %}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.workshop-header {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+}
+
+.workshop-description .workshop-content,
+.prerequisites-content,
+.software-content,
+.cloud-content,
+.preparation-content {
+  line-height: 1.6;
+}
+
+.workshop-description .workshop-content p,
+.prerequisites-content p,
+.software-content p,
+.cloud-content p,
+.preparation-content p {
+  margin-bottom: 0.75rem;
+}
+
+/* Remove margin from empty paragraphs with just <br> */
+.workshop-description .workshop-content p:has(br:only-child),
+.prerequisites-content p:has(br:only-child),
+.software-content p:has(br:only-child),
+.cloud-content p:has(br:only-child),
+.preparation-content p:has(br:only-child) {
+  margin-bottom: 0;
+  height: 0.5rem;
+}
+
+/* Reduce spacing for paragraphs that only contain &nbsp; or are empty */
+.workshop-description .workshop-content p:empty,
+.prerequisites-content p:empty,
+.software-content p:empty,
+.cloud-content p:empty,
+.preparation-content p:empty {
+  display: none;
+}
+
+.workshop-description .workshop-content ul,
+.prerequisites-content ul,
+.software-content ul,
+.cloud-content ul,
+.preparation-content ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.prereq-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f8f9fa;
+}
+
+.prereq-item:last-child {
+  border-bottom: none;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+}
+
+.info-item i {
+  width: 20px;
+  margin-right: 8px;
+  margin-top: 2px;
+}
+
+.related-workshop {
+  padding: 0.25rem 0;
+  border-bottom: 1px solid #f8f9fa;
+}
+
+.related-workshop:last-child {
+  border-bottom: none;
+}
+
+.related-workshop:hover {
+  background-color: #f8f9fa;
+  margin: -0.25rem -1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+</style>

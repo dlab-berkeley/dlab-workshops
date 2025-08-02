@@ -1,6 +1,6 @@
 ---
 layout: default
-title: D-Lab Workshops
+title: D-Lab Workshops - Google Sheets Version
 ---
 
 <div class="homepage-hero">
@@ -9,6 +9,7 @@ title: D-Lab Workshops
       <img src="static/images/logo-2023.png" alt="D-Lab Berkeley" class="mb-2 d-block mx-auto" style="height: 140px; width: auto;">
     </a>
     <h2 class="mb-0">Workshop Catalog</h2>
+    <p class="text-muted">Powered by Google Sheets</p>
   </div>
 </div>
 
@@ -35,8 +36,9 @@ title: D-Lab Workshops
     {% assign python_count = 0 %}
     {% assign r_count = 0 %}
     {% assign ai_count = 0 %}
-    {% assign other_count = 0 %}
+    {% assign sql_count = 0 %}
     {% assign qualitative_count = 0 %}
+    {% assign other_count = 0 %}
     
     {% for workshop in site.data.workshops.workshops %}
       {% if workshop.category == 'python' %}
@@ -71,13 +73,13 @@ title: D-Lab Workshops
           {% endif %}
         {% endfor %}
       {% endif %}
-      
-      {% if workshop.category == 'other' %}
-        {% assign other_count = other_count | plus: 1 %}
-      {% elsif workshop.category contains 'other' and workshop.category.size > 1 %}
+
+      {% if workshop.category == 'sql' %}
+        {% assign sql_count = sql_count | plus: 1 %}
+      {% elsif workshop.category contains 'sql' and workshop.category.size > 1 %}
         {% for cat in workshop.category %}
-          {% if cat == 'other' %}
-            {% assign other_count = other_count | plus: 1 %}
+          {% if cat == 'sql' %}
+            {% assign sql_count = sql_count | plus: 1 %}
             {% break %}
           {% endif %}
         {% endfor %}
@@ -93,84 +95,109 @@ title: D-Lab Workshops
           {% endif %}
         {% endfor %}
       {% endif %}
+      
+      {% if workshop.category == 'other' %}
+        {% assign other_count = other_count | plus: 1 %}
+      {% elsif workshop.category contains 'other' and workshop.category.size > 1 %}
+        {% for cat in workshop.category %}
+          {% if cat == 'other' %}
+            {% assign other_count = other_count | plus: 1 %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
     {% endfor %}
     
-    <div class="col-xl col-lg-4 col-md-6 col-sm-6 mb-3">
-      <div class="card h-100 text-center border-0 shadow-sm category-card">
-        <div class="card-body d-flex flex-column">
-          <div class="category-icon python-icon"></div>
-          <h5 class="card-title text-dark">Python</h5>
-          <p class="card-text">{{ python_count }} total workshops</p>
-          <p class="small text-muted flex-grow-1">Data science, machine learning, and web development</p>
-          <a href="python.html" class="btn btn-dark mt-auto">Explore Python</a>
+    <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+      <a href="python.html" class="text-decoration-none">
+        <div class="card category-card h-100 text-center">
+          <div class="card-body d-flex flex-column justify-content-center">
+            <i class="fab fa-python category-icon mb-2" style="color: #3776ab;"></i>
+            <h5 class="card-title">Python</h5>
+            <span class="badge badge-primary">{{ python_count }} workshops</span>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
     
-    <div class="col-xl col-lg-4 col-md-6 col-sm-6 mb-3">
-      <div class="card h-100 text-center border-0 shadow-sm category-card">
-        <div class="card-body d-flex flex-column">
-          <div class="category-icon r-icon"></div>
-          <h5 class="card-title text-dark">R</h5>
-          <p class="card-text">{{ r_count }} total workshops</p>
-          <p class="small text-muted flex-grow-1">Statistical analysis and data visualization</p>
-          <a href="R.html" class="btn btn-dark mt-auto">Explore R</a>
+    <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+      <a href="R.html" class="text-decoration-none">
+        <div class="card category-card h-100 text-center">
+          <div class="card-body d-flex flex-column justify-content-center">
+            <i class="fab fa-r-project category-icon mb-2" style="color: #276DC3;"></i>
+            <h5 class="card-title">R Programming</h5>
+            <span class="badge badge-info">{{ r_count }} workshops</span>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
     
-    <div class="col-xl col-lg-4 col-md-6 col-sm-6 mb-3">
-      <div class="card h-100 text-center border-0 shadow-sm category-card">
-        <div class="card-body d-flex flex-column">
-          <div class="category-icon ai-icon"></div>
-          <h5 class="card-title text-dark">AI</h5>
-          <p class="card-text">{{ ai_count }} total workshops</p>
-          <p class="small text-muted flex-grow-1">Working with AI tools and large language models</p>
-          <a href="ai.html" class="btn btn-dark mt-auto">Explore AI</a>
+    <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+      <a href="ai.html" class="text-decoration-none">
+        <div class="card category-card h-100 text-center">
+          <div class="card-body d-flex flex-column justify-content-center">
+            <i class="fas fa-robot category-icon mb-2" style="color: #ff6b35;"></i>
+            <h5 class="card-title">AI</h5>
+            <span class="badge badge-warning">{{ ai_count }} workshops</span>
+          </div>
         </div>
-      </div>
+      </a>
+    </div>
+
+    <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+      <a href="sql.html" class="text-decoration-none">
+        <div class="card category-card h-100 text-center">
+          <div class="card-body d-flex flex-column justify-content-center">
+            <i class="fas fa-database category-icon mb-2" style="color: #336791;"></i>
+            <h5 class="card-title">SQL</h5>
+            <span class="badge badge-secondary">{{ sql_count }} workshops</span>
+          </div>
+        </div>
+      </a>
     </div>
     
-    <div class="col-xl col-lg-4 col-md-6 col-sm-6 mb-3">
-      <div class="card h-100 text-center border-0 shadow-sm category-card">
-        <div class="card-body d-flex flex-column">
-          <div class="category-icon qualitative-icon"></div>
-          <h5 class="card-title text-dark">Qualitative</h5>
-          <p class="card-text">{{ qualitative_count }} total workshops</p>
-          <p class="small text-muted flex-grow-1">MaxQDA, Qualtrics, and qualitative research tools</p>
-          <a href="qualitative.html" class="btn btn-dark mt-auto">Explore Qualitative</a>
+    <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+      <a href="qualitative.html" class="text-decoration-none">
+        <div class="card category-card h-100 text-center">
+          <div class="card-body d-flex flex-column justify-content-center">
+            <i class="fas fa-comments category-icon mb-2" style="color: #28a745;"></i>
+            <h5 class="card-title">Qualitative</h5>
+            <span class="badge badge-success">{{ qualitative_count }} workshops</span>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
     
-    <div class="col-xl col-lg-4 col-md-6 col-sm-6 mb-3">
-      <div class="card h-100 text-center border-0 shadow-sm category-card">
-        <div class="card-body d-flex flex-column">
-          <div class="category-icon other-icon"></div>
-          <h5 class="card-title text-dark">Other</h5>
-          <p class="card-text">{{ other_count }} total workshops</p>
-          <p class="small text-muted flex-grow-1">Github, Excel, and specialized tools</p>
-          <a href="other.html" class="btn btn-dark mt-auto">Explore Other</a>
+    <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+      <a href="other.html" class="text-decoration-none">
+        <div class="card category-card h-100 text-center">
+          <div class="card-body d-flex flex-column justify-content-center">
+            <i class="fas fa-tools category-icon mb-2" style="color: #6c757d;"></i>
+            <h5 class="card-title">Other</h5>
+            <span class="badge badge-dark">{{ other_count }} workshops</span>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
   
-  <div class="row justify-content-center">
-    <div class="col-auto">
-      <a href="catalog.html" class="btn btn-primary btn-lg">View All Workshops</a>
-      <a href="https://dlab.my.salesforce-sites.com/events" class="btn btn-info btn-lg ml-2">Book a Workshop</a>
+  {% comment %} Browse All Workshops Button {% endcomment %}
+  <div class="row justify-content-center mt-4">
+    <div class="col-12 col-md-6 text-center">
+      <a href="all-workshops.html" class="btn btn-outline-primary btn-lg btn-block">
+        <i class="fas fa-list"></i> Browse All Workshops
+      </a>
     </div>
   </div>
-  
-  <div class="row mt-5">
-    <div class="col-12 text-center">
-      <h5>Learning Paths</h5>
-      <p class="text-muted">Not sure where to start? Follow our structured learning paths:</p>
+
+  {% comment %} Learning Paths {% endcomment %}
+  <div class="row justify-content-center mt-4">
+    <div class="col-12 col-md-6 text-center">
       <div class="btn-group" role="group">
         <a href="python_path.html" class="btn btn-outline-dark">Python Path</a>
         <a href="R_path.html" class="btn btn-outline-dark">R Path</a>
       </div>
     </div>
   </div>
+  
 </div>

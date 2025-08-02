@@ -1,0 +1,121 @@
+{% comment %} Count active workshops for given category {% endcomment %}
+{% assign active_count = 0 %}
+{% for workshop in site.data.workshops.workshops %}
+  {% if include.category == nil or workshop.category == include.category or workshop.category contains include.category %}
+    {% assign workshop_title_lower = workshop.title | downcase %}
+    {% for upcoming in site.data.upcoming_workshops.workshops %}
+      {% assign upcoming_title_lower = upcoming.title | downcase %}
+      {% if upcoming_title_lower == workshop_title_lower or upcoming_title_lower contains workshop_title_lower or workshop_title_lower contains upcoming_title_lower %}
+        {% assign active_count = active_count | plus: 1 %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} Display active workshops first {% endcomment %}
+{% if active_count > 0 %}
+  <div class="row mb-4">
+    <div class="col-12">
+      <h3 class="text-success">
+        <i class="fas fa-calendar-check"></i> Currently Available
+      </h3>
+      <p class="text-muted">These workshops have upcoming sessions you can register for.</p>
+    </div>
+  </div>
+  <div class="row">
+    {% for workshop in site.data.workshops.workshops %}
+      {% if include.category == nil or workshop.category == include.category or workshop.category contains include.category %}
+        {% assign is_active = false %}
+        {% assign workshop_title_lower = workshop.title | downcase %}
+        
+        {% for upcoming in site.data.upcoming_workshops.workshops %}
+          {% assign upcoming_title_lower = upcoming.title | downcase %}
+          {% if upcoming_title_lower == workshop_title_lower %}
+            {% assign is_active = true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+        
+        {% if is_active %}
+          {% include workshop-card.html workshop=workshop %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {% comment %} Add pathway button after Currently Available section {% endcomment %}
+  <div class="row mb-5 mt-4">
+    <div class="col-12 text-center">
+      <div class="card border-0 bg-light">
+        <div class="card-body py-4">
+          <h5 class="card-title mb-3">
+            <!-- <i class="fas fa-map-marked-alt me-2"></i> -->Need help choosing your next workshop?
+          </h5>
+          <p class="text-muted mb-3">
+            See how workshops build on each other and discover the perfect learning pathway for your goals.
+          </p>
+          <a href="{{ include.pathway_url }}" class="btn btn-primary btn-lg">
+            <i class="fas fa-route"></i> {{ include.pathway_title }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% comment %} Display inactive workshops {% endcomment %}
+<div class="row mb-4 mt-5">
+  <div class="col-12">
+    <h3>
+      <i class="fas fa-archive"></i> Workshop Catalog
+    </h3>
+    <p class="text-muted">These workshops are not currently scheduled but materials are available.</p>
+  </div>
+</div>
+<div class="row">
+  {% comment %} Sort by difficulty: introductory, intermediate, advanced {% endcomment %}
+  {% assign difficulty_levels = "introductory,intermediate,advanced" | split: "," %}
+  
+  {% for level in difficulty_levels %}
+    {% for workshop in site.data.workshops.workshops %}
+      {% if include.category == nil or workshop.category == include.category or workshop.category contains include.category %}
+        {% assign is_active = false %}
+        {% assign workshop_title_lower = workshop.title | downcase %}
+        
+        {% for upcoming in site.data.upcoming_workshops.workshops %}
+          {% assign upcoming_title_lower = upcoming.title | downcase %}
+          {% if upcoming_title_lower == workshop_title_lower %}
+            {% assign is_active = true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+        
+        {% if is_active == false and workshop.level == level %}
+          {% include workshop-card.html workshop=workshop %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</div>
+
+{% comment %} Add pathway button at the bottom if no currently available workshops {% endcomment %}
+{% if active_count == 0 %}
+  <div class="row mb-5 mt-4">
+    <div class="col-12 text-center">
+      <div class="card border-0 bg-light">
+        <div class="card-body py-4">
+          <h5 class="card-title mb-3">
+            <!-- <i class="fas fa-map-marked-alt me-2"></i> -->Need help choosing your next workshop?
+          </h5>
+          <p class="text-muted mb-3">
+            See how workshops build on each other and discover the perfect learning pathway for your goals.
+          </p>
+          <a href="{{ include.pathway_url }}" class="btn btn-primary btn-lg">
+            <i class="fas fa-route"></i> {{ include.pathway_title }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

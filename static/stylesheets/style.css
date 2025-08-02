@@ -115,3 +115,89 @@ blockquote.display-5.clickable {
     font-style: normal;
 }
 
+/* Improved Workshop Card Styles */
+.workshop-card {
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef !important;
+}
+
+.workshop-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;
+}
+
+/* Button spacing for workshop cards */
+.workshop-links .d-flex {
+    gap: 0.5rem;
+}
+
+/* Better register button styling */
+.btn-register {
+    background-color: #28a745 !important;
+    color: white !important;
+    border: none !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+.btn-register:hover {
+    background-color: #218838 !important;
+    color: white !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3) !important;
+}
+
+/* Enhanced materials button */
+.workshop-links .btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.workshop-links .btn-outline-primary:hover {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Workshop card title improvements */
+.workshop-card .card-title {
+    font-weight: 600;
+    color: #2c3e50;
+    line-height: 1.3;
+}
+
+/* Duration styling */
+.workshop-card small {
+    font-weight: 500;
+}
+
+/* Active workshop card highlighting */
+.workshop-card[data-active="true"] {
+    border: 2px solid #28a745 !important;
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.2) !important;
+    background-color: #f8fff9 !important;
+}
+
+/* Workshop sidebar sticky positioning */
+.workshop-sidebar .card {
+    position: sticky !important;
+    top: 90px !important;
+    z-index: 100 !important;
+}
+
+/* Ensure the Get Started card specifically stays sticky */
+.workshop-sidebar .card:first-child {
+    position: sticky !important;
+    top: 90px !important;
+    z-index: 100 !important;
+    max-height: calc(100vh - 110px) !important;
+    overflow-y: auto !important;
+}
+

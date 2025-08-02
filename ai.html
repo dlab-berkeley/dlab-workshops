@@ -1,30 +1,32 @@
 ---
 layout: default
-title: AI Workshops
-permalink: /ai
+title: AI Workshops - D-Lab
 ---
 
-<div class="container mt-5 pt-5">
-  <div class="row mb-3">
+<div class="container" style="margin-top: 70px;">
+  <div class="row mb-4">
     <div class="col-12">
-      <a href="index.html" class="btn btn-secondary">
-        <i class="fas fa-arrow-left"></i> Back to Home
-      </a>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">AI Workshops</li>
+        </ol>
+      </nav>
     </div>
   </div>
-  <div class="row">
+
+  <div class="row mb-4">
     <div class="col-12">
-      <h1 class="mb-4">AI Workshops</h1>
-      <p class="lead">Learn to work effectively with AI tools, large language models, and AI-assisted coding for research and development.</p>
-      
-      <div class="mb-4">
-        <span class="badge badge-success">Introductory</span>
-        <span class="badge badge-warning">Intermediate</span>
-        <span class="badge badge-danger">Advanced</span>
+      <div class="d-flex align-items-center">
+        <i class="fas fa-robot me-5" style="font-size: 2.5rem; color: #ff6b35;"></i>
+        <div>
+          <h1 class="mb-0">AI Workshops</h1>
+          <p class="text-muted mb-0">Learn about artificial intelligence and machine learning</p>
+        </div>
       </div>
     </div>
   </div>
-  
-  {% include workshop-list-sorted.html category='ai' %}
-  
+
+  {% include workshop-list.html category="ai" %}
+
 </div>

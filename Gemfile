@@ -23,6 +23,11 @@ gem "rexml", ">= 3.3.6"
 gem "addressable", ">= 2.8.6"
 gem "webrick", ">= 1.8.2"
 
+# Ruby 3.4 compatibility
+gem "csv"
+gem "logger"
+gem "base64"
+
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
 platforms :mingw, :x64_mingw, :mswin, :jruby do

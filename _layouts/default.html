@@ -9,8 +9,8 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="{{ '/static/images/favicon-16x16.png' | relative_url }}">
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
-	<!-- Fontawesome JS -->
-	<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="{{ '/static/stylesheets/style.css' | relative_url }}">
@@ -53,6 +53,57 @@
 	
 	<!-- Workshop Status JS -->
 	<script src="{{ '/static/javascripts/workshop-status.js' | relative_url }}"></script>
+	
+	<!-- Workshop Card Interactions -->
+	<style>
+	.clickable-card {
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+		cursor: pointer;
+	}
+	
+	.clickable-card:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+	}
+	
+	a.text-decoration-none:hover {
+		text-decoration: none !important;
+	}
+	
+	a.text-decoration-none .card-title {
+		color: inherit;
+	}
+	
+	a.text-decoration-none:hover .card-title {
+		color: #007bff;
+	}
+	</style>
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		// Handle expandable prerequisites
+		document.addEventListener('click', function(e) {
+			if (e.target.classList.contains('show-more-prereqs')) {
+				e.preventDefault();
+				const container = e.target.closest('.prerequisites-container');
+				const initialView = container.querySelector('.d-flex');
+				const fullView = container.querySelector('.all-prerequisites');
+				
+				initialView.classList.add('d-none');
+				fullView.classList.remove('d-none');
+			}
+			
+			if (e.target.classList.contains('show-less-prereqs')) {
+				e.preventDefault();
+				const container = e.target.closest('.prerequisites-container');
+				const initialView = container.querySelector('.d-flex');
+				const fullView = container.querySelector('.all-prerequisites');
+				
+				fullView.classList.add('d-none');
+				initialView.classList.remove('d-none');
+			}
+		});
+	});
+	</script>
 
 </body>
 </html>

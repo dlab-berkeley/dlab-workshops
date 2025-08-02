@@ -4,58 +4,184 @@ title: Python Learning Path
 permalink: /python_path.html
 ---
 
-<div class="container-fluid mt-5">
-  <div style="text-align: center; padding-top: 20px;">
-    <a href="python.html" class="btn btn-warning">Return to default view</a>
-    <a href="https://dlab.my.salesforce-sites.com/events" class="btn btn-info btn-lg">Book a Workshop</a>
+<div class="container" style="margin-top: 70px;">
+  <!-- Breadcrumb -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="python.html">Python Workshops</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Learning Pathways</li>
+        </ol>
+      </nav>
+    </div>
   </div>
 
-  <h1 style="padding-top: 20px; padding-bottom: 10px;">Learning Pathways for Python Workshops</h1>
+  <!-- Header Section -->
+  <div class="row mb-5">
+    <div class="col-12 text-center">
+      <div class="d-flex align-items-center justify-content-center mb-3">
+        <i class="fab fa-python me-3" style="font-size: 3rem; color: #3776ab;"></i>
+        <div>
+          <h1 class="mb-0 display-4">Python Learning Pathways</h1>
+          <p class="text-muted mb-0 lead">Discover the prerequisite chain for any Python workshop</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <select id="workshop-dropdown" class="form-control mb-5">
-    <option value="" disabled selected>Select a workshop</option>
-  </select>
+  <!-- Action Buttons -->
+  <div class="row mb-5">
+    <div class="col-12 text-center">
+      <a href="python.html" class="btn btn-outline-secondary me-3">
+        <i class="fas fa-arrow-left"></i> Back to Python Workshops
+      </a>
+      <a href="https://dlab.my.salesforce-sites.com/events" class="btn btn-primary btn-lg">
+        <i class="fas fa-calendar-plus"></i> Book a Workshop
+      </a>
+    </div>
+  </div>
+
+  <!-- Workshop Selection -->
+  <div class="row mb-4">
+    <div class="col-md-8 offset-md-2">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title mb-3">
+            <i class="fas fa-search me-2"></i>Select a Workshop
+          </h5>
+          <select id="workshop-dropdown" class="form-control form-control-lg">
+            <option value="" disabled selected>Choose a Python workshop to see its learning pathway...</option>
+          </select>
+          <small class="text-muted mt-2 d-block">
+            <i class="fas fa-info-circle"></i> 
+            This will show you which workshops to take first and in what order
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
   
-  <h3 id="requirements-heading" style="display: none;">Workshop Requirements</h3>
+  <!-- Results Section -->
+  <div id="pathway-results" style="display: none;">
+    <div class="row mb-4">
+      <div class="col-12">
+        <h3 id="requirements-heading" class="text-center">
+          <i class="fas fa-route me-2"></i>Your Learning Pathway
+        </h3>
+        <p class="text-center text-muted">Follow these workshops in order to build your skills step by step</p>
+      </div>
+    </div>
 
-  <div id="prerequisite-cards" class="row flex-nowrap overflow-auto">
-    <!-- Cards will be populated here -->
+    <div id="prerequisite-cards" class="pathway-container">
+      <!-- Cards will be populated here -->
+    </div>
   </div>
 </div>
 
 <style>
-  #requirements-heading {
-    display: none;
-  }
-
-  .container-fluid {
-    margin: 20px;
-  }
-  
-  .card {
-    margin-bottom: 20px;
-  }
-  .arrow span {
-    font-size: 2em;
-  }
-
-  .flex-nowrap {
-    flex-wrap: nowrap !important;
-  }
-
-  .overflow-auto {
+  .pathway-container {
+    display: flex;
+    flex-wrap: nowrap;
     overflow-x: auto;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
-  .card {
+  .pathway-container .card {
+    min-width: 300px;
+    max-width: 350px;
     margin-right: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .pathway-container .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .pathway-container .card:last-child {
+    margin-right: 0;
+  }
+
+  .pathway-container .card-title {
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
+
+  .pathway-container .card-text {
+    color: #6c757d;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    margin: 0 10px;
   }
 
   .arrow span {
-    font-size: 2em;
-    margin-left: 20px;
-    margin-right: 20px;
+    font-size: 2.5rem;
+    color: #6c757d;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Selected workshop highlighting */
+  .selected-workshop {
+    background: linear-gradient(135deg, #d7e3f0 0%, #c8d9ed 100%) !important;
+    border: 2px solid #3776ab !important;
+  }
+
+  .selected-workshop .card-title {
+    color: #2c5aa0 !important;
+    font-weight: 700;
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .pathway-container {
+      padding: 20px 15px;
+    }
+    
+    .pathway-container .card {
+      min-width: 280px;
+    }
+    
+    .arrow span {
+      font-size: 2rem;
+    }
+  }
+
+  /* Custom scrollbar for pathway container */
+  .pathway-container::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .pathway-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+
+  .pathway-container::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+  }
+
+  .pathway-container::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
   }
 </style>
 
@@ -94,6 +220,7 @@ var prereqMapping = {
   'Python Fundamentals 1-3': 'Python Fundamentals: Parts 1-3',
   'Python Data Wrangling': 'Python Data Wrangling and Manipulation with Pandas: Parts 1-2',
   'Python Machine Learning Fundamentals': 'Python Machine Learning Fundamentals: Parts 1-2',
+  'Python Data Visualization': 'Python Data Visualization: Parts 1-2'
 };
 
 // Wait for document ready
@@ -131,16 +258,12 @@ function findWorkshopByTitle(title) {
 function parsePrerequisites(prereqArray) {
   var parsed = [];
   prereqArray.forEach(function(prereq) {
-    // Split on common separators and clean up
-    var parts = prereq.split(/[,;]|\s+and\s+|\s{2,}/)
-      .map(p => p.trim())
-      .filter(p => p.length > 0);
-    
-    parts.forEach(function(part) {
-      if (part && !parsed.includes(part)) {
-        parsed.push(part);
-      }
-    });
+    // Prerequisites are already properly parsed from Google Sheets
+    // Just clean up whitespace and add if not already included
+    var cleanPrereq = prereq.trim();
+    if (cleanPrereq && !parsed.includes(cleanPrereq)) {
+      parsed.push(cleanPrereq);
+    }
   });
   return parsed;
 }
@@ -148,7 +271,9 @@ function parsePrerequisites(prereqArray) {
 // On dropdown change, populate cards
 $('#workshop-dropdown').change(function() {
   var selectedID = $(this).val();
-  $("#requirements-heading").show();
+  
+  // Show the pathway results section
+  $("#pathway-results").show();
 
   // Clear existing cards
   $('#prerequisite-cards').html('');
@@ -163,18 +288,34 @@ $('#workshop-dropdown').change(function() {
     var cleanPrereqs = parsePrerequisites(selectedWorkshop.prerequisites || []);
     console.log('Clean prerequisites:', cleanPrereqs);
     
-    // Handle workshops with no prerequisites
-    if (cleanPrereqs.length === 0) {
-      var noneCard = `
-      <div class="card col-md-4">
-        <div class="card-body">
-          <h5 class="card-title">None!</h5>
-          <p class="card-text">You don't need any prerequisites for this workshop.</p>
-        </div>
-      </div>`;
-      
-      $('#prerequisite-cards').append(noneCard);
-    } else {
+    // Sort prerequisites by learning path order (using correct "Parts" titling)
+    var pythonOrder = [
+      'Python Fundamentals: Parts 1-3',
+      'Python Fundamentals: Parts 4-6',
+      'Python Data Wrangling and Manipulation with Pandas: Parts 1-2',
+      'Python Data Visualization: Parts 1-2',
+      'Python Machine Learning Fundamentals: Parts 1-2'
+    ];
+    
+    var sortedPrereqs = [];
+    // First add items in Python order (avoid duplicates)
+    pythonOrder.forEach(function(orderedItem) {
+      if (cleanPrereqs.includes(orderedItem) && !sortedPrereqs.includes(orderedItem)) {
+        sortedPrereqs.push(orderedItem);
+      }
+    });
+    // Then add any remaining items not in the predefined order (avoid duplicates)
+    cleanPrereqs.forEach(function(prereq) {
+      if (!pythonOrder.includes(prereq) && !sortedPrereqs.includes(prereq)) {
+        sortedPrereqs.push(prereq);
+      }
+    });
+    
+    cleanPrereqs = sortedPrereqs;
+    console.log('Sorted prerequisites:', cleanPrereqs);
+    
+    // Handle workshops with prerequisites
+    if (cleanPrereqs.length > 0) {
       // Generate cards for each prerequisite
       cleanPrereqs.forEach(function(prereqTitle, index) {
         var prerequisiteData = findWorkshopByTitle(prereqTitle);
@@ -183,11 +324,18 @@ $('#workshop-dropdown').change(function() {
         if (prerequisiteData) {
           var materialUrl = prerequisiteData.datahub_url || prerequisiteData.github_url;
           var card = `
-          <div class="card col-md-4" style="max-width: 350px;">
+          <div class="card">
             <div class="card-body">
               <h5 class="card-title">${prerequisiteData.title}</h5>
               <p class="card-text">${prerequisiteData.description}</p>
-              <a href="${materialUrl}" class="btn btn-primary" target="_blank">Workshop Materials</a>
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <small class="text-muted">
+                  <i class="fas fa-layer-group"></i> ${prerequisiteData.level || 'Workshop'}
+                </small>
+                <a href="${materialUrl}" class="btn btn-sm btn-primary" target="_blank">
+                  <i class="fab fa-github"></i> Materials
+                </a>
+              </div>
             </div>
           </div>`;
           
@@ -195,41 +343,48 @@ $('#workshop-dropdown').change(function() {
 
           // Add arrow after each card except the last one
           if (index < cleanPrereqs.length - 1) {
-            $('#prerequisite-cards').append('<div class="arrow col-auto d-flex align-items-center justify-content-center" style="margin-left: 5px; margin-right: 5px;"><span>&rarr;</span></div>');
+            $('#prerequisite-cards').append('<div class="arrow"><span>&rarr;</span></div>');
           }
         } else {
           // Show a placeholder for unmapped prerequisites
           var placeholderCard = `
-          <div class="card col-md-4" style="max-width: 350px; opacity: 0.6;">
+          <div class="card" style="opacity: 0.6;">
             <div class="card-body">
               <h5 class="card-title">${prereqTitle}</h5>
               <p class="card-text">Prerequisite workshop (not found in current data)</p>
-              <div class="btn btn-secondary disabled">Not Available</div>
+              <div class="btn btn-secondary disabled btn-sm">Not Available</div>
             </div>
           </div>`;
           
           $('#prerequisite-cards').append(placeholderCard);
           
           if (index < cleanPrereqs.length - 1) {
-            $('#prerequisite-cards').append('<div class="arrow col-auto d-flex align-items-center justify-content-center" style="margin-left: 5px; margin-right: 5px;"><span>&rarr;</span></div>');
+            $('#prerequisite-cards').append('<div class="arrow"><span>&rarr;</span></div>');
           }
         }
       });
-    }
-    
-    // Add arrow before the selected workshop if there were prerequisites
-    if (cleanPrereqs.length > 0) {
-      $('#prerequisite-cards').append('<div class="arrow col-auto d-flex align-items-center justify-content-center" style="margin-left: 5px; margin-right: 5px;"><span>&rarr;</span></div>');
+      
+      // Add arrow before the selected workshop if there were prerequisites
+      $('#prerequisite-cards').append('<div class="arrow"><span>&rarr;</span></div>');
     }
     
     // Add a card for the selected workshop at the end
     var selectedMaterialUrl = selectedWorkshop.datahub_url || selectedWorkshop.github_url;
     var selectedCard = `
-    <div class="card col-md-4" style="max-width: 350px; background-color: #D7E3F0;">
+    <div class="card selected-workshop">
       <div class="card-body">
-        <h5 class="card-title">${selectedWorkshop.title}</h5>
+        <h5 class="card-title">
+          <i class="fas fa-star me-2" style="color: #ffc107;"></i>${selectedWorkshop.title}
+        </h5>
         <p class="card-text">${selectedWorkshop.description}</p>
-        <a href="${selectedMaterialUrl}" class="btn btn-primary" target="_blank">Workshop Materials</a>
+        <div class="d-flex justify-content-between align-items-center mt-3">
+          <small class="text-muted">
+            <i class="fas fa-target"></i> Your Goal
+          </small>
+          <a href="${selectedMaterialUrl}" class="btn btn-sm btn-success" target="_blank">
+            <i class="fab fa-github"></i> Start Here
+          </a>
+        </div>
       </div>
     </div>`;
     $('#prerequisite-cards').append(selectedCard);

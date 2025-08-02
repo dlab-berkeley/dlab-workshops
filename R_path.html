@@ -4,58 +4,184 @@ title: R Learning Path
 permalink: /R_path
 ---
 
-<div class="container-fluid mt-5">
-  <div style="text-align: center; padding-top: 20px;">
-    <a href="R.html" class="btn btn-warning">Return to default view</a>
-    <a href="https://dlab.my.salesforce-sites.com/events" class="btn btn-info btn-lg">Book a Workshop</a>
+<div class="container" style="margin-top: 70px;">
+  <!-- Breadcrumb -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="R.html">R Workshops</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Learning Pathways</li>
+        </ol>
+      </nav>
+    </div>
   </div>
 
-  <h1 style="padding-top: 20px; padding-bottom: 10px;">Learning Pathways for R Workshops</h1>
+  <!-- Header Section -->
+  <div class="row mb-5">
+    <div class="col-12 text-center">
+      <div class="d-flex align-items-center justify-content-center mb-3">
+        <i class="fab fa-r-project me-3" style="font-size: 3rem; color: #276DC3;"></i>
+        <div>
+          <h1 class="mb-0 display-4">R Learning Pathways</h1>
+          <p class="text-muted mb-0 lead">Discover the prerequisite chain for any R workshop</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <select id="r-workshop-dropdown" class="form-control mb-5">
-    <option value="" disabled selected>Select an R workshop</option>
-  </select>
+  <!-- Action Buttons -->
+  <div class="row mb-5">
+    <div class="col-12 text-center">
+      <a href="R.html" class="btn btn-outline-secondary me-3">
+        <i class="fas fa-arrow-left"></i> Back to R Workshops
+      </a>
+      <a href="https://dlab.my.salesforce-sites.com/events" class="btn btn-primary btn-lg">
+        <i class="fas fa-calendar-plus"></i> Book a Workshop
+      </a>
+    </div>
+  </div>
+
+  <!-- Workshop Selection -->
+  <div class="row mb-4">
+    <div class="col-md-8 offset-md-2">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title mb-3">
+            <i class="fas fa-search me-2"></i>Select a Workshop
+          </h5>
+          <select id="r-workshop-dropdown" class="form-control form-control-lg">
+            <option value="" disabled selected>Choose an R workshop to see its learning pathway...</option>
+          </select>
+          <small class="text-muted mt-2 d-block">
+            <i class="fas fa-info-circle"></i> 
+            This will show you which workshops to take first and in what order
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
   
-  <h3 id="requirements-heading" style="display: none;">Workshop Requirements</h3>
+  <!-- Results Section -->
+  <div id="pathway-results" style="display: none;">
+    <div class="row mb-4">
+      <div class="col-12">
+        <h3 id="requirements-heading" class="text-center">
+          <i class="fas fa-route me-2"></i>Your Learning Pathway
+        </h3>
+        <p class="text-center text-muted">Follow these workshops in order to build your skills step by step</p>
+      </div>
+    </div>
 
-  <div id="prerequisite-cards" class="row flex-nowrap overflow-auto">
-    <!-- Cards will be populated here -->
+    <div id="prerequisite-cards" class="pathway-container">
+      <!-- Cards will be populated here -->
+    </div>
   </div>
 </div>
 
 <style>
-  #requirements-heading {
-    display: none;
-  }
-
-  .container-fluid {
-    margin: 20px;
-  }
-  
-  .card {
-    margin-bottom: 20px;
-  }
-  .arrow span {
-    font-size: 2em;
-  }
-
-  .flex-nowrap {
-    flex-wrap: nowrap !important;
-  }
-
-  .overflow-auto {
+  .pathway-container {
+    display: flex;
+    flex-wrap: nowrap;
     overflow-x: auto;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
-  .card {
+  .pathway-container .card {
+    min-width: 300px;
+    max-width: 350px;
     margin-right: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .pathway-container .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .pathway-container .card:last-child {
+    margin-right: 0;
+  }
+
+  .pathway-container .card-title {
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
+
+  .pathway-container .card-text {
+    color: #6c757d;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    margin: 0 10px;
   }
 
   .arrow span {
-    font-size: 2em;
-    margin-left: 20px;
-    margin-right: 20px;
+    font-size: 2.5rem;
+    color: #6c757d;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Selected workshop highlighting */
+  .selected-workshop {
+    background: linear-gradient(135deg, #d7e3f0 0%, #c8d9ed 100%) !important;
+    border: 2px solid #276DC3 !important;
+  }
+
+  .selected-workshop .card-title {
+    color: #1a4d80 !important;
+    font-weight: 700;
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .pathway-container {
+      padding: 20px 15px;
+    }
+    
+    .pathway-container .card {
+      min-width: 280px;
+    }
+    
+    .arrow span {
+      font-size: 2rem;
+    }
+  }
+
+  /* Custom scrollbar for pathway container */
+  .pathway-container::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .pathway-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+
+  .pathway-container::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+  }
+
+  .pathway-container::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
   }
 </style>
 
@@ -85,9 +211,14 @@ $(document).ready(function() {
   });
 });
 
-// Function to find workshop by title
+// Function to find workshop by title with mapping
 function findRWorkshopByTitle(title) {
-  return rWorkshopData.find(w => w.title === title);
+  // First try exact match
+  var exactMatch = rWorkshopData.find(w => w.title === title);
+  if (exactMatch) return exactMatch;
+  
+  // Try partial matching
+  return rWorkshopData.find(w => w.title.includes(title) || title.includes(w.title));
 }
 
 // On dropdown change, populate cards
@@ -102,20 +233,34 @@ $('#r-workshop-dropdown').change(function() {
   var selectedWorkshop = rWorkshopData.find(w => w.id === selectedID);
 
   if (selectedWorkshop) {
-    // Handle workshops with no prerequisites
-    if (!selectedWorkshop.prerequisites || selectedWorkshop.prerequisites.length === 0) {
-      var noneCard = `
-      <div class="card col-md-4">
-        <div class="card-body">
-          <h5 class="card-title">None!</h5>
-          <p class="card-text">You don't need any prerequisites for this workshop.</p>
-        </div>
-      </div>`;
-      
-      $('#prerequisite-cards').append(noneCard);
-    } else {
+    // Sort prerequisites by learning path order
+    var rOrder = [
+      'R Fundamentals: Parts 1-4',
+      'R Data Wrangling and Manipulation: Parts 1-2',
+      'R Data Visualization',
+      'R Machine Learning with tidymodels: Parts 1-2'
+    ];
+    
+    var sortedPrereqs = [];
+    if (selectedWorkshop.prerequisites && selectedWorkshop.prerequisites.length > 0) {
+      // First add items in R order (avoid duplicates)
+      rOrder.forEach(function(orderedItem) {
+        if (selectedWorkshop.prerequisites.includes(orderedItem) && !sortedPrereqs.includes(orderedItem)) {
+          sortedPrereqs.push(orderedItem);
+        }
+      });
+      // Then add any remaining items not in the predefined order (avoid duplicates)
+      selectedWorkshop.prerequisites.forEach(function(prereq) {
+        if (!rOrder.includes(prereq) && !sortedPrereqs.includes(prereq)) {
+          sortedPrereqs.push(prereq);
+        }
+      });
+    }
+    
+    // Handle workshops with prerequisites
+    if (sortedPrereqs.length > 0) {
       // Generate cards for each prerequisite
-      $.each(selectedWorkshop.prerequisites, function(index, prereqTitle) {
+      $.each(sortedPrereqs, function(index, prereqTitle) {
         var prerequisiteData = findRWorkshopByTitle(prereqTitle);
         
         if (prerequisiteData) {
@@ -132,15 +277,13 @@ $('#r-workshop-dropdown').change(function() {
           $('#prerequisite-cards').append(card);
 
           // Add arrow after each card except the last one
-          if (index < selectedWorkshop.prerequisites.length - 1) {
+          if (index < sortedPrereqs.length - 1) {
             $('#prerequisite-cards').append('<div class="arrow col-auto d-flex align-items-center justify-content-center" style="margin-left: 5px; margin-right: 5px;"><span>&rarr;</span></div>');
           }
         }
       });
-    }
-    
-    // Add arrow before the selected workshop if there were prerequisites
-    if (selectedWorkshop.prerequisites && selectedWorkshop.prerequisites.length > 0) {
+      
+      // Add arrow before the selected workshop if there were prerequisites
       $('#prerequisite-cards').append('<div class="arrow col-auto d-flex align-items-center justify-content-center" style="margin-left: 5px; margin-right: 5px;"><span>&rarr;</span></div>');
     }
     

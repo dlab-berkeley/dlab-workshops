@@ -1,36 +1,35 @@
 ---
 layout: default
-title: Python Workshops
-permalink: /python
+title: Python Workshops - D-Lab
 ---
 
-<div class="container mt-5 pt-5">
-  <div class="row mb-3">
+<div class="container" style="margin-top: 70px;">
+  <div class="row mb-4">
     <div class="col-12">
-      <a href="index.html" class="btn btn-secondary">
-        <i class="fas fa-arrow-left"></i> Back to Home
-      </a>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Python Workshops</li>
+        </ol>
+      </nav>
     </div>
   </div>
-  <div class="row">
+
+  <div class="row mb-4">
     <div class="col-12">
-      <h1 class="mb-4">Python Workshops</h1>
-      <p class="lead">Learn Python programming from fundamentals to advanced applications in data science and machine learning.</p>
-      
-      <div class="mb-4">
-        <span class="badge badge-success">Introductory</span>
-        <span class="badge badge-warning">Intermediate</span>
-        <span class="badge badge-danger">Advanced</span>
+      <div class="d-flex align-items-center">
+        <i class="fab fa-python me-3" style="font-size: 2.5rem; color: #3776ab;"></i>
+        <div>
+          <h1 class="mb-0">Python Workshops</h1>
+          <p class="text-muted mb-0">Learn Python programming for data science and research</p>
+        </div>
       </div>
     </div>
   </div>
-  
-  {% include workshop-list-sorted.html category='python' %}
-  
-  <div class="row mt-4">
-    <div class="col-12">
-      <h2>Learning Path</h2>
-      <p>Not sure where to start? Check out our <a href="python-path">Python Learning Path</a> for a guided journey through our Python workshops.</p>
-    </div>
-  </div>
+
+  {% assign include_category = "python" %}
+  {% assign pathway_url = "python_path.html" %}
+  {% assign pathway_title = "View Python Learning Pathways" %}
+  {% include workshop-list-with-pathways.html category=include_category pathway_url=pathway_url pathway_title=pathway_title %}
+
 </div>
