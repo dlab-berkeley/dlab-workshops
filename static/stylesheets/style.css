@@ -4,6 +4,11 @@ p {
 	font-weight: 400;
 }
 
+li {
+    font-size: 0.9375rem;
+    font-weight: 400;
+}
+
 nav {
 	opacity: .90;
 }
