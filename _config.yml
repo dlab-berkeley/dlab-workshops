@@ -25,6 +25,9 @@ description: >-
   data science and digital humanities workshops.
 baseurl: ""
 url: "https://dlab-berkeley.github.io/dlab-workshops"
+website: "https://dlab.berkeley.edu"
+github: "https://github.com/dlab-berkeley"
+footer_text: "© 2024 UC Berkeley D-Lab. All rights reserved."
 
 # Build settings
 plugins:
