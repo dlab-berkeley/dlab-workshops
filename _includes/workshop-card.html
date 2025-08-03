@@ -47,7 +47,29 @@
           <i class="fas fa-layer-group"></i> <strong>Builds on:</strong>
         </small>
         {% if workshop.prerequisites and workshop.prerequisites.size > 0 %}
-          {% include sort-prerequisites.html prerequisites=workshop.prerequisites %}
+          {% comment %} Sort prerequisites by learning path order {% endcomment %}
+          {% assign sorted_prereqs = "" | split: "" %}
+          
+          {% comment %} First add items in Python order {% endcomment %}
+          {% for ordered_item in site.data.prerequisite_order.python_order %}
+            {% if workshop.prerequisites contains ordered_item %}
+              {% assign sorted_prereqs = sorted_prereqs | push: ordered_item %}
+            {% endif %}
+          {% endfor %}
+          
+          {% comment %} Then add items in R order {% endcomment %}
+          {% for ordered_item in site.data.prerequisite_order.r_order %}
+            {% if workshop.prerequisites contains ordered_item %}
+              {% assign sorted_prereqs = sorted_prereqs | push: ordered_item %}
+            {% endif %}
+          {% endfor %}
+          
+          {% comment %} Finally add any remaining items not in the predefined orders {% endcomment %}
+          {% for prereq in workshop.prerequisites %}
+            {% unless site.data.prerequisite_order.python_order contains prereq or site.data.prerequisite_order.r_order contains prereq %}
+              {% assign sorted_prereqs = sorted_prereqs | push: prereq %}
+            {% endunless %}
+          {% endfor %}
           
           {% if sorted_prereqs.size > 2 %}
             <div class="prerequisites-container">
