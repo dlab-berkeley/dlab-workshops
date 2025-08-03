@@ -413,3 +413,33 @@ blockquote.display-5.clickable {
     }
 }
 
+/* Category menu styling */
+.btn-group .btn-outline-dark.active {
+    background-color: #343a40;
+    border-color: #343a40;
+    color: white;
+    font-weight: 600;
+}
+
+.btn-group .btn-outline-dark {
+    margin: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-group .btn-outline-dark:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(52, 58, 64, 0.3);
+}
+
+/* Responsive category menu */
+@media (max-width: 768px) {
+    .btn-group {
+        flex-direction: column !important;
+    }
+    
+    .btn-group .btn-outline-dark {
+        width: 100%;
+        margin: 2px 0;
+    }
+}
+
