@@ -264,6 +264,15 @@ function findWorkshopByTitle(title) {
   return workshopData.find(w => w.title.includes(title) || title.includes(w.title));
 }
 
+// Function to convert workshop title to URL slug
+function titleToSlug(title) {
+  return title.toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+    .replace(/\s+/g, '-') // Replace spaces with hyphens
+    .replace(/-+/g, '-') // Replace multiple hyphens with single
+    .trim();
+}
+
 // Function to parse prerequisites that might be concatenated
 function parsePrerequisites(prereqArray) {
   var parsed = [];
@@ -333,8 +342,9 @@ $('#workshop-dropdown').change(function() {
         
         if (prerequisiteData) {
           var materialUrl = prerequisiteData.datahub_url || prerequisiteData.github_url;
+          var workshopUrl = `/workshop/${titleToSlug(prerequisiteData.title)}/`;
           var card = `
-          <div class="card">
+          <div class="card clickable-card" style="cursor: pointer;" onclick="window.location.href='${workshopUrl}'">
             <div class="card-body">
               <h5 class="card-title">${prerequisiteData.title}</h5>
               <p class="card-text">${prerequisiteData.description}</p>
@@ -342,7 +352,7 @@ $('#workshop-dropdown').change(function() {
                 <small class="text-muted">
                   <i class="fas fa-layer-group"></i> ${prerequisiteData.level || 'Workshop'}
                 </small>
-                <a href="${materialUrl}" class="btn btn-sm btn-primary" target="_blank">
+                <a href="${materialUrl}" class="btn btn-sm btn-primary" target="_blank" onclick="event.stopPropagation()">
                   <i class="fab fa-github"></i> Materials
                 </a>
               </div>
@@ -380,8 +390,9 @@ $('#workshop-dropdown').change(function() {
     
     // Add a card for the selected workshop at the end
     var selectedMaterialUrl = selectedWorkshop.datahub_url || selectedWorkshop.github_url;
+    var selectedWorkshopUrl = `/workshop/${titleToSlug(selectedWorkshop.title)}/`;
     var selectedCard = `
-    <div class="card selected-workshop">
+    <div class="card selected-workshop clickable-card" style="cursor: pointer;" onclick="window.location.href='${selectedWorkshopUrl}'">
       <div class="card-body">
         <h5 class="card-title">
           <i class="fas fa-star me-4" style="color: #ffc107;"></i>${selectedWorkshop.title}
@@ -391,7 +402,7 @@ $('#workshop-dropdown').change(function() {
           <small class="text-muted">
             <i class="fas fa-target"></i> Your Goal
           </small>
-          <a href="${selectedMaterialUrl}" class="btn btn-sm btn-success" target="_blank">
+          <a href="${selectedMaterialUrl}" class="btn btn-sm btn-success" target="_blank" onclick="event.stopPropagation()">
             <i class="fab fa-github"></i> Start Here
           </a>
         </div>

@@ -232,6 +232,15 @@ function findRWorkshopByTitle(title) {
   return rWorkshopData.find(w => w.title.includes(title) || title.includes(w.title));
 }
 
+// Function to convert workshop title to URL slug
+function titleToSlug(title) {
+  return title.toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+    .replace(/\s+/g, '-') // Replace spaces with hyphens
+    .replace(/-+/g, '-') // Replace multiple hyphens with single
+    .trim();
+}
+
 // On dropdown change, populate cards
 $('#r-workshop-dropdown').change(function() {
   var selectedID = $(this).val();
@@ -278,12 +287,13 @@ $('#r-workshop-dropdown').change(function() {
         
         if (prerequisiteData) {
           var materialUrl = prerequisiteData.datahub_url || prerequisiteData.github_url;
+          var workshopUrl = `/workshop/${titleToSlug(prerequisiteData.title)}/`;
           var card = `
-          <div class="card col-md-4" style="max-width: 350px;">
+          <div class="card col-md-4 clickable-card" style="max-width: 350px; cursor: pointer;" onclick="window.location.href='${workshopUrl}'">
             <div class="card-body">
               <h5 class="card-title">${prerequisiteData.title}</h5>
               <p class="card-text">${prerequisiteData.description}</p>
-              <a href="${materialUrl}" class="btn btn-primary" target="_blank">Workshop Materials</a>
+              <a href="${materialUrl}" class="btn btn-primary btn-sm" target="_blank" onclick="event.stopPropagation()">Materials</a>
             </div>
           </div>`;
           
@@ -302,12 +312,13 @@ $('#r-workshop-dropdown').change(function() {
     
     // Add a card for the selected workshop at the end
     var selectedMaterialUrl = selectedWorkshop.datahub_url || selectedWorkshop.github_url;
+    var selectedWorkshopUrl = `/workshop/${titleToSlug(selectedWorkshop.title)}/`;
     var selectedCard = `
-    <div class="card col-md-4" style="max-width: 350px; background-color: #D7E3F0;">
+    <div class="card col-md-4 clickable-card" style="max-width: 350px; background-color: #D7E3F0; cursor: pointer;" onclick="window.location.href='${selectedWorkshopUrl}'">
       <div class="card-body">
         <h5 class="card-title">${selectedWorkshop.title}</h5>
         <p class="card-text">${selectedWorkshop.description}</p>
-        <a href="${selectedMaterialUrl}" class="btn btn-primary" target="_blank">Workshop Materials</a>
+        <a href="${selectedMaterialUrl}" class="btn btn-primary btn-sm" target="_blank" onclick="event.stopPropagation()">Materials</a>
       </div>
     </div>`;
     $('#prerequisite-cards').append(selectedCard);
