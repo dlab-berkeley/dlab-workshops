@@ -1,17 +1,17 @@
 {% comment %} 
   Check if workshop matches category filter
-  Input: workshop, category
+  Input: include.workshop, include.category
   Output: category_match (boolean)
 {% endcomment %}
 {% assign category_match = false %}
-{% if category == nil %}
+{% if include.category == nil %}
   {% assign category_match = true %}
-{% elsif workshop.category == category %}
+{% elsif include.workshop.category == include.category %}
   {% assign category_match = true %}
 {% else %}
   {% comment %} Check if workshop.category is an array containing category {% endcomment %}
-  {% for cat in workshop.category %}
-    {% if cat == category %}
+  {% for cat in include.workshop.category %}
+    {% if cat == include.category %}
       {% assign category_match = true %}
       {% break %}
     {% endif %}
