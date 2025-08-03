@@ -190,7 +190,19 @@ permalink: /python_path.html
 // Simplified workshop data from Jekyll - remove duplicates
 var allWorkshops = [
   {% for workshop in site.data.workshops.workshops %}
-    {% if workshop.category == 'python' or workshop.category contains 'python' %}
+    {% assign category_match = false %}
+    {% if workshop.category == 'python' %}
+      {% assign category_match = true %}
+    {% else %}
+      {% comment %} Check if workshop.category is an array containing 'python' {% endcomment %}
+      {% for cat in workshop.category %}
+        {% if cat == 'python' %}
+          {% assign category_match = true %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if category_match %}
   {
     'id': 'workshop_{{ forloop.index }}',
     'title': '{{ workshop.title | escape }}',

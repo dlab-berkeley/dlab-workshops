@@ -189,7 +189,19 @@ permalink: /R_path
 // Workshop data from Jekyll
 var rWorkshopData = [
   {% for workshop in site.data.workshops.workshops %}
-    {% if workshop.category == 'r' or workshop.category contains 'r' %}
+    {% assign category_match = false %}
+    {% if workshop.category == 'r' %}
+      {% assign category_match = true %}
+    {% else %}
+      {% comment %} Check if workshop.category is an array containing 'r' {% endcomment %}
+      {% for cat in workshop.category %}
+        {% if cat == 'r' %}
+          {% assign category_match = true %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if category_match %}
     {
       'id': '{{ forloop.index }}',
       'title': '{{ workshop.title | escape }}',
