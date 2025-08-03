@@ -2,7 +2,7 @@
 
 /* Fix homepage banner positioning below navbar */
 .homepage-hero {
-  margin-top: 75px !important; /* Account for fixed navbar height + padding */
+  margin-top: 50px !important; /* Account for fixed navbar height + padding */
 }
 
 /* Modern flat design for category cards */
