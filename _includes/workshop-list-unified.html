@@ -1,20 +1,19 @@
+{% comment %} 
+  Unified workshop listing template
+  Parameters:
+    - category: Filter by workshop category (optional)
+    - show_pathways: Show pathway buttons (default: false)
+    - pathway_url: URL for pathway button
+    - pathway_title: Title for pathway button
+{% endcomment %}
+
+{% comment %} Default parameter values {% endcomment %}
+{% assign show_pathways = include.show_pathways | default: false %}
+
 {% comment %} Count active workshops for given category {% endcomment %}
 {% assign active_count = 0 %}
 {% for workshop in site.data.workshops.workshops %}
-  {% assign category_match = false %}
-  {% if include.category == nil %}
-    {% assign category_match = true %}
-  {% elsif workshop.category == include.category %}
-    {% assign category_match = true %}
-  {% else %}
-    {% comment %} Check if workshop.category is an array containing include.category {% endcomment %}
-    {% for cat in workshop.category %}
-      {% if cat == include.category %}
-        {% assign category_match = true %}
-        {% break %}
-      {% endif %}
-    {% endfor %}
-  {% endif %}
+  {% include category-match.html workshop=workshop category=include.category %}
   {% if category_match %}
     {% assign workshop_title_lower = workshop.title | downcase %}
     {% for upcoming in site.data.upcoming_workshops.workshops %}
@@ -39,20 +38,7 @@
   </div>
   <div class="row">
     {% for workshop in site.data.workshops.workshops %}
-      {% assign category_match = false %}
-      {% if include.category == nil %}
-        {% assign category_match = true %}
-      {% elsif workshop.category == include.category %}
-        {% assign category_match = true %}
-      {% else %}
-        {% comment %} Check if workshop.category is an array containing include.category {% endcomment %}
-        {% for cat in workshop.category %}
-          {% if cat == include.category %}
-            {% assign category_match = true %}
-            {% break %}
-          {% endif %}
-        {% endfor %}
-      {% endif %}
+      {% include category-match.html workshop=workshop category=include.category %}
       {% if category_match %}
         {% assign is_active = false %}
         {% assign workshop_title_lower = workshop.title | downcase %}
@@ -72,24 +58,26 @@
     {% endfor %}
   </div>
 
-  {% comment %} Add pathway button after Currently Available section {% endcomment %}
-  <div class="row mb-5 mt-4">
-    <div class="col-12 text-center">
-      <div class="card border-0 bg-light">
-        <div class="card-body py-4">
-          <h5 class="card-title mb-3">
-            <!-- <i class="fas fa-map-marked-alt me-2"></i> -->Need help choosing your next workshop?
-          </h5>
-          <p class="text-muted mb-3">
-            See how workshops build on each other and discover the perfect learning pathway for your goals.
-          </p>
-          <a href="{{ include.pathway_url }}" class="btn btn-primary btn-lg">
-            <i class="fas fa-route"></i> {{ include.pathway_title }}
-          </a>
+  {% comment %} Add pathway button after Currently Available section if show_pathways is true {% endcomment %}
+  {% if show_pathways and include.pathway_url and include.pathway_title %}
+    <div class="row mb-5 mt-4">
+      <div class="col-12 text-center">
+        <div class="card border-0 bg-light">
+          <div class="card-body py-4">
+            <h5 class="card-title mb-3">
+              Need help choosing your next workshop?
+            </h5>
+            <p class="text-muted mb-3">
+              See how workshops build on each other and discover the perfect learning pathway for your goals.
+            </p>
+            <a href="{{ include.pathway_url }}" class="btn btn-primary btn-lg">
+              <i class="fas fa-route"></i> {{ include.pathway_title }}
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  {% endif %}
 {% endif %}
 
 {% comment %} Display inactive workshops {% endcomment %}
@@ -107,20 +95,7 @@
   
   {% for level in difficulty_levels %}
     {% for workshop in site.data.workshops.workshops %}
-      {% assign category_match = false %}
-      {% if include.category == nil %}
-        {% assign category_match = true %}
-      {% elsif workshop.category == include.category %}
-        {% assign category_match = true %}
-      {% else %}
-        {% comment %} Check if workshop.category is an array containing include.category {% endcomment %}
-        {% for cat in workshop.category %}
-          {% if cat == include.category %}
-            {% assign category_match = true %}
-            {% break %}
-          {% endif %}
-        {% endfor %}
-      {% endif %}
+      {% include category-match.html workshop=workshop category=include.category %}
       {% if category_match %}
         {% assign is_active = false %}
         {% assign workshop_title_lower = workshop.title | downcase %}
@@ -141,14 +116,14 @@
   {% endfor %}
 </div>
 
-{% comment %} Add pathway button at the bottom if no currently available workshops {% endcomment %}
-{% if active_count == 0 %}
+{% comment %} Add pathway button at the bottom if no currently available workshops and show_pathways is true {% endcomment %}
+{% if active_count == 0 and show_pathways and include.pathway_url and include.pathway_title %}
   <div class="row mb-5 mt-4">
     <div class="col-12 text-center">
       <div class="card border-0 bg-light">
         <div class="card-body py-4">
           <h5 class="card-title mb-3">
-            <!-- <i class="fas fa-map-marked-alt me-2"></i> -->Need help choosing your next workshop?
+            Need help choosing your next workshop?
           </h5>
           <p class="text-muted mb-3">
             See how workshops build on each other and discover the perfect learning pathway for your goals.

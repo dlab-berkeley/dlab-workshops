@@ -1,0 +1,19 @@
+{% comment %} 
+  Check if workshop matches category filter
+  Input: workshop, category
+  Output: category_match (boolean)
+{% endcomment %}
+{% assign category_match = false %}
+{% if category == nil %}
+  {% assign category_match = true %}
+{% elsif workshop.category == category %}
+  {% assign category_match = true %}
+{% else %}
+  {% comment %} Check if workshop.category is an array containing category {% endcomment %}
+  {% for cat in workshop.category %}
+    {% if cat == category %}
+      {% assign category_match = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endif %}

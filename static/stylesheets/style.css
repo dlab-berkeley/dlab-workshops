@@ -29,6 +29,125 @@ h3 {
 	margin-top: 3rem !important;
 }
 
+/* Workshop layout styles moved from inline CSS */
+.workshop-header {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+}
+
+.workshop-description .workshop-content,
+.prerequisites-content,
+.software-content,
+.cloud-content,
+.preparation-content {
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.workshop-description .workshop-content p,
+.prerequisites-content p,
+.software-content p,
+.cloud-content p,
+.preparation-content p {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.workshop-description .workshop-content li,
+.prerequisites-content li,
+.software-content li,
+.cloud-content li,
+.preparation-content li {
+  font-size: 1rem;
+}
+
+/* Remove margin from empty paragraphs with just <br> */
+.workshop-description .workshop-content p:has(br:only-child),
+.prerequisites-content p:has(br:only-child),
+.software-content p:has(br:only-child),
+.cloud-content p:has(br:only-child),
+.preparation-content p:has(br:only-child) {
+  margin-bottom: 0;
+  height: 0.5rem;
+}
+
+/* Reduce spacing for paragraphs that only contain &nbsp; or are empty */
+.workshop-description .workshop-content p:empty,
+.prerequisites-content p:empty,
+.software-content p:empty,
+.cloud-content p:empty,
+.preparation-content p:empty {
+  display: none;
+}
+
+.workshop-description .workshop-content ul,
+.prerequisites-content ul,
+.software-content ul,
+.cloud-content ul,
+.preparation-content ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.prereq-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f8f9fa;
+}
+
+.prereq-item:last-child {
+  border-bottom: none;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+}
+
+.info-item i {
+  width: 20px;
+  margin-right: 8px;
+  margin-top: 2px;
+}
+
+.related-workshop {
+  padding: 0.25rem 0;
+  border-bottom: 1px solid #f8f9fa;
+}
+
+.related-workshop:last-child {
+  border-bottom: none;
+}
+
+.related-workshop:hover {
+  background-color: #f8f9fa;
+  margin: -0.25rem -1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+/* Workshop card interactions moved from inline CSS */
+.clickable-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.clickable-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+}
+
+a.text-decoration-none:hover {
+  text-decoration: none !important;
+}
+
+a.text-decoration-none .card-title {
+  color: inherit;
+}
+
+a.text-decoration-none:hover .card-title {
+  color: #007bff;
+}
+
 .btn-bigger {
 	padding: 8px 20px; /* Increase padding */
 	font-size: 20px; /* Increase font size */
@@ -39,9 +158,15 @@ h3 {
 		margin-bottom: 10px;
 }
 
-/* Workshop card styles */
+/* Workshop card styles - consolidated */
 .workshop-card {
     transition: all 0.3s ease;
+    border: 1px solid #e9ecef !important;
+}
+
+.workshop-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;
 }
 
 .workshop-card[data-active="true"] {
@@ -76,21 +201,23 @@ h3 {
     font-size: 0.75rem;
 }
 
-/* Register button */
+/* Register button - consolidated */
 .btn-register {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 0.375rem 0.75rem;
-    font-size: 0.875rem;
-    transition: all 0.3s ease;
+    background-color: #28a745 !important;
+    color: white !important;
+    border: none !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
 }
 
 .btn-register:hover {
-    background-color: #218838;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #218838 !important;
+    color: white !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3) !important;
 }
 
 .content {
@@ -120,39 +247,9 @@ blockquote.display-5.clickable {
     font-style: normal;
 }
 
-/* Improved Workshop Card Styles */
-.workshop-card {
-    transition: all 0.3s ease;
-    border: 1px solid #e9ecef !important;
-}
-
-.workshop-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;
-}
-
 /* Button spacing for workshop cards */
 .workshop-links .d-flex {
     gap: 0.5rem;
-}
-
-/* Better register button styling */
-.btn-register {
-    background-color: #28a745 !important;
-    color: white !important;
-    border: none !important;
-    padding: 0.5rem 1rem !important;
-    font-size: 0.875rem !important;
-    font-weight: 600 !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
-}
-
-.btn-register:hover {
-    background-color: #218838 !important;
-    color: white !important;
-    transform: translateY(-1px) !important;
-    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3) !important;
 }
 
 /* Enhanced materials button */

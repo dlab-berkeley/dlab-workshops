@@ -53,57 +53,7 @@
 	
 	<!-- Workshop Status JS -->
 	<script src="{{ '/static/javascripts/workshop-status.js' | relative_url }}"></script>
-	
-	<!-- Workshop Card Interactions -->
-	<style>
-	.clickable-card {
-		transition: transform 0.2s ease, box-shadow 0.2s ease;
-		cursor: pointer;
-	}
-	
-	.clickable-card:hover {
-		transform: translateY(-2px);
-		box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
-	}
-	
-	a.text-decoration-none:hover {
-		text-decoration: none !important;
-	}
-	
-	a.text-decoration-none .card-title {
-		color: inherit;
-	}
-	
-	a.text-decoration-none:hover .card-title {
-		color: #007bff;
-	}
-	</style>
-	<script>
-	document.addEventListener('DOMContentLoaded', function() {
-		// Handle expandable prerequisites
-		document.addEventListener('click', function(e) {
-			if (e.target.classList.contains('show-more-prereqs')) {
-				e.preventDefault();
-				const container = e.target.closest('.prerequisites-container');
-				const initialView = container.querySelector('.d-flex');
-				const fullView = container.querySelector('.all-prerequisites');
-				
-				initialView.classList.add('d-none');
-				fullView.classList.remove('d-none');
-			}
-			
-			if (e.target.classList.contains('show-less-prereqs')) {
-				e.preventDefault();
-				const container = e.target.closest('.prerequisites-container');
-				const initialView = container.querySelector('.d-flex');
-				const fullView = container.querySelector('.all-prerequisites');
-				
-				fullView.classList.add('d-none');
-				initialView.classList.remove('d-none');
-			}
-		});
-	});
-	</script>
+	<script src="{{ '/static/javascripts/prerequisites.js' | relative_url }}"></script>
 
 </body>
 </html>

@@ -1,0 +1,17 @@
+# Prerequisite ordering for learning paths
+# This defines the order in which prerequisites should be displayed
+
+python_order:
+  - "Python Fundamentals: Part 1-3"
+  - "Python Fundamentals: Parts 1-3"
+  - "Python Fundamentals: Part 4-6"
+  - "Python Fundamentals: Parts 4-6"
+  - "Python Data Wrangling and Manipulation with Pandas: Parts 1-2"
+  - "Python Data Visualization: Parts 1-2"
+  - "Python Machine Learning Fundamentals: Parts 1-2"
+
+r_order:
+  - "R Fundamentals: Parts 1-4"
+  - "R Data Wrangling and Manipulation: Parts 1-2"
+  - "R Data Visualization"
+  - "R Machine Learning with tidymodels: Parts 1-2"
