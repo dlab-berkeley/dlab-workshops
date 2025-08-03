@@ -235,7 +235,9 @@ function findRWorkshopByTitle(title) {
 // On dropdown change, populate cards
 $('#r-workshop-dropdown').change(function() {
   var selectedID = $(this).val();
-  $("#requirements-heading").show();
+  
+  // Show the pathway results section
+  $("#pathway-results").show();
 
   // Clear existing cards
   $('#prerequisite-cards').html('');
