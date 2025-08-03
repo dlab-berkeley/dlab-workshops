@@ -1,7 +1,21 @@
 {% comment %} Count active workshops for given category {% endcomment %}
 {% assign active_count = 0 %}
 {% for workshop in site.data.workshops.workshops %}
-  {% if include.category == nil or workshop.category == include.category or workshop.category contains include.category %}
+  {% assign category_match = false %}
+  {% if include.category == nil %}
+    {% assign category_match = true %}
+  {% elsif workshop.category == include.category %}
+    {% assign category_match = true %}
+  {% else %}
+    {% comment %} Check if workshop.category is an array containing include.category {% endcomment %}
+    {% for cat in workshop.category %}
+      {% if cat == include.category %}
+        {% assign category_match = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  {% if category_match %}
     {% assign workshop_title_lower = workshop.title | downcase %}
     {% for upcoming in site.data.upcoming_workshops.workshops %}
       {% assign upcoming_title_lower = upcoming.title | downcase %}
@@ -25,7 +39,21 @@
   </div>
   <div class="row">
     {% for workshop in site.data.workshops.workshops %}
-      {% if include.category == nil or workshop.category == include.category or workshop.category contains include.category %}
+      {% assign category_match = false %}
+      {% if include.category == nil %}
+        {% assign category_match = true %}
+      {% elsif workshop.category == include.category %}
+        {% assign category_match = true %}
+      {% else %}
+        {% comment %} Check if workshop.category is an array containing include.category {% endcomment %}
+        {% for cat in workshop.category %}
+          {% if cat == include.category %}
+            {% assign category_match = true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      {% if category_match %}
         {% assign is_active = false %}
         {% assign workshop_title_lower = workshop.title | downcase %}
         
@@ -79,7 +107,21 @@
   
   {% for level in difficulty_levels %}
     {% for workshop in site.data.workshops.workshops %}
-      {% if include.category == nil or workshop.category == include.category or workshop.category contains include.category %}
+      {% assign category_match = false %}
+      {% if include.category == nil %}
+        {% assign category_match = true %}
+      {% elsif workshop.category == include.category %}
+        {% assign category_match = true %}
+      {% else %}
+        {% comment %} Check if workshop.category is an array containing include.category {% endcomment %}
+        {% for cat in workshop.category %}
+          {% if cat == include.category %}
+            {% assign category_match = true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      {% if category_match %}
         {% assign is_active = false %}
         {% assign workshop_title_lower = workshop.title | downcase %}
         
