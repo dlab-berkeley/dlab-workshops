@@ -1,0 +1,190 @@
+<!-- IOKN2K 90s Pixelated Banner - Self-contained include file -->
+<style>
+  /* Secret Button Styling */
+  .iokn2k-secret-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    border: 2px solid #fff;
+    color: #000;
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 5px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 1000;
+    text-shadow: 1px 1px 0px #fff;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    transition: all 0.2s ease;
+    letter-spacing: 1px;
+  }
+
+  .iokn2k-secret-button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #00ffff, #ffff00);
+    animation: button-pulse 0.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes button-pulse {
+    0% { box-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+    100% { box-shadow: 2px 2px 8px rgba(255,0,255,0.6); }
+  }
+
+  /* Banner Styling */
+  .iokn2k-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+    background: linear-gradient(45deg, #ff00ff 0%, #00ffff 25%, #ffff00 50%, #ff00ff 75%, #00ffff 100%);
+    background-size: 20px 20px;
+    animation: retro-bg 0.5s steps(4) infinite;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .iokn2k-banner.show {
+    display: flex;
+    animation: retro-bg 0.5s steps(4) infinite, banner-show 1.5s ease-out;
+  }
+
+  @keyframes retro-bg {
+    0% { background-position: 0px 0px; }
+    100% { background-position: 20px 20px; }
+  }
+
+  @keyframes banner-show {
+    0% { 
+      opacity: 0;
+      transform: scale(0.1);
+    }
+    8% { 
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    15% { 
+      transform: scale(0.9);
+    }
+    22% { 
+      transform: scale(1.1);
+    }
+    30% { 
+      transform: scale(1);
+    }
+    85% { 
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% { 
+      opacity: 0;
+      transform: scale(0.8);
+    }
+  }
+
+  .iokn2k-text {
+    font-family: 'Courier New', monospace;
+    font-size: 10vw;
+    font-weight: bold;
+    color: #000;
+    text-shadow: 
+      2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+      1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff,
+      4px 4px 0px #ff00ff;
+    letter-spacing: 0.1em;
+    image-rendering: pixelated;
+    -ms-interpolation-mode: nearest-neighbor;
+    animation: pixel-glitch 0.1s steps(2) infinite;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  @keyframes pixel-glitch {
+    0% { 
+      text-shadow: 
+        2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+        1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff,
+        4px 4px 0px #ff00ff;
+    }
+    50% { 
+      text-shadow: 
+        2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+        1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff,
+        4px 4px 0px #00ffff;
+    }
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .iokn2k-text {
+      font-size: 12vw;
+      letter-spacing: 0.05em;
+    }
+    .iokn2k-secret-button {
+      font-size: 8px;
+      padding: 4px 6px;
+      bottom: 15px;
+      right: 15px;
+    }
+  }
+
+  /* Add scan lines effect */
+  .iokn2k-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.1) 2px,
+      rgba(0, 0, 0, 0.1) 4px
+    );
+    pointer-events: none;
+    animation: scanlines 0.1s linear infinite;
+  }
+
+  @keyframes scanlines {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(4px); }
+  }
+</style>
+
+<div id="iokn2k-banner" class="iokn2k-banner">
+  <div class="iokn2k-text">IT'S OKAY<br>NOT TO<br>KNOW!</div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var button = document.getElementById('iokn2k-trigger');
+    var banner = document.getElementById('iokn2k-banner');
+    
+    if (button && banner) {
+      button.addEventListener('click', function() {
+        banner.classList.add('show');
+        
+        // Auto-remove banner after animation completes
+        setTimeout(function() {
+          banner.classList.remove('show');
+        }, 1500); // 1.5s total animation time
+      });
+    }
+
+    // Click anywhere to dismiss banner early
+    document.addEventListener('click', function(e) {
+      if (banner && banner.classList.contains('show') && e.target.id !== 'iokn2k-trigger') {
+        banner.classList.remove('show');
+      }
+    });
+  });
+</script>
