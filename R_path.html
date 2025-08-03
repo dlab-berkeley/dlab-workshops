@@ -287,7 +287,7 @@ $('#r-workshop-dropdown').change(function() {
         
         if (prerequisiteData) {
           var materialUrl = prerequisiteData.datahub_url || prerequisiteData.github_url;
-          var workshopUrl = `/workshop/${titleToSlug(prerequisiteData.title)}/`;
+          var workshopUrl = `/dlab-workshops/workshop/${titleToSlug(prerequisiteData.title)}/`;
           var card = `
           <div class="card col-md-4 clickable-card" style="max-width: 350px; cursor: pointer;" onclick="window.location.href='${workshopUrl}'">
             <div class="card-body">
@@ -312,7 +312,7 @@ $('#r-workshop-dropdown').change(function() {
     
     // Add a card for the selected workshop at the end
     var selectedMaterialUrl = selectedWorkshop.datahub_url || selectedWorkshop.github_url;
-    var selectedWorkshopUrl = `/workshop/${titleToSlug(selectedWorkshop.title)}/`;
+    var selectedWorkshopUrl = `/dlab-workshops/workshop/${titleToSlug(selectedWorkshop.title)}/`;
     var selectedCard = `
     <div class="card col-md-4 clickable-card" style="max-width: 350px; background-color: #D7E3F0; cursor: pointer;" onclick="window.location.href='${selectedWorkshopUrl}'">
       <div class="card-body">
