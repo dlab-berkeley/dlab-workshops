@@ -2,8 +2,8 @@ name: Update Workshop Catalog from Google Sheets
 
 on:
   schedule:
-    # Run daily at 9 AM UTC (2 AM PST)
-    - cron: '0 9 * * *'
+    # Run daily at 7:45 AM UTC (12:45 AM PST) - 31 minutes after Google Sheets catalog update
+    - cron: '45 7 * * *'
   workflow_dispatch:  # Allow manual triggering
 
 jobs:
@@ -45,6 +45,6 @@ jobs:
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
-          git commit -m "Update workshop catalog and generate new workshop pages [skip ci]"
+          git commit -m "Update workshop catalog and generate new workshop pages"
           git push
         fi
