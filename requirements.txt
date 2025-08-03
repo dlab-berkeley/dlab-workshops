@@ -1,5 +1,14 @@
-# Salesforce Workshop Sync Dependencies
-simple-salesforce>=1.12.4
-PyYAML>=6.0
-pandas>=1.3.0
-requests>=2.25.0
+# D-Lab Workshop Site Dependencies
+# Pinned versions to prevent silent breakages - update quarterly or for security patches
+
+# Google Sheets Integration (used by CI for workshop data sync)
+google-auth==2.34.0
+google-auth-oauthlib==1.2.1
+google-auth-httplib2==0.2.0
+google-api-python-client==2.149.0
+PyYAML==6.0.1
+
+# Salesforce Workshop Sync Dependencies (if needed for local development)
+simple-salesforce==1.12.6
+pandas==2.2.2
+requests==2.32.3

@@ -36,7 +36,7 @@ jobs:
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client pyyaml
+        pip install -r requirements.txt
     
     # Step 1: Update workshop catalog from Google Sheets (fetch definitions first)
     - name: Fetch workshop catalog from Google Sheets
@@ -86,7 +86,7 @@ jobs:
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.2'
+        ruby-version: '3.4'
         bundler-cache: true
     
     - name: Install Jekyll dependencies
