@@ -1,35 +1,35 @@
-<!-- IOKN2K 90s Pixelated Banner - Self-contained include file -->
+<!-- IOKN2K 90s Banner - Self-contained include file -->
 <style>
   /* Secret Button Styling */
   .iokn2k-secret-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    background: linear-gradient(135deg, #ff69b4, #40e0d0);
     border: 2px solid #fff;
     color: #000;
-    font-family: 'Courier New', monospace;
+    font-family: 'Comic Sans MS', 'Courier New', monospace;
     font-size: 10px;
     font-weight: bold;
     padding: 5px 8px;
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
     z-index: 1000;
     text-shadow: 1px 1px 0px #fff;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     letter-spacing: 1px;
   }
 
   .iokn2k-secret-button:hover {
-    transform: scale(1.1);
-    background: linear-gradient(45deg, #00ffff, #ffff00);
-    animation: button-pulse 0.5s ease-in-out infinite alternate;
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #40e0d0, #ffd700);
+    animation: button-gentle-pulse 1s ease-in-out infinite alternate;
   }
 
-  @keyframes button-pulse {
+  @keyframes button-gentle-pulse {
     0% { box-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-    100% { box-shadow: 2px 2px 8px rgba(255,0,255,0.6); }
+    100% { box-shadow: 2px 2px 6px rgba(255,105,180,0.5); }
   }
 
   /* Banner Styling */
@@ -42,90 +42,101 @@
     pointer-events: none;
     z-index: 9999;
     overflow: hidden;
-    background: linear-gradient(45deg, #ff00ff 0%, #00ffff 25%, #ffff00 50%, #ff00ff 75%, #00ffff 100%);
-    background-size: 20px 20px;
-    animation: retro-bg 0.5s steps(4) infinite;
+    background: linear-gradient(135deg, #ff69b4 0%, #40e0d0 25%, #ffd700 50%, #ff69b4 75%, #40e0d0 100%);
+    background-size: 400% 400%;
+    animation: gentle-gradient 8s ease infinite;
     display: none;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 20px;
   }
 
   .iokn2k-banner.show {
     display: flex;
-    animation: retro-bg 0.5s steps(4) infinite, banner-show 1.5s ease-out;
+    animation: gentle-gradient 8s ease infinite, banner-show 2.5s ease-out;
   }
 
-  @keyframes retro-bg {
-    0% { background-position: 0px 0px; }
-    100% { background-position: 20px 20px; }
+  @keyframes gentle-gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 
   @keyframes banner-show {
     0% { 
       opacity: 0;
-      transform: scale(0.1);
+      transform: scale(0.8);
     }
-    8% { 
+    10% { 
       opacity: 1;
-      transform: scale(1.2);
+      transform: scale(1.05);
     }
-    15% { 
-      transform: scale(0.9);
-    }
-    22% { 
-      transform: scale(1.1);
+    20% { 
+      transform: scale(0.98);
     }
     30% { 
       transform: scale(1);
     }
-    85% { 
+    80% { 
       opacity: 1;
       transform: scale(1);
     }
     100% { 
       opacity: 0;
-      transform: scale(0.8);
+      transform: scale(0.95);
     }
   }
 
-  .iokn2k-text {
-    font-family: 'Courier New', monospace;
-    font-size: 10vw;
+  .iokn2k-title {
+    font-family: 'Comic Sans MS', 'Courier New', monospace;
+    font-size: 7vw;
     font-weight: bold;
-    color: #000;
+    color: #fff;
     text-shadow: 
-      2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-      1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff,
-      4px 4px 0px #ff00ff;
-    letter-spacing: 0.1em;
-    image-rendering: pixelated;
-    -ms-interpolation-mode: nearest-neighbor;
-    animation: pixel-glitch 0.1s steps(2) infinite;
+      3px 3px 0px #ff1493,
+      6px 6px 10px rgba(0,0,0,0.3);
+    letter-spacing: 0.05em;
     text-align: center;
-    line-height: 1.2;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    animation: gentle-wobble 2s ease-in-out infinite;
   }
 
-  @keyframes pixel-glitch {
-    0% { 
-      text-shadow: 
-        2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-        1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff,
-        4px 4px 0px #ff00ff;
+  .iokn2k-subtitle {
+    font-family: 'Georgia', serif;
+    font-size: 2.5vw;
+    color: #fff;
+    text-shadow: 
+      2px 2px 0px #000,
+      3px 3px 8px rgba(0,0,0,0.5);
+    text-align: center;
+    line-height: 1.4;
+    max-width: 80%;
+    padding: 15px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 10px;
+    border: 2px solid rgba(255,255,255,0.3);
+  }
+
+  @keyframes gentle-wobble {
+    0%, 100% { 
+      transform: rotate(-1deg);
     }
     50% { 
-      text-shadow: 
-        2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-        1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff,
-        4px 4px 0px #00ffff;
+      transform: rotate(1deg);
     }
   }
 
   /* Mobile responsive */
   @media (max-width: 768px) {
-    .iokn2k-text {
-      font-size: 12vw;
-      letter-spacing: 0.05em;
+    .iokn2k-title {
+      font-size: 10vw;
+      letter-spacing: 0.03em;
+    }
+    .iokn2k-subtitle {
+      font-size: 3.5vw;
+      padding: 10px;
     }
     .iokn2k-secret-button {
       font-size: 8px;
@@ -135,7 +146,7 @@
     }
   }
 
-  /* Add scan lines effect */
+  /* Subtle scan lines effect */
   .iokn2k-banner::before {
     content: '';
     position: absolute;
@@ -146,22 +157,23 @@
     background: repeating-linear-gradient(
       0deg,
       transparent,
-      transparent 2px,
-      rgba(0, 0, 0, 0.1) 2px,
-      rgba(0, 0, 0, 0.1) 4px
+      transparent 3px,
+      rgba(255, 255, 255, 0.05) 3px,
+      rgba(255, 255, 255, 0.05) 6px
     );
     pointer-events: none;
-    animation: scanlines 0.1s linear infinite;
+    animation: scanlines 0.5s linear infinite;
   }
 
   @keyframes scanlines {
     0% { transform: translateY(0); }
-    100% { transform: translateY(4px); }
+    100% { transform: translateY(6px); }
   }
 </style>
 
 <div id="iokn2k-banner" class="iokn2k-banner">
-  <div class="iokn2k-text">IT'S OKAY<br>NOT TO<br>KNOW!</div>
+  <div class="iokn2k-title">It's Okay Not To Know</div>
+  <div class="iokn2k-subtitle">(IOKN2K) is D-Lab's core motto, reminding everyone that curiosity, questions, and not having all the answers are welcome parts of the learning process.</div>
 </div>
 
 <script>
