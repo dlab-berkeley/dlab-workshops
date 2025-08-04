@@ -41,20 +41,33 @@
     height: 100vh;
     pointer-events: none;
     z-index: 9999;
-    overflow: hidden;
-    background: linear-gradient(135deg, #ff69b4 0%, #40e0d0 25%, #ffd700 50%, #ff69b4 75%, #40e0d0 100%);
-    background-size: 400% 400%;
-    animation: gentle-gradient 8s ease infinite;
     display: none;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
   }
 
   .iokn2k-banner.show {
     display: flex;
-    animation: gentle-gradient 8s ease infinite, banner-show 2.5s ease-out;
+  }
+
+  .iokn2k-box {
+    background: linear-gradient(135deg, #ff69b4 0%, #40e0d0 25%, #ffd700 50%, #ff69b4 75%, #40e0d0 100%);
+    background-size: 400% 400%;
+    animation: gentle-gradient 8s ease infinite;
+    padding: 40px;
+    border-radius: 15px;
+    border: 5px solid #fff;
+    box-shadow: 
+      0 0 0 10px #ff1493,
+      0 0 0 15px #fff,
+      10px 10px 30px rgba(0,0,0,0.5);
+    max-width: 80%;
+    text-align: center;
+  }
+
+  .iokn2k-box.show {
+    animation: gentle-gradient 8s ease infinite, banner-show 4s ease-out;
   }
 
   @keyframes gentle-gradient {
@@ -66,57 +79,59 @@
   @keyframes banner-show {
     0% { 
       opacity: 0;
-      transform: scale(0.8);
+      transform: scale(0.5) rotate(-5deg);
     }
     10% { 
       opacity: 1;
-      transform: scale(1.05);
+      transform: scale(1.1) rotate(2deg);
+    }
+    15% { 
+      transform: scale(0.95) rotate(-1deg);
     }
     20% { 
-      transform: scale(0.98);
+      transform: scale(1) rotate(0deg);
     }
-    30% { 
-      transform: scale(1);
-    }
-    80% { 
+    70% { 
       opacity: 1;
-      transform: scale(1);
+      transform: scale(1) rotate(0deg);
     }
     100% { 
       opacity: 0;
-      transform: scale(0.95);
+      transform: scale(0.9) rotate(0deg);
     }
   }
 
   .iokn2k-title {
-    font-family: 'Comic Sans MS', 'Courier New', monospace;
-    font-size: 7vw;
-    font-weight: bold;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
     color: #fff;
     text-shadow: 
       3px 3px 0px #ff1493,
-      6px 6px 10px rgba(0,0,0,0.3);
-    letter-spacing: 0.05em;
+      6px 6px 0px #000,
+      9px 9px 15px rgba(0,0,0,0.5);
+    letter-spacing: 0.08em;
     text-align: center;
-    line-height: 1.1;
-    margin-bottom: 20px;
+    line-height: 0.9;
+    margin-bottom: 25px;
     animation: gentle-wobble 2s ease-in-out infinite;
+    text-transform: uppercase;
   }
 
   .iokn2k-subtitle {
-    font-family: 'Georgia', serif;
-    font-size: 2.5vw;
+    font-family: 'Verdana', 'Arial', sans-serif;
+    font-size: 1.2rem;
     color: #fff;
     text-shadow: 
       2px 2px 0px #000,
       3px 3px 8px rgba(0,0,0,0.5);
     text-align: center;
     line-height: 1.4;
-    max-width: 80%;
     padding: 15px;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.3);
     border-radius: 10px;
-    border: 2px solid rgba(255,255,255,0.3);
+    border: 2px solid rgba(255,255,255,0.5);
+    margin: 0 auto;
   }
 
   @keyframes gentle-wobble {
@@ -130,12 +145,16 @@
 
   /* Mobile responsive */
   @media (max-width: 768px) {
+    .iokn2k-box {
+      max-width: 90%;
+      padding: 25px;
+    }
     .iokn2k-title {
-      font-size: 10vw;
-      letter-spacing: 0.03em;
+      font-size: 2.5rem;
+      letter-spacing: 0.05em;
     }
     .iokn2k-subtitle {
-      font-size: 3.5vw;
+      font-size: 4vw;
       padding: 10px;
     }
     .iokn2k-secret-button {
@@ -172,23 +191,28 @@
 </style>
 
 <div id="iokn2k-banner" class="iokn2k-banner">
-  <div class="iokn2k-title">It's Okay Not To Know</div>
-  <div class="iokn2k-subtitle">(IOKN2K) is D-Lab's core motto, reminding everyone that curiosity, questions, and not having all the answers are welcome parts of the learning process.</div>
+  <div id="iokn2k-box" class="iokn2k-box">
+    <div class="iokn2k-title">It's Okay<br>Not To Know</div>
+    <div class="iokn2k-subtitle">(IOKN2K) is D-Lab's core motto, reminding everyone that curiosity, questions, and not having all the answers are welcome parts of the learning process.</div>
+  </div>
 </div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     var button = document.getElementById('iokn2k-trigger');
     var banner = document.getElementById('iokn2k-banner');
+    var box = document.getElementById('iokn2k-box');
     
-    if (button && banner) {
+    if (button && banner && box) {
       button.addEventListener('click', function() {
         banner.classList.add('show');
+        box.classList.add('show');
         
         // Auto-remove banner after animation completes
         setTimeout(function() {
           banner.classList.remove('show');
-        }, 1500); // 1.5s total animation time
+          box.classList.remove('show');
+        }, 4000); // 4s total animation time
       });
     }
 
@@ -196,6 +220,7 @@
     document.addEventListener('click', function(e) {
       if (banner && banner.classList.contains('show') && e.target.id !== 'iokn2k-trigger') {
         banner.classList.remove('show');
+        box.classList.remove('show');
       }
     });
   });
