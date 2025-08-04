@@ -67,7 +67,7 @@
   }
 
   .iokn2k-box.show {
-    animation: gentle-gradient 8s ease infinite, banner-show 4s ease-out;
+    animation: gentle-gradient 8s ease infinite, banner-show 8s ease-out;
   }
 
   @keyframes gentle-gradient {
@@ -81,17 +81,17 @@
       opacity: 0;
       transform: scale(0.5) rotate(-5deg);
     }
-    10% { 
+    5% { 
       opacity: 1;
       transform: scale(1.1) rotate(2deg);
     }
-    15% { 
+    8% { 
       transform: scale(0.95) rotate(-1deg);
     }
-    20% { 
+    12% { 
       transform: scale(1) rotate(0deg);
     }
-    70% { 
+    85% { 
       opacity: 1;
       transform: scale(1) rotate(0deg);
     }
@@ -102,20 +102,36 @@
   }
 
   .iokn2k-title {
-    font-family: 'Impact', 'Arial Black', sans-serif;
-    font-size: 4rem;
-    font-weight: 900;
+    font-family: 'Courier New', 'Lucida Console', monospace;
+    font-size: 3.5rem;
+    font-weight: bold;
     color: #fff;
     text-shadow: 
-      3px 3px 0px #ff1493,
-      6px 6px 0px #000,
-      9px 9px 15px rgba(0,0,0,0.5);
-    letter-spacing: 0.08em;
+      1px 1px 0px #ff1493,
+      2px 2px 0px #00ffff,
+      3px 3px 0px #ffff00,
+      4px 4px 0px #ff1493,
+      5px 5px 0px #000,
+      6px 6px 15px rgba(0,0,0,0.8);
+    letter-spacing: 0.15em;
     text-align: center;
-    line-height: 0.9;
+    line-height: 1.1;
     margin-bottom: 25px;
-    animation: gentle-wobble 2s ease-in-out infinite;
+    animation: gentle-wobble 2.5s ease-in-out infinite, text-glow 2s ease-in-out infinite alternate;
     text-transform: uppercase;
+    background: linear-gradient(45deg, #fff, #ff1493, #00ffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  @keyframes text-glow {
+    0% { 
+      filter: brightness(1) contrast(1);
+    }
+    100% { 
+      filter: brightness(1.2) contrast(1.1);
+    }
   }
 
   .iokn2k-subtitle {
@@ -212,7 +228,7 @@
         setTimeout(function() {
           banner.classList.remove('show');
           box.classList.remove('show');
-        }, 4000); // 4s total animation time
+        }, 8000); // 8s total animation time
       });
     }
 
