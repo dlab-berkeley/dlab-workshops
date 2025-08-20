@@ -1,0 +1,10 @@
+.git
+.gitignore
+.bundle
+vendor
+node_modules
+tmp
+*.log
+*.swp
+.DS_Store
+_site

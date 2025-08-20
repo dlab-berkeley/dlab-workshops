@@ -68,10 +68,21 @@
   function findMatchingWorkshop(cardTitle) {
     if (!workshopData || !workshopData.workshops) return null;
 
-    // Only use exact title matching to prevent false positives
+    // First try exact title matching
     let match = workshopData.workshops.find(w => 
       w.title.toLowerCase().trim() === cardTitle.toLowerCase().trim()
     );
+
+    // If no exact match, try matching base titles (without part specifications)
+    if (!match) {
+      // Extract base title (everything before ": Part")
+      const cardBase = cardTitle.split(': Part')[0].toLowerCase().trim();
+      
+      match = workshopData.workshops.find(w => {
+        const workshopBase = w.title.split(': Part')[0].toLowerCase().trim();
+        return workshopBase === cardBase;
+      });
+    }
 
     return match;
   }
@@ -145,9 +156,11 @@
     if (daysUntil <= 7) {
       badgeClass = 'badge-upcoming';
       if (daysUntil === 0) {
-        badgeText = `Today at ${formatTime(sessionDate)}`;
+        // Use the time field from the workshop data instead of converting
+        badgeText = `Today at ${workshop.time}`;
       } else if (daysUntil === 1) {
-        badgeText = `Tomorrow at ${formatTime(sessionDate)}`;
+        // Use the time field from the workshop data instead of converting
+        badgeText = `Tomorrow at ${workshop.time}`;
       }
     } else if (daysUntil <= 30) {
       badgeClass = 'badge-upcoming-soon';

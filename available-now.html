@@ -38,12 +38,16 @@ permalink: /available-now
       {% assign processed_titles = "" | split: "" %}
       
       {% for upcoming in site.data.upcoming_workshops.workshops %}
-        {% unless processed_titles contains upcoming.title %}
+        {% comment %} Extract base title without part specification {% endcomment %}
+        {% assign upcoming_base = upcoming.title | split: ": Part" | first %}
+        
+        {% unless processed_titles contains upcoming_base %}
           {% comment %} Find matching workshop in main catalog {% endcomment %}
           {% for workshop in site.data.workshops.workshops %}
-            {% if workshop.title == upcoming.title %}
+            {% assign workshop_base = workshop.title | split: ": Part" | first %}
+            {% if workshop_base == upcoming_base %}
               {% assign unique_workshops = unique_workshops | push: workshop %}
-              {% assign processed_titles = processed_titles | push: upcoming.title %}
+              {% assign processed_titles = processed_titles | push: upcoming_base %}
               {% break %}
             {% endif %}
           {% endfor %}
