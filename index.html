@@ -20,11 +20,20 @@ title: D-Lab Workshops - Google Sheets Version
 <div class="container">
   
   {% if site.data.upcoming_workshops.workshops.size > 0 %}
+  {% comment %} Count only registrable workshops (Part 1 or no parts) {% endcomment %}
+  {% assign registrable_count = 0 %}
+  {% for workshop in site.data.upcoming_workshops.workshops %}
+    {% unless workshop.title contains ": Part 2" or workshop.title contains ": Part 3" or workshop.title contains ": Part 4" or workshop.title contains ": Part 5" or workshop.title contains ": Part 6" %}
+      {% assign registrable_count = registrable_count | plus: 1 %}
+    {% endunless %}
+  {% endfor %}
+  
+  {% if registrable_count > 0 %}
   <div class="row justify-content-center my-4">
     <div class="col-12">
       <div class="alert alert-success text-center" role="alert">
         <h4 class="alert-heading">
-          <i class="fas fa-calendar-check"></i> {{ site.data.upcoming_workshops.total_workshops }} Workshops Available Now!
+          <i class="fas fa-calendar-check"></i> {{ registrable_count }} Workshops Available Now!
         </h4>
         <p class="mb-2">Register for upcoming workshop sessions happening soon.</p>
         <hr>
@@ -34,6 +43,7 @@ title: D-Lab Workshops - Google Sheets Version
       </div>
     </div>
   </div>
+  {% endif %}
   {% endif %}
   
   <div class="row justify-content-center mb-4 category-row">

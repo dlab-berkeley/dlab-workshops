@@ -87,23 +87,26 @@ permalink: /available-now
             </thead>
             <tbody>
               {% for session in site.data.upcoming_workshops.workshops %}
-                <tr>
-                  <td><strong>{{ session.title }}</strong></td>
-                  <td>
-                    {{ session.datetime_iso | date: "%B %d, %Y" }}<br>
-                    <small class="text-muted">{{ session.time }}</small>
-                  </td>
-                  <td>{{ session.location | default: "Online" }}</td>
-                  <td>
-                    {% if session.registration_url %}
-                      <a href="{{ session.registration_url }}" class="btn btn-sm btn-success" target="_blank">
-                        <i class="fas fa-user-plus"></i> Register
-                      </a>
-                    {% else %}
-                      <span class="text-muted">Registration TBA</span>
-                    {% endif %}
-                  </td>
-                </tr>
+                {% comment %} Only show registrable workshops (Part 1 or no parts) in the schedule {% endcomment %}
+                {% unless session.title contains ": Part 2" or session.title contains ": Part 3" or session.title contains ": Part 4" or session.title contains ": Part 5" or session.title contains ": Part 6" %}
+                  <tr>
+                    <td><strong>{{ session.title }}</strong></td>
+                    <td>
+                      {{ session.datetime_iso | date: "%B %d, %Y" }}<br>
+                      <small class="text-muted">{{ session.time }}</small>
+                    </td>
+                    <td>{{ session.location | default: "Online" }}</td>
+                    <td>
+                      {% if session.registration_url %}
+                        <a href="{{ session.registration_url }}" class="btn btn-sm btn-success" target="_blank">
+                          <i class="fas fa-user-plus"></i> Register
+                        </a>
+                      {% else %}
+                        <span class="text-muted">Registration TBA</span>
+                      {% endif %}
+                    </td>
+                  </tr>
+                {% endunless %}
               {% endfor %}
             </tbody>
           </table>
