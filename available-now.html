@@ -17,7 +17,7 @@ permalink: /available-now
       <h1 class="mb-4">
         <i class="fas fa-calendar-check text-success"></i> Available Now
       </h1>
-      <p class="lead">Workshops with upcoming sessions you can register for today!</p>
+      <p class="lead">Current workshop sessions open for registration</p>
       
       {% if site.data.upcoming_workshops.workshops.size > 0 %}
         {% comment %} Count only registrable workshops (Part 1 or no parts) {% endcomment %}
@@ -28,7 +28,7 @@ permalink: /available-now
           {% endunless %}
         {% endfor %}
         <div class="alert alert-success">
-          <i class="fas fa-info-circle"></i> <strong>{{ registrable_count }} workshops</strong> currently have sessions available for registration.
+          <i class="fas fa-info-circle"></i> <strong>{{ registrable_count }} sessions</strong> currently available for registration.
         </div>
         
         <p class="text-muted mb-4">
@@ -40,41 +40,7 @@ permalink: /available-now
   
   {% if site.data.upcoming_workshops.workshops.size > 0 %}
     <div class="row">
-      {% comment %} Group workshops by title to avoid duplicates {% endcomment %}
-      {% assign unique_workshops = "" | split: "" %}
-      {% assign processed_titles = "" | split: "" %}
-      
-      {% for upcoming in site.data.upcoming_workshops.workshops %}
-        {% comment %} Skip Part 2, 3, 4 etc. - only show workshops that start with Part 1 or have no parts {% endcomment %}
-        {% if upcoming.title contains ": Part 2" or upcoming.title contains ": Part 3" or upcoming.title contains ": Part 4" or upcoming.title contains ": Part 5" or upcoming.title contains ": Part 6" %}
-          {% continue %}
-        {% endif %}
-        
-        {% comment %} Extract base title without part specification {% endcomment %}
-        {% assign upcoming_base = upcoming.title | split: ": Part" | first %}
-        
-        {% unless processed_titles contains upcoming_base %}
-          {% comment %} Find matching workshop in main catalog {% endcomment %}
-          {% for workshop in site.data.workshops.workshops %}
-            {% assign workshop_base = workshop.title | split: ": Part" | first %}
-            {% if workshop_base == upcoming_base %}
-              {% assign unique_workshops = unique_workshops | push: workshop %}
-              {% assign processed_titles = processed_titles | push: upcoming_base %}
-              {% break %}
-            {% endif %}
-          {% endfor %}
-        {% endunless %}
-      {% endfor %}
-      
-      {% comment %} Display all unique active workshops {% endcomment %}
-      {% for workshop in unique_workshops %}
-        {% include workshop-card.html workshop=workshop %}
-      {% endfor %}
-    </div>
-    
-    <div class="row mt-5">
       <div class="col-12">
-        <h3>Upcoming Session Schedule</h3>
         <div class="table-responsive">
           <table class="table table-hover">
             <thead>
@@ -90,7 +56,7 @@ permalink: /available-now
                 {% comment %} Only show registrable workshops (Part 1 or no parts) in the schedule {% endcomment %}
                 {% unless session.title contains ": Part 2" or session.title contains ": Part 3" or session.title contains ": Part 4" or session.title contains ": Part 5" or session.title contains ": Part 6" %}
                   <tr>
-                    <td><strong>{{ session.title }}</strong></td>
+                    <td><strong><a href="{{ session.title | slugify | prepend: '/workshop/' | relative_url }}" class="text-decoration-none">{{ session.title }}</a></strong></td>
                     <td>
                       {{ session.datetime_iso | date: "%B %d, %Y" }}<br>
                       <small class="text-muted">{{ session.time }}</small>
