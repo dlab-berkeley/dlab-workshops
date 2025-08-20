@@ -68,35 +68,41 @@
   function findMatchingWorkshop(cardTitle) {
     if (!workshopData || !workshopData.workshops) return null;
 
-    // First try exact title matching
-    let match = workshopData.workshops.find(w => 
-      w.title.toLowerCase().trim() === cardTitle.toLowerCase().trim()
-    );
-
-    // If no exact match, try matching base titles (without part specifications)
-    // But only match Part 1 or workshops without parts (since registration is only for Part 1)
-    if (!match) {
-      // Extract base title (everything before ": Part")
-      const cardBase = cardTitle.split(': Part')[0].toLowerCase().trim();
-      
-      // Find workshops that match the base title
-      const matches = workshopData.workshops.filter(w => {
-        const workshopBase = w.title.split(': Part')[0].toLowerCase().trim();
-        return workshopBase === cardBase;
-      });
-      
-      // From the matches, prefer Part 1 or workshops without parts
-      match = matches.find(w => {
-        return w.title.includes(': Part 1') || !w.title.includes(': Part');
-      });
-      
-      // If no Part 1 found, return the first match (if any)
-      if (!match && matches.length > 0) {
-        match = matches[0];
+    // Only show registration badges for workshops that have registrable sessions
+    // This means we need to find Part 1 sessions or standalone workshops in the upcoming data
+    
+    const cardBase = cardTitle.split(': Part')[0].toLowerCase().trim();
+    
+    // Check if there are any registrable upcoming sessions for this workshop base
+    const hasRegistrableSession = workshopData.workshops.some(w => {
+      // Skip non-registrable parts
+      if (w.title.includes(': Part 2') || w.title.includes(': Part 3') || 
+          w.title.includes(': Part 4') || w.title.includes(': Part 5') || 
+          w.title.includes(': Part 6')) {
+        return false;
       }
+      
+      const upcomingBase = w.title.split(': Part')[0].toLowerCase().trim();
+      return upcomingBase === cardBase;
+    });
+    
+    // Only return a match if there are registrable sessions for this workshop
+    if (!hasRegistrableSession) {
+      return null;
     }
-
-    return match;
+    
+    // Find the registrable session to show
+    return workshopData.workshops.find(w => {
+      // Skip non-registrable parts
+      if (w.title.includes(': Part 2') || w.title.includes(': Part 3') || 
+          w.title.includes(': Part 4') || w.title.includes(': Part 5') || 
+          w.title.includes(': Part 6')) {
+        return false;
+      }
+      
+      const upcomingBase = w.title.split(': Part')[0].toLowerCase().trim();
+      return upcomingBase === cardBase;
+    });
   }
 
   function normalizeTitle(title) {
