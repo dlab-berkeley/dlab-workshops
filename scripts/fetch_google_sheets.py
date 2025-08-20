@@ -7,6 +7,7 @@ import json
 import os
 import sys
 from datetime import datetime, timezone, time
+import zoneinfo
 from pathlib import Path
 from typing import List, Dict, Optional
 from google.oauth2 import service_account
@@ -182,8 +183,10 @@ def update_upcoming_workshops(workshops: List[Dict], output_path: Path):
     """
     Update the upcoming_workshops.json file in both _data and data directories
     """
+    # Use Pacific Time for consistency with workshop schedule times
+    pacific_tz = zoneinfo.ZoneInfo("America/Los_Angeles")
     data = {
-        'last_updated': datetime.now(timezone.utc).isoformat(),
+        'last_updated': datetime.now(pacific_tz).isoformat(),
         'total_workshops': len(workshops),
         'workshops': workshops
     }
