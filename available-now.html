@@ -20,8 +20,15 @@ permalink: /available-now
       <p class="lead">Workshops with upcoming sessions you can register for today!</p>
       
       {% if site.data.upcoming_workshops.workshops.size > 0 %}
+        {% comment %} Count only registrable workshops (Part 1 or no parts) {% endcomment %}
+        {% assign registrable_count = 0 %}
+        {% for workshop in site.data.upcoming_workshops.workshops %}
+          {% unless workshop.title contains ": Part 2" or workshop.title contains ": Part 3" or workshop.title contains ": Part 4" or workshop.title contains ": Part 5" or workshop.title contains ": Part 6" %}
+            {% assign registrable_count = registrable_count | plus: 1 %}
+          {% endunless %}
+        {% endfor %}
         <div class="alert alert-success">
-          <i class="fas fa-info-circle"></i> <strong>{{ site.data.upcoming_workshops.total_workshops }} workshops</strong> currently have sessions available for registration.
+          <i class="fas fa-info-circle"></i> <strong>{{ registrable_count }} workshops</strong> currently have sessions available for registration.
         </div>
         
         <p class="text-muted mb-4">
@@ -38,6 +45,11 @@ permalink: /available-now
       {% assign processed_titles = "" | split: "" %}
       
       {% for upcoming in site.data.upcoming_workshops.workshops %}
+        {% comment %} Skip Part 2, 3, 4 etc. - only show workshops that start with Part 1 or have no parts {% endcomment %}
+        {% if upcoming.title contains ": Part 2" or upcoming.title contains ": Part 3" or upcoming.title contains ": Part 4" or upcoming.title contains ": Part 5" or upcoming.title contains ": Part 6" %}
+          {% continue %}
+        {% endif %}
+        
         {% comment %} Extract base title without part specification {% endcomment %}
         {% assign upcoming_base = upcoming.title | split: ": Part" | first %}
         

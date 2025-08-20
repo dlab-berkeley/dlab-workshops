@@ -74,14 +74,26 @@
     );
 
     // If no exact match, try matching base titles (without part specifications)
+    // But only match Part 1 or workshops without parts (since registration is only for Part 1)
     if (!match) {
       // Extract base title (everything before ": Part")
       const cardBase = cardTitle.split(': Part')[0].toLowerCase().trim();
       
-      match = workshopData.workshops.find(w => {
+      // Find workshops that match the base title
+      const matches = workshopData.workshops.filter(w => {
         const workshopBase = w.title.split(': Part')[0].toLowerCase().trim();
         return workshopBase === cardBase;
       });
+      
+      // From the matches, prefer Part 1 or workshops without parts
+      match = matches.find(w => {
+        return w.title.includes(': Part 1') || !w.title.includes(': Part');
+      });
+      
+      // If no Part 1 found, return the first match (if any)
+      if (!match && matches.length > 0) {
+        match = matches[0];
+      }
     }
 
     return match;
