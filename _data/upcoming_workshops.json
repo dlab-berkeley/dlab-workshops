@@ -1,6 +1,6 @@
 {
-  "last_updated": "2025-08-20T21:40:22.450446+00:00",
-  "total_workshops": 15,
+  "last_updated": "2025-08-21T00:41:29.313322-07:00",
+  "total_workshops": 16,
   "workshops": [
     {
       "title": "R Fundamentals: Part 2",
@@ -134,6 +134,15 @@
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/gitfundam20251006",
       "date": "Oct 06, 2025",
       "time": "02:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "MaxQDA Fundamentals",
+      "datetime_iso": "2025-10-09T13:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/maxqdafun20251009",
+      "date": "Oct 09, 2025",
+      "time": "01:00 PM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     }
