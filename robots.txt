@@ -1,0 +1,37 @@
+# Prevent search engines from indexing this site
+# This helps keep workshop registrations limited to UC Berkeley community
+User-agent: *
+Disallow: /
+
+# Block specific crawlers more explicitly
+User-agent: Googlebot
+Disallow: /
+
+User-agent: Bingbot
+Disallow: /
+
+User-agent: Slurp
+Disallow: /
+
+User-agent: DuckDuckBot
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: facebookexternalhit
+Disallow: /
+
+User-agent: Twitterbot
+Disallow: /
+
+User-agent: LinkedInBot
+Disallow: /
+
+User-agent: WhatsApp
+Disallow: /
+
+User-agent: Applebot
+Disallow: /
+
+# Sitemap: none (no sitemap provided to prevent discovery)
