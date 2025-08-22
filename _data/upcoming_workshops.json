@@ -1,25 +1,7 @@
 {
-  "last_updated": "2025-08-21T00:41:29.313322-07:00",
-  "total_workshops": 16,
+  "last_updated": "2025-08-22T00:40:34.389461-07:00",
+  "total_workshops": 14,
   "workshops": [
-    {
-      "title": "R Fundamentals: Part 2",
-      "datetime_iso": "2025-08-20T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20250820",
-      "date": "Aug 20, 2025",
-      "time": "10:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
-    {
-      "title": "Python Fundamentals: Part 2",
-      "datetime_iso": "2025-08-20T13:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonfun20250820",
-      "date": "Aug 20, 2025",
-      "time": "01:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "R Fundamentals: Part 3",
       "datetime_iso": "2025-08-21T10:00:00+00:00",
@@ -77,7 +59,7 @@
     {
       "title": "R Data Wrangling and Manipulation: Part 2",
       "datetime_iso": "2025-09-17T12:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rdatawra20250917",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rdatawra2025-09-17",
       "date": "Sep 17, 2025",
       "time": "12:00 PM",
       "location": "Online",
@@ -113,7 +95,7 @@
     {
       "title": "AI-Assisted Coding In Python",
       "datetime_iso": "2025-09-29T15:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/aiassiste20250929",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/ai-assiste2025-09-29",
       "date": "Sep 29, 2025",
       "time": "03:00 PM",
       "location": "Online",
