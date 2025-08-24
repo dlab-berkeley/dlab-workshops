@@ -1,25 +1,7 @@
 {
-  "last_updated": "2025-08-23T00:38:48.016296-07:00",
-  "total_workshops": 12,
+  "last_updated": "2025-08-24T00:39:41.471311-07:00",
+  "total_workshops": 10,
   "workshops": [
-    {
-      "title": "R Fundamentals: Part 4",
-      "datetime_iso": "2025-08-22T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20250822",
-      "date": "Aug 22, 2025",
-      "time": "10:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
-    {
-      "title": "Python APIs for Large Language Models",
-      "datetime_iso": "2025-08-22T13:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonapi20250822",
-      "date": "Aug 22, 2025",
-      "time": "01:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "R Data Wrangling and Manipulation: Parts 1-2",
       "datetime_iso": "2025-09-15T12:00:00+00:00",
