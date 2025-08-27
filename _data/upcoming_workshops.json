@@ -1,7 +1,16 @@
 {
-  "last_updated": "2025-08-26T00:41:38.844817-07:00",
-  "total_workshops": 10,
+  "last_updated": "2025-08-27T00:40:08.179008-07:00",
+  "total_workshops": 12,
   "workshops": [
+    {
+      "title": "Assistant Instructor Training",
+      "datetime_iso": "2025-08-27T11:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/assistant20250827",
+      "date": "Aug 27, 2025",
+      "time": "11:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
     {
       "title": "R Data Wrangling and Manipulation: Parts 1-2",
       "datetime_iso": "2025-09-15T12:00:00+00:00",
@@ -50,7 +59,7 @@
     {
       "title": "R SQL Fundamentals",
       "datetime_iso": "2025-09-25T14:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rsqlfund20250925",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rsqlfund2025-09-25",
       "date": "Sep 25, 2025",
       "time": "02:00 PM",
       "location": "Online",
@@ -59,7 +68,7 @@
     {
       "title": "AI-Assisted Coding In Python",
       "datetime_iso": "2025-09-29T15:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/aiassiste20250929",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/ai-assiste2025-09-29",
       "date": "Sep 29, 2025",
       "time": "03:00 PM",
       "location": "Online",
@@ -86,9 +95,18 @@
     {
       "title": "MaxQDA Fundamentals",
       "datetime_iso": "2025-10-09T13:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/maxqdafun20251009",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/maxqdafun2025-10-09",
       "date": "Oct 09, 2025",
       "time": "01:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Workshop Recording Requests",
+      "datetime_iso": "2025-12-23T16:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/workshopr20251223",
+      "date": "Dec 23, 2025",
+      "time": "04:00 PM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     }
