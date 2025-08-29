@@ -1,13 +1,13 @@
 {
-  "last_updated": "2025-08-28T00:41:21.057770-07:00",
+  "last_updated": "2025-08-29T00:40:31.034931-07:00",
   "total_workshops": 12,
   "workshops": [
     {
-      "title": "Assistant Instructor Training",
-      "datetime_iso": "2025-08-27T11:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/assistant20250827",
-      "date": "Aug 27, 2025",
-      "time": "11:00 AM",
+      "title": "Consultant Training",
+      "datetime_iso": "2025-09-04T12:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/consultant20250904",
+      "date": "Sep 04, 2025",
+      "time": "12:00 PM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     },
@@ -104,7 +104,7 @@
     {
       "title": "Workshop Recording Requests",
       "datetime_iso": "2025-12-23T16:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/workshopr20251223",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/workshopr2025-12-23",
       "date": "Dec 23, 2025",
       "time": "04:00 PM",
       "location": "Online",
