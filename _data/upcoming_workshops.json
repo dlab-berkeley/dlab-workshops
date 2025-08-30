@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-08-29T00:40:31.034931-07:00",
+  "last_updated": "2025-08-30T00:38:50.447809-07:00",
   "total_workshops": 12,
   "workshops": [
     {
@@ -104,7 +104,7 @@
     {
       "title": "Workshop Recording Requests",
       "datetime_iso": "2025-12-23T16:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/workshopr2025-12-23",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/workshopr20251223",
       "date": "Dec 23, 2025",
       "time": "04:00 PM",
       "location": "Online",
