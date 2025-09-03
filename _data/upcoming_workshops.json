@@ -1,13 +1,13 @@
 {
-  "last_updated": "2025-09-03T00:40:18.613137-07:00",
-  "total_workshops": 12,
+  "last_updated": "2025-09-03T14:21:12.116366-07:00",
+  "total_workshops": 16,
   "workshops": [
     {
-      "title": "Consultant Training",
-      "datetime_iso": "2025-09-04T12:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/consultant20250904",
-      "date": "Sep 04, 2025",
-      "time": "12:00 PM",
+      "title": "Haas: Python Fundamentals (120 minutes)",
+      "datetime_iso": "2025-09-09T16:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/haaspyth20250909",
+      "date": "Sep 09, 2025",
+      "time": "04:00 PM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     },
@@ -17,6 +17,15 @@
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rdatawra20250915",
       "date": "Sep 15, 2025",
       "time": "12:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Demystifying AI",
+      "datetime_iso": "2025-09-16T10:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/demystifyi20250916",
+      "date": "Sep 16, 2025",
+      "time": "10:00 AM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     },
@@ -44,6 +53,15 @@
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/exceldata20250922",
       "date": "Sep 22, 2025",
       "time": "01:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "R Data Visualization",
+      "datetime_iso": "2025-09-22T14:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rdatavis20250922",
+      "date": "Sep 22, 2025",
+      "time": "02:00 PM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     },
@@ -84,6 +102,24 @@
       "instructor": "D-Lab Staff"
     },
     {
+      "title": "Python Fundamentals: Parts 1-3",
+      "datetime_iso": "2025-10-01T09:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonfun20251001",
+      "date": "Oct 01, 2025",
+      "time": "09:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "LLMs for Exploratory Research",
+      "datetime_iso": "2025-10-01T14:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/llmsfore20251001",
+      "date": "Oct 01, 2025",
+      "time": "02:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
       "title": "Git Fundamentals",
       "datetime_iso": "2025-10-06T14:00:00+00:00",
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/gitfundam20251006",
@@ -93,20 +129,20 @@
       "instructor": "D-Lab Staff"
     },
     {
-      "title": "MaxQDA Fundamentals",
-      "datetime_iso": "2025-10-09T13:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/maxqdafun20251009",
-      "date": "Oct 09, 2025",
+      "title": "Python APIs for Large Language Models: Parts 1-2",
+      "datetime_iso": "2025-10-07T13:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonapi20251007",
+      "date": "Oct 07, 2025",
       "time": "01:00 PM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     },
     {
-      "title": "Workshop Recording Requests",
-      "datetime_iso": "2025-12-23T16:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/workshopr20251223",
-      "date": "Dec 23, 2025",
-      "time": "04:00 PM",
+      "title": "MaxQDA Fundamentals",
+      "datetime_iso": "2025-10-09T13:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/maxqdafun20251009",
+      "date": "Oct 09, 2025",
+      "time": "01:00 PM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     }
