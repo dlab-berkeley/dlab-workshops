@@ -26,32 +26,69 @@
   {% assign difficulty_levels = "introductory,intermediate,advanced" | split: "," %}
   
   {% for level in difficulty_levels %}
+    {% comment %} Check if there are any workshops at this level first {% endcomment %}
+    {% assign level_has_workshops = false %}
     {% for workshop in site.data.workshops.workshops %}
       {% include category-match.html workshop=workshop category=include.category %}
-      {% if category_match %}
-        {% assign is_active = false %}
-        {% assign workshop_title_lower = workshop.title | downcase %}
-        
-        {% for upcoming in site.data.upcoming_workshops.workshops %}
-          {% comment %} Skip non-registrable workshop parts {% endcomment %}
-          {% if upcoming.title contains ": Part 2" or upcoming.title contains ": Part 3" or upcoming.title contains ": Part 4" or upcoming.title contains ": Part 5" or upcoming.title contains ": Part 6" %}
-            {% continue %}
-          {% endif %}
-          
-          {% assign upcoming_title_lower = upcoming.title | downcase %}
-          {% comment %} Use same flexible matching logic as before {% endcomment %}
-          {% if upcoming_title_lower == workshop_title_lower or upcoming_title_lower contains workshop_title_lower or workshop_title_lower contains upcoming_title_lower %}
-            {% assign is_active = true %}
-            {% break %}
-          {% endif %}
-        {% endfor %}
-        
-        {% comment %} Show ALL workshops of this level, pass active status to card {% endcomment %}
-        {% if workshop.level == level %}
-          {% include workshop-card.html workshop=workshop is_active=is_active %}
-        {% endif %}
+      {% if category_match and workshop.level == level %}
+        {% assign level_has_workshops = true %}
+        {% break %}
       {% endif %}
     {% endfor %}
+    
+    {% if level_has_workshops %}
+      {% comment %} Add section header for this difficulty level {% endcomment %}
+      <div class="row mb-3 mt-4">
+        <div class="col-12">
+          {% if level == 'introductory' %}
+            <h4 class="text-success mb-0">
+              <i class="fas fa-seedling"></i> Introductory Workshops
+            </h4>
+            <small class="text-muted">Perfect for beginners - no prior experience required</small>
+          {% elsif level == 'intermediate' %}
+            <h4 class="text-warning mb-0">
+              <i class="fas fa-layer-group"></i> Intermediate Workshops
+            </h4>
+            <small class="text-muted">Build on foundational knowledge with more advanced topics</small>
+          {% elsif level == 'advanced' %}
+            <h4 class="text-danger mb-0">
+              <i class="fas fa-rocket"></i> Advanced Workshops
+            </h4>
+            <small class="text-muted">Specialized topics for experienced practitioners</small>
+          {% endif %}
+        </div>
+      </div>
+      
+      {% comment %} Show workshops for this level {% endcomment %}
+      <div class="row mb-5">
+        {% for workshop in site.data.workshops.workshops %}
+          {% include category-match.html workshop=workshop category=include.category %}
+          {% if category_match %}
+            {% assign is_active = false %}
+            {% assign workshop_title_lower = workshop.title | downcase %}
+            
+            {% for upcoming in site.data.upcoming_workshops.workshops %}
+              {% comment %} Skip non-registrable workshop parts {% endcomment %}
+              {% if upcoming.title contains ": Part 2" or upcoming.title contains ": Part 3" or upcoming.title contains ": Part 4" or upcoming.title contains ": Part 5" or upcoming.title contains ": Part 6" %}
+                {% continue %}
+              {% endif %}
+              
+              {% assign upcoming_title_lower = upcoming.title | downcase %}
+              {% comment %} Use same flexible matching logic as before {% endcomment %}
+              {% if upcoming_title_lower == workshop_title_lower or upcoming_title_lower contains workshop_title_lower or workshop_title_lower contains upcoming_title_lower %}
+                {% assign is_active = true %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+            
+            {% comment %} Show ALL workshops of this level, pass active status to card {% endcomment %}
+            {% if workshop.level == level %}
+              {% include workshop-card.html workshop=workshop is_active=is_active %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
   {% endfor %}
 </div>
 
