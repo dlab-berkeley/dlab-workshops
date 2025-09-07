@@ -68,7 +68,7 @@ permalink: /available-now
                     <td>{{ session.location | default: "Online" }}</td>
                     <td>
                       {% if session.registration_url %}
-                        <a href="{{ session.registration_url }}" class="btn btn-sm btn-success" target="_blank">
+                        <a href="{{ session.registration_url }}?utm_source=workshop_catalog&utm_medium=website&utm_campaign=available_now_registration" class="btn btn-sm btn-success" target="_blank">
                           <i class="fas fa-user-plus"></i> Register
                         </a>
                       {% else %}
