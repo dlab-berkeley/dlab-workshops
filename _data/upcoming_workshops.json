@@ -1,16 +1,7 @@
 {
-  "last_updated": "2025-09-06T00:39:18.160148-07:00",
-  "total_workshops": 16,
+  "last_updated": "2025-09-06T18:14:54.912419-07:00",
+  "total_workshops": 15,
   "workshops": [
-    {
-      "title": "Haas: Python Fundamentals (120 minutes)",
-      "datetime_iso": "2025-09-09T16:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/haaspyth20250909",
-      "date": "Sep 09, 2025",
-      "time": "04:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "R Data Wrangling and Manipulation: Parts 1-2",
       "datetime_iso": "2025-09-15T12:00:00+00:00",
@@ -41,7 +32,7 @@
     {
       "title": "R Data Wrangling and Manipulation: Part 2",
       "datetime_iso": "2025-09-17T12:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rdatawra2025-09-17",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rdatawra20250917",
       "date": "Sep 17, 2025",
       "time": "12:00 PM",
       "location": "Online",
