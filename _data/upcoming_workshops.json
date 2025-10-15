@@ -1,16 +1,7 @@
 {
-  "last_updated": "2025-10-15T00:41:44.438899-07:00",
-  "total_workshops": 20,
+  "last_updated": "2025-10-15T09:14:22.438890-07:00",
+  "total_workshops": 19,
   "workshops": [
-    {
-      "title": "R Data Wrangling and Manipulation: Parts 1-2",
-      "datetime_iso": "2025-10-14T14:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rdatawra20251014",
-      "date": "Oct 14, 2025",
-      "time": "02:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "Python Fundamentals: Parts 4-6",
       "datetime_iso": "2025-10-15T13:00:00+00:00",
@@ -39,18 +30,18 @@
       "instructor": "D-Lab Staff"
     },
     {
-      "title": "R SQL Fundamentals",
+      "title": "R Data Wrangling and Manipulation: Part 2",
       "datetime_iso": "2025-10-16T14:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rsqlfund20251016",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rdatawra20251016",
       "date": "Oct 16, 2025",
       "time": "02:00 PM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     },
     {
-      "title": "R Data Wrangling and Manipulation: Part 2",
+      "title": "R SQL Fundamentals",
       "datetime_iso": "2025-10-16T14:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rdatawra20251016",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rsqlfund20251016",
       "date": "Oct 16, 2025",
       "time": "02:00 PM",
       "location": "Online",
