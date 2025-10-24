@@ -1,22 +1,22 @@
 {
-  "last_updated": "2025-10-23T00:41:43.957909-07:00",
+  "last_updated": "2025-10-24T00:40:04.273031-07:00",
   "total_workshops": 9,
   "workshops": [
-    {
-      "title": "Python Data Visualization: Parts 1-2",
-      "datetime_iso": "2025-10-22T09:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythondat20251022",
-      "date": "Oct 22, 2025",
-      "time": "09:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "Command Line Fundamentals",
       "datetime_iso": "2025-10-23T10:00:00+00:00",
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/commandli20251023",
       "date": "Oct 23, 2025",
       "time": "10:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Python Data Visualization: Part 2",
+      "datetime_iso": "2025-10-27T09:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythondat20251027",
+      "date": "Oct 27, 2025",
+      "time": "09:00 AM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     },
