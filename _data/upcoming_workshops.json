@@ -1,16 +1,7 @@
 {
-  "last_updated": "2025-10-24T00:40:04.273031-07:00",
-  "total_workshops": 9,
+  "last_updated": "2025-10-25T00:38:49.873824-07:00",
+  "total_workshops": 10,
   "workshops": [
-    {
-      "title": "Command Line Fundamentals",
-      "datetime_iso": "2025-10-23T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/commandli20251023",
-      "date": "Oct 23, 2025",
-      "time": "10:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "Python Data Visualization: Part 2",
       "datetime_iso": "2025-10-27T09:00:00+00:00",
@@ -80,6 +71,24 @@
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/githubfun20251106",
       "date": "Nov 06, 2025",
       "time": "10:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Python Deep Learning",
+      "datetime_iso": "2025-11-13T09:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythondee20251113",
+      "date": "Nov 13, 2025",
+      "time": "09:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Python Fundamentals: Parts 1-3",
+      "datetime_iso": "2025-12-08T12:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonfun20251208",
+      "date": "Dec 08, 2025",
+      "time": "12:00 PM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     }
