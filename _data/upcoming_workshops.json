@@ -1,25 +1,7 @@
 {
-  "last_updated": "2025-10-27T00:41:07.500059-07:00",
-  "total_workshops": 11,
+  "last_updated": "2025-10-29T00:41:49.112237-07:00",
+  "total_workshops": 9,
   "workshops": [
-    {
-      "title": "Python Data Visualization: Part 2",
-      "datetime_iso": "2025-10-27T09:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythondat20251027",
-      "date": "Oct 27, 2025",
-      "time": "09:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
-    {
-      "title": "Getting Started With AI",
-      "datetime_iso": "2025-10-27T15:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/gettingst20251027",
-      "date": "Oct 27, 2025",
-      "time": "03:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "R Geospatial Fundamentals: Parts 1-2",
       "datetime_iso": "2025-10-28T14:00:00+00:00",
