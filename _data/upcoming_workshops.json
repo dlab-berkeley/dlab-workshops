@@ -1,16 +1,7 @@
 {
-  "last_updated": "2025-10-30T00:40:18.246269-07:00",
-  "total_workshops": 9,
+  "last_updated": "2025-10-31T00:40:16.151360-07:00",
+  "total_workshops": 8,
   "workshops": [
-    {
-      "title": "Qualtrics Fundamentals",
-      "datetime_iso": "2025-10-29T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/qualtrics20251029",
-      "date": "Oct 29, 2025",
-      "time": "10:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "R Geospatial Fundamentals: Part 2",
       "datetime_iso": "2025-10-30T14:00:00+00:00",
