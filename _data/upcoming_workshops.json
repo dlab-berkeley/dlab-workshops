@@ -1,16 +1,7 @@
 {
-  "last_updated": "2025-11-03T23:41:57.516311-08:00",
-  "total_workshops": 7,
+  "last_updated": "2025-11-04T23:41:58.333585-08:00",
+  "total_workshops": 6,
   "workshops": [
-    {
-      "title": "Python Data Wrangling and Manipulation with Pandas",
-      "datetime_iso": "2025-11-03T14:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythondat20251103",
-      "date": "Nov 03, 2025",
-      "time": "02:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "Institutional Review Board (IRB) Fundamentals",
       "datetime_iso": "2025-11-04T12:00:00+00:00",
