@@ -1,16 +1,7 @@
 {
-  "last_updated": "2025-11-04T23:41:58.333585-08:00",
-  "total_workshops": 6,
+  "last_updated": "2025-11-05T23:40:45.005265-08:00",
+  "total_workshops": 8,
   "workshops": [
-    {
-      "title": "Institutional Review Board (IRB) Fundamentals",
-      "datetime_iso": "2025-11-04T12:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/institutio20251104",
-      "date": "Nov 04, 2025",
-      "time": "12:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "R Census Data Fundamentals",
       "datetime_iso": "2025-11-05T09:00:00+00:00",
@@ -34,6 +25,33 @@
       "datetime_iso": "2025-11-13T09:00:00+00:00",
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythondee20251113",
       "date": "Nov 13, 2025",
+      "time": "09:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "AI Chats at D-Lab",
+      "datetime_iso": "2025-11-17T15:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/aichatsa20251117",
+      "date": "Nov 17, 2025",
+      "time": "03:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "AI-Assisted Coding In R",
+      "datetime_iso": "2025-11-18T09:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/aiassiste20251118",
+      "date": "Nov 18, 2025",
+      "time": "09:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "AI-Assisted Coding In Python",
+      "datetime_iso": "2025-11-20T09:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/aiassiste20251120",
+      "date": "Nov 20, 2025",
       "time": "09:00 AM",
       "location": "Online",
       "instructor": "D-Lab Staff"
