@@ -1,16 +1,7 @@
 {
-  "last_updated": "2025-11-06T23:41:19.692174-08:00",
-  "total_workshops": 7,
+  "last_updated": "2025-11-07T23:38:49.803201-08:00",
+  "total_workshops": 6,
   "workshops": [
-    {
-      "title": "Github Fundamentals",
-      "datetime_iso": "2025-11-06T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/githubfun20251106",
-      "date": "Nov 06, 2025",
-      "time": "10:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "Python Deep Learning",
       "datetime_iso": "2025-11-13T09:00:00+00:00",
