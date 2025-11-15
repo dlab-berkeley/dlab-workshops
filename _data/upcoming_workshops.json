@@ -1,16 +1,7 @@
 {
-  "last_updated": "2025-11-13T23:41:35.870493-08:00",
-  "total_workshops": 6,
+  "last_updated": "2025-11-14T23:38:30.576776-08:00",
+  "total_workshops": 5,
   "workshops": [
-    {
-      "title": "Python Deep Learning",
-      "datetime_iso": "2025-11-13T09:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythondee20251113",
-      "date": "Nov 13, 2025",
-      "time": "09:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "AI Chats at D-Lab",
       "datetime_iso": "2025-11-17T15:00:00+00:00",
