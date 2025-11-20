@@ -1,16 +1,7 @@
 {
-  "last_updated": "2025-11-18T23:42:09.545084-08:00",
-  "total_workshops": 4,
+  "last_updated": "2025-11-19T23:41:27.183341-08:00",
+  "total_workshops": 3,
   "workshops": [
-    {
-      "title": "AI-Assisted Coding In R",
-      "datetime_iso": "2025-11-18T09:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/aiassiste20251118",
-      "date": "Nov 18, 2025",
-      "time": "09:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "AI-Assisted Coding In Python",
       "datetime_iso": "2025-11-20T09:00:00+00:00",
