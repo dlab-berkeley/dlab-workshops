@@ -1,16 +1,7 @@
 {
-  "last_updated": "2025-11-20T23:41:22.291705-08:00",
+  "last_updated": "2025-11-21T23:39:08.424758-08:00",
   "total_workshops": 3,
   "workshops": [
-    {
-      "title": "AI-Assisted Coding In Python",
-      "datetime_iso": "2025-11-20T09:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/aiassiste20251120",
-      "date": "Nov 20, 2025",
-      "time": "09:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "R Fundamentals: Parts 1-4",
       "datetime_iso": "2025-12-08T09:00:00+00:00",
@@ -26,6 +17,15 @@
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonfun20251208",
       "date": "Dec 08, 2025",
       "time": "12:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Vibe Coding for Research",
+      "datetime_iso": "2025-12-11T11:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/vibecodin20251211",
+      "date": "Dec 11, 2025",
+      "time": "11:00 AM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     }
