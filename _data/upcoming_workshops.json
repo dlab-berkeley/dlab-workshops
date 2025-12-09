@@ -1,6 +1,6 @@
 {
-  "last_updated": "2025-12-07T23:44:46.759420-08:00",
-  "total_workshops": 3,
+  "last_updated": "2025-12-08T23:43:39.332351-08:00",
+  "total_workshops": 8,
   "workshops": [
     {
       "title": "R Fundamentals: Parts 1-4",
@@ -17,6 +17,51 @@
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonfun20251208",
       "date": "Dec 08, 2025",
       "time": "12:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "R Fundamentals: Part 2",
+      "datetime_iso": "2025-12-09T09:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20251209",
+      "date": "Dec 09, 2025",
+      "time": "09:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Python Fundamentals: Part 2",
+      "datetime_iso": "2025-12-09T12:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonfun20251209",
+      "date": "Dec 09, 2025",
+      "time": "12:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "R Fundamentals: Part 3",
+      "datetime_iso": "2025-12-10T09:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20251210",
+      "date": "Dec 10, 2025",
+      "time": "09:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Python Fundamentals: Part 3",
+      "datetime_iso": "2025-12-10T12:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonfun20251210",
+      "date": "Dec 10, 2025",
+      "time": "12:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "R Fundamentals: Part 4",
+      "datetime_iso": "2025-12-11T09:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20251211",
+      "date": "Dec 11, 2025",
+      "time": "09:00 AM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     },
