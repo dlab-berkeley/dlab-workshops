@@ -1,29 +1,11 @@
 {
-  "last_updated": "2025-12-09T23:44:48.605312-08:00",
-  "total_workshops": 6,
+  "last_updated": "2025-12-10T23:44:36.193592-08:00",
+  "total_workshops": 4,
   "workshops": [
-    {
-      "title": "R Fundamentals: Part 2",
-      "datetime_iso": "2025-12-09T09:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20251209",
-      "date": "Dec 09, 2025",
-      "time": "09:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
-    {
-      "title": "Python Fundamentals: Part 2",
-      "datetime_iso": "2025-12-09T12:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonfun20251209",
-      "date": "Dec 09, 2025",
-      "time": "12:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "R Fundamentals: Part 3",
       "datetime_iso": "2025-12-10T09:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20251210",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen2025-12-10",
       "date": "Dec 10, 2025",
       "time": "09:00 AM",
       "location": "Online",
@@ -41,7 +23,7 @@
     {
       "title": "R Fundamentals: Part 4",
       "datetime_iso": "2025-12-11T09:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20251211",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen2025-12-11",
       "date": "Dec 11, 2025",
       "time": "09:00 AM",
       "location": "Online",
