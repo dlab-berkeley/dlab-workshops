@@ -1,24 +1,5 @@
 {
-  "last_updated": "2025-12-11T23:44:00.623787-08:00",
-  "total_workshops": 2,
-  "workshops": [
-    {
-      "title": "R Fundamentals: Part 4",
-      "datetime_iso": "2025-12-11T09:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20251211",
-      "date": "Dec 11, 2025",
-      "time": "09:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
-    {
-      "title": "Vibe Coding for Research",
-      "datetime_iso": "2025-12-11T11:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/vibecodin20251211",
-      "date": "Dec 11, 2025",
-      "time": "11:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    }
-  ]
+  "last_updated": "2025-12-12T23:41:07.472161-08:00",
+  "total_workshops": 0,
+  "workshops": []
 }
