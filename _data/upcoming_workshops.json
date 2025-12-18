@@ -1,6 +1,6 @@
 {
-  "last_updated": "2025-12-16T23:44:19.450873-08:00",
-  "total_workshops": 2,
+  "last_updated": "2025-12-17T23:43:49.335097-08:00",
+  "total_workshops": 8,
   "workshops": [
     {
       "title": "Python Fundamentals: Parts 1-3",
@@ -12,11 +12,65 @@
       "instructor": "D-Lab Staff"
     },
     {
+      "title": "R Fundamentals: Parts 1-4",
+      "datetime_iso": "2026-01-13T12:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20260113",
+      "date": "Jan 13, 2026",
+      "time": "12:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
       "title": "Vibe Coding for Research",
       "datetime_iso": "2026-01-13T15:00:00+00:00",
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/vibecodin2026-01-13",
       "date": "Jan 13, 2026",
       "time": "03:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "D-Lab AI Pulse (In Person)",
+      "datetime_iso": "2026-01-27T15:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/dlabaip20260127",
+      "date": "Jan 27, 2026",
+      "time": "03:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "D-Lab Setup Sessions: Python + AI Tools (In Person Only)",
+      "datetime_iso": "2026-01-28T14:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/dlabsetu20260128",
+      "date": "Jan 28, 2026",
+      "time": "02:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Command Line Fundamentals",
+      "datetime_iso": "2026-01-29T10:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/commandli20260129",
+      "date": "Jan 29, 2026",
+      "time": "10:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "R Geospatial Fundamentals: Parts 1-2",
+      "datetime_iso": "2026-02-03T08:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rgeospati20260203",
+      "date": "Feb 03, 2026",
+      "time": "08:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Python APIs for Large Language Models: Parts 1-2",
+      "datetime_iso": "2026-02-03T14:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonapi20260203",
+      "date": "Feb 03, 2026",
+      "time": "02:00 PM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     }
