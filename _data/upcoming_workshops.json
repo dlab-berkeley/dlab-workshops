@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-12-18T23:43:11.506377-08:00",
+  "last_updated": "2025-12-19T23:40:12.497327-08:00",
   "total_workshops": 10,
   "workshops": [
     {
@@ -59,7 +59,7 @@
     {
       "title": "D-Lab Setup Sessions: Python + AI Tools (In Person Only)",
       "datetime_iso": "2026-01-28T14:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/d-labsetu2026-01-28",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/dlabsetu20260128",
       "date": "Jan 28, 2026",
       "time": "02:00 PM",
       "location": "Online",
