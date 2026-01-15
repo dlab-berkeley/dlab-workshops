@@ -1,31 +1,31 @@
 {
-  "last_updated": "2026-01-13T23:46:59.774757-08:00",
-  "total_workshops": 17,
+  "last_updated": "2026-01-14T23:46:45.339788-08:00",
+  "total_workshops": 19,
   "workshops": [
     {
-      "title": "R Fundamentals: Parts 1-4",
-      "datetime_iso": "2026-01-13T12:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20260113",
-      "date": "Jan 13, 2026",
+      "title": "R Fundamentals: Part 2",
+      "datetime_iso": "2026-01-14T12:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20260114",
+      "date": "Jan 14, 2026",
       "time": "12:00 PM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     },
     {
-      "title": "Excel Data Analysis: Introduction",
-      "datetime_iso": "2026-01-13T14:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/exceldata20260113",
-      "date": "Jan 13, 2026",
-      "time": "02:00 PM",
+      "title": "Python Fundamentals: Part 2",
+      "datetime_iso": "2026-01-15T09:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonfun20260115",
+      "date": "Jan 15, 2026",
+      "time": "09:00 AM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     },
     {
-      "title": "Vibe Coding for Research",
-      "datetime_iso": "2026-01-13T15:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/vibecodin20260113",
-      "date": "Jan 13, 2026",
-      "time": "03:00 PM",
+      "title": "R Fundamentals: Part 3",
+      "datetime_iso": "2026-01-15T12:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20260115",
+      "date": "Jan 15, 2026",
+      "time": "12:00 PM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     },
@@ -35,6 +35,24 @@
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/exceldata20260115",
       "date": "Jan 15, 2026",
       "time": "02:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Python Fundamentals: Part 3",
+      "datetime_iso": "2026-01-16T09:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonfun20260116",
+      "date": "Jan 16, 2026",
+      "time": "09:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "R Fundamentals: Part 4",
+      "datetime_iso": "2026-01-16T12:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20260116",
+      "date": "Jan 16, 2026",
+      "time": "12:00 PM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     },
