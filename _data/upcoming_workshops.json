@@ -1,34 +1,7 @@
 {
-  "last_updated": "2026-01-15T23:46:22.860721-08:00",
-  "total_workshops": 18,
+  "last_updated": "2026-01-16T23:41:22.143237-08:00",
+  "total_workshops": 15,
   "workshops": [
-    {
-      "title": "Python Fundamentals: Part 2",
-      "datetime_iso": "2026-01-15T09:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonfun20260115",
-      "date": "Jan 15, 2026",
-      "time": "09:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
-    {
-      "title": "R Fundamentals: Part 3",
-      "datetime_iso": "2026-01-15T12:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20260115",
-      "date": "Jan 15, 2026",
-      "time": "12:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
-    {
-      "title": "Excel Data Analysis: Charts, Pivot Tables, and VLOOKUP",
-      "datetime_iso": "2026-01-15T14:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/exceldata20260115",
-      "date": "Jan 15, 2026",
-      "time": "02:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "Python Fundamentals: Part 3",
       "datetime_iso": "2026-01-16T09:00:00+00:00",
