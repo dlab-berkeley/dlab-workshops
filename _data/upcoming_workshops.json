@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-01-20T23:51:04.775049-08:00",
-  "total_workshops": 13,
+  "last_updated": "2026-01-21T23:49:53.910937-08:00",
+  "total_workshops": 18,
   "workshops": [
     {
       "title": "D-Lab AI Pulse (In Person)",
@@ -115,6 +115,51 @@
       "datetime_iso": "2026-02-12T13:00:00+00:00",
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/aiassiste20260212",
       "date": "Feb 12, 2026",
+      "time": "01:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Python Fundamentals: Parts 4-6",
+      "datetime_iso": "2026-02-17T10:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonfun20260217",
+      "date": "Feb 17, 2026",
+      "time": "10:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Python GPT Fundamentals",
+      "datetime_iso": "2026-02-17T15:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythongpt20260217",
+      "date": "Feb 17, 2026",
+      "time": "03:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "D-Lab Setup Sessions: R + AI Tools (In Person Only)",
+      "datetime_iso": "2026-02-18T10:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/dlabsetu20260218",
+      "date": "Feb 18, 2026",
+      "time": "10:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "R Fundamentals: Parts 1-4",
+      "datetime_iso": "2026-02-18T10:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20260218",
+      "date": "Feb 18, 2026",
+      "time": "10:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Python Data Visualization: Parts 1-2",
+      "datetime_iso": "2026-02-18T13:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythondat20260218",
+      "date": "Feb 18, 2026",
       "time": "01:00 PM",
       "location": "Online",
       "instructor": "D-Lab Staff"
