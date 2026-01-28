@@ -21,8 +21,7 @@
     <p class="text-muted">Browse all available workshops. <span class="text-success"><i class="fas fa-circle"></i> Green dots</span> indicate workshops with upcoming sessions.</p>
   </div>
 </div>
-<div class="row">
-  {% comment %} Sort by difficulty: introductory, intermediate, advanced {% endcomment %}
+{% comment %} Sort by difficulty: introductory, intermediate, advanced {% endcomment %}
   {% assign difficulty_levels = "introductory,intermediate,advanced" | split: "," %}
   
   {% for level in difficulty_levels %}
@@ -90,7 +89,6 @@
       </div>
     {% endif %}
   {% endfor %}
-</div>
 
 {% comment %} Add pathway button at the bottom if show_pathways is true {% endcomment %}
 {% if show_pathways and include.pathway_url and include.pathway_title %}
