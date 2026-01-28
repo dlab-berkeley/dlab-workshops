@@ -51,7 +51,7 @@ title: D-Lab Workshop Catalog
     {% assign python_count = 0 %}
     {% assign r_count = 0 %}
     {% assign ai_count = 0 %}
-    {% assign sql_count = 0 %}
+    {% assign excel_count = 0 %}
     {% assign qualitative_count = 0 %}
     {% assign other_count = 0 %}
     
@@ -89,12 +89,12 @@ title: D-Lab Workshop Catalog
         {% endfor %}
       {% endif %}
 
-      {% if workshop.category == 'sql' %}
-        {% assign sql_count = sql_count | plus: 1 %}
-      {% elsif workshop.category contains 'sql' and workshop.category.size > 1 %}
+      {% if workshop.category == 'excel' %}
+        {% assign excel_count = excel_count | plus: 1 %}
+      {% elsif workshop.category contains 'excel' and workshop.category.size > 1 %}
         {% for cat in workshop.category %}
-          {% if cat == 'sql' %}
-            {% assign sql_count = sql_count | plus: 1 %}
+          {% if cat == 'excel' %}
+            {% assign excel_count = excel_count | plus: 1 %}
             {% break %}
           {% endif %}
         {% endfor %}
@@ -160,12 +160,12 @@ title: D-Lab Workshop Catalog
     </div>
 
     <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
-      <a href="sql.html" class="text-decoration-none">
+      <a href="excel.html" class="text-decoration-none">
         <div class="card category-card h-100 text-center">
           <div class="card-body d-flex flex-column justify-content-center">
-            <i class="fas fa-database category-icon mb-2" style="color: #336791;"></i>
-            <h5 class="card-title">SQL</h5>
-            <span class="badge badge-secondary">{{ sql_count }} workshops</span>
+            <i class="fas fa-file-excel category-icon mb-2" style="color: #217346;"></i>
+            <h5 class="card-title">Excel</h5>
+            <span class="badge badge-secondary">{{ excel_count }} workshops</span>
           </div>
         </div>
       </a>
@@ -188,7 +188,7 @@ title: D-Lab Workshop Catalog
         <div class="card category-card h-100 text-center">
           <div class="card-body d-flex flex-column justify-content-center">
             <i class="fas fa-tools category-icon mb-2" style="color: #6c757d;"></i>
-            <h5 class="card-title">Other</h5>
+            <h5 class="card-title">Other Tools</h5>
             <span class="badge badge-dark">{{ other_count }} workshops</span>
           </div>
         </div>

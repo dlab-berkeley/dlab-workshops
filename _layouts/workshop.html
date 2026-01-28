@@ -69,10 +69,12 @@ layout: default
                   <i class="fab fa-r-project"></i> R
                 {% elsif cat == 'ai' %}
                   <i class="fas fa-brain"></i> AI
-                {% elsif cat == 'sql' %}
-                  <i class="fas fa-database"></i> SQL
+                {% elsif cat == 'excel' %}
+                  <i class="fas fa-file-excel"></i> Excel
                 {% elsif cat == 'qualitative' %}
                   <i class="fas fa-comments"></i> Qualitative
+                {% elsif cat == 'other' %}
+                  <i class="fas fa-tools"></i> Other Tools
                 {% else %}
                   <i class="fas fa-cog"></i> {{ cat | capitalize }}
                 {% endif %}

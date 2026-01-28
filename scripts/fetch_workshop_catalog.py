@@ -156,7 +156,7 @@ def parse_workshop_catalog(raw_data: List[Dict]) -> List[Dict]:
     Parse and transform raw Google Sheets data into workshop catalog format
     Expected columns:
     - Workshop_Name__c: Workshop title
-    - Category__c: Primary category (python, r, ai, sql, qualitative, other)
+    - Category__c: Primary category (python, r, ai, excel, qualitative, other)
     - Secondary_Category__c: Secondary category (optional)
     - Description__c: Full description of the workshop and its learning goals
     - Duration_min__c: Duration in minutes
@@ -174,9 +174,9 @@ def parse_workshop_catalog(raw_data: List[Dict]) -> List[Dict]:
         'Python': 'python',
         'R Programming': 'r',
         'AI': 'ai',
-        'SQL': 'sql',
+        'Excel': 'excel',
         'Qualitative': 'qualitative',
-        'Other': 'other'
+        'Other Tools': 'other'
     }
     
     for row in raw_data:

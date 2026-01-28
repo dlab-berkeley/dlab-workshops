@@ -54,6 +54,12 @@
   display: block;
 }
 
+/* Excel icon */
+.excel-icon::before {
+  content: "\1F4CA";
+  display: block;
+}
+
 /* Alternative: Use Berkeley colors */
 .berkeley-blue {
   color: #003262;
