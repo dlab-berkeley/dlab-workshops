@@ -70,36 +70,49 @@
 
     // Normalize the card title for comparison
     const normalizedCardTitle = cardTitle.toLowerCase().trim();
-    
+    const now = new Date();
+
     // Look for exact match first (for standalone workshops)
     let match = workshopData.workshops.find(w => {
       // Skip non-registrable parts
-      if (w.title.includes(': Part 2') || w.title.includes(': Part 3') || 
-          w.title.includes(': Part 4') || w.title.includes(': Part 5') || 
+      if (w.title.includes(': Part 2') || w.title.includes(': Part 3') ||
+          w.title.includes(': Part 4') || w.title.includes(': Part 5') ||
           w.title.includes(': Part 6')) {
         return false;
       }
-      
+
+      // Skip past workshops
+      const workshopDate = new Date(w.datetime_iso);
+      if (workshopDate < now) {
+        return false;
+      }
+
       return w.title.toLowerCase().trim() === normalizedCardTitle;
     });
-    
+
     // If no exact match, try matching base titles (for multi-part workshops)
     if (!match) {
       const cardBase = cardTitle.split(': Part')[0].toLowerCase().trim();
-      
+
       match = workshopData.workshops.find(w => {
         // Skip non-registrable parts
-        if (w.title.includes(': Part 2') || w.title.includes(': Part 3') || 
-            w.title.includes(': Part 4') || w.title.includes(': Part 5') || 
+        if (w.title.includes(': Part 2') || w.title.includes(': Part 3') ||
+            w.title.includes(': Part 4') || w.title.includes(': Part 5') ||
             w.title.includes(': Part 6')) {
           return false;
         }
-        
+
+        // Skip past workshops
+        const workshopDate = new Date(w.datetime_iso);
+        if (workshopDate < now) {
+          return false;
+        }
+
         const upcomingBase = w.title.split(': Part')[0].toLowerCase().trim();
         return upcomingBase === cardBase;
       });
     }
-    
+
     return match;
   }
 
