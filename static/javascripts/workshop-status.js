@@ -200,12 +200,12 @@
     const sessionDate = new Date(workshop.datetime_iso);
     const now = new Date();
     const daysUntil = Math.floor((sessionDate - now) / (1000 * 60 * 60 * 24));
-    
-    let badgeClass = 'badge-upcoming';
+
+    let dateBadgeClass = 'badge-upcoming';
     let badgeText = `Next: ${formatDate(sessionDate)}`;
-    
+
     if (daysUntil <= 7) {
-      badgeClass = 'badge-upcoming';
+      dateBadgeClass = 'badge-upcoming';
       if (daysUntil === 0) {
         // Use the time field from the workshop data instead of converting
         badgeText = `Today at ${workshop.time}`;
@@ -214,10 +214,14 @@
         badgeText = `Tomorrow at ${workshop.time}`;
       }
     } else if (daysUntil <= 30) {
-      badgeClass = 'badge-upcoming-soon';
+      dateBadgeClass = 'badge-upcoming-soon';
     }
 
-    return `<span class="badge badge-pill ${badgeClass}">
+    // Return both "Available" badge and the date badge
+    return `<span class="badge badge-pill badge-info mb-1">
+      <i class="fas fa-calendar-check"></i> Available
+    </span>
+    <span class="badge badge-pill ${dateBadgeClass}">
       <i class="fas fa-calendar-alt"></i> ${badgeText}
     </span>`;
   }
