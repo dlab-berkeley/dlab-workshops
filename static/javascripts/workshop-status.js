@@ -205,16 +205,16 @@
     let badgeText = `Next: ${formatDate(sessionDate)}`;
 
     if (daysUntil <= 7) {
-      dateBadgeClass = 'badge-upcoming';
+      // Orange/yellow for urgent - happening soon!
+      dateBadgeClass = 'badge-upcoming-soon';
       if (daysUntil === 0) {
-        // Use the time field from the workshop data instead of converting
         badgeText = `Today at ${workshop.time}`;
       } else if (daysUntil === 1) {
-        // Use the time field from the workshop data instead of converting
         badgeText = `Tomorrow at ${workshop.time}`;
       }
-    } else if (daysUntil <= 30) {
-      dateBadgeClass = 'badge-upcoming-soon';
+    } else {
+      // Green for upcoming but not urgent
+      dateBadgeClass = 'badge-upcoming';
     }
 
     // Return both "Available" badge and the date badge
