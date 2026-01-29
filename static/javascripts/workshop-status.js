@@ -113,6 +113,28 @@
       });
     }
 
+    // If still no match, try fuzzy contains matching (like Jekyll does)
+    if (!match) {
+      match = workshopData.workshops.find(w => {
+        // Skip non-registrable parts
+        if (w.title.includes(': Part 2') || w.title.includes(': Part 3') ||
+            w.title.includes(': Part 4') || w.title.includes(': Part 5') ||
+            w.title.includes(': Part 6')) {
+          return false;
+        }
+
+        // Skip past workshops
+        const workshopDate = new Date(w.datetime_iso);
+        if (workshopDate < now) {
+          return false;
+        }
+
+        const upcomingTitle = w.title.toLowerCase().trim();
+        // Check if one contains the other (handles suffixes like "(In Person Only)")
+        return upcomingTitle.includes(normalizedCardTitle) || normalizedCardTitle.includes(upcomingTitle);
+      });
+    }
+
     return match;
   }
 
