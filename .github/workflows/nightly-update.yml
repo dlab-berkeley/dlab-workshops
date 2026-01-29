@@ -71,7 +71,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add _data/upcoming_workshops.json _data/workshops.yml workshop/
+        git add _data/upcoming_workshops.json _data/workshops.yml data/upcoming_workshops.json workshop/
         if git diff --staged --quiet; then
           echo "No workshop data changes to commit"
           echo "has_changes=false" >> $GITHUB_OUTPUT
