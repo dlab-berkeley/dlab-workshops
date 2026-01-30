@@ -1,16 +1,7 @@
 {
-  "last_updated": "2026-01-30T09:30:00.000000-08:00",
+  "last_updated": "2026-01-30T10:22:13.499238-08:00",
   "total_workshops": 15,
   "workshops": [
-    {
-      "title": "R Geospatial Fundamentals: Parts 1-2",
-      "datetime_iso": "2026-02-03T08:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rgeospati20260203",
-      "date": "Feb 03, 2026",
-      "time": "08:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "Python APIs for Large Language Models: Parts 1-2",
       "datetime_iso": "2026-02-03T14:00:00+00:00",
@@ -111,15 +102,6 @@
       "instructor": "D-Lab Staff"
     },
     {
-      "title": "D-Lab Setup Sessions: R + AI Tools (In Person Only)",
-      "datetime_iso": "2026-02-18T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/dlabsetu20260218",
-      "date": "Feb 18, 2026",
-      "time": "10:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
-    {
       "title": "R Fundamentals: Parts 1-4",
       "datetime_iso": "2026-02-18T10:00:00+00:00",
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20260218",
@@ -134,6 +116,24 @@
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythondat20260218",
       "date": "Feb 18, 2026",
       "time": "01:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Models Galore: A Field Guide to Model Specs",
+      "datetime_iso": "2026-02-19T14:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/modelsgal20260219",
+      "date": "Feb 19, 2026",
+      "time": "02:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "R Census Data Fundamentals",
+      "datetime_iso": "2026-02-23T14:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rcensusd20260223",
+      "date": "Feb 23, 2026",
+      "time": "02:00 PM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     }
