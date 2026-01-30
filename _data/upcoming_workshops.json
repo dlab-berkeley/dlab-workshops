@@ -1,34 +1,7 @@
 {
-  "last_updated": "2026-01-30T00:00:14.525071-08:00",
-  "total_workshops": 18,
+  "last_updated": "2026-01-30T09:30:00.000000-08:00",
+  "total_workshops": 15,
   "workshops": [
-    {
-      "title": "D-Lab AI Pulse (In Person)",
-      "datetime_iso": "2026-01-27T15:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/dlabaip20260127",
-      "date": "Jan 27, 2026",
-      "time": "03:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
-    {
-      "title": "D-Lab Setup Sessions: Python + AI Tools (In Person Only)",
-      "datetime_iso": "2026-01-28T14:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/dlabsetu20260128",
-      "date": "Jan 28, 2026",
-      "time": "02:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
-    {
-      "title": "Command Line Fundamentals",
-      "datetime_iso": "2026-01-29T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/commandli20260129",
-      "date": "Jan 29, 2026",
-      "time": "10:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "R Geospatial Fundamentals: Parts 1-2",
       "datetime_iso": "2026-02-03T08:00:00+00:00",

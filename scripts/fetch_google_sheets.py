@@ -176,8 +176,19 @@ def parse_workshop_data(raw_data: List[Dict]) -> List[Dict]:
     
     # Sort by date
     workshops.sort(key=lambda x: x['datetime_iso'])
-    
-    return workshops
+
+    # Filter out past workshops
+    now = datetime.now(timezone.utc)
+    future_workshops = []
+    for w in workshops:
+        workshop_dt = datetime.fromisoformat(w['datetime_iso'].replace('Z', '+00:00'))
+        if workshop_dt > now:
+            future_workshops.append(w)
+        else:
+            print(f"Filtering out past workshop: {w['title']} ({w['date']})")
+
+    print(f"Filtered {len(workshops) - len(future_workshops)} past workshops, {len(future_workshops)} remaining")
+    return future_workshops
 
 def update_upcoming_workshops(workshops: List[Dict], output_path: Path):
     """
