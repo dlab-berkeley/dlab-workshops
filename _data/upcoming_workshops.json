@@ -1,16 +1,7 @@
 {
-  "last_updated": "2026-02-03T00:01:59.662954-08:00",
+  "last_updated": "2026-02-04T00:02:51.802592-08:00",
   "total_workshops": 15,
   "workshops": [
-    {
-      "title": "Python APIs for Large Language Models: Parts 1-2",
-      "datetime_iso": "2026-02-03T14:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonapi20260203",
-      "date": "Feb 03, 2026",
-      "time": "02:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "Tableau Fundamentals",
       "datetime_iso": "2026-02-04T13:00:00+00:00",
@@ -125,6 +116,15 @@
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/modelsgal20260219",
       "date": "Feb 19, 2026",
       "time": "02:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Vibe Coding for Research",
+      "datetime_iso": "2026-02-19T16:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/vibecodin20260219",
+      "date": "Feb 19, 2026",
+      "time": "04:00 PM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     },
