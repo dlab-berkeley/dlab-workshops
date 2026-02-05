@@ -1,13 +1,13 @@
 {
-  "last_updated": "2026-02-04T00:02:51.802592-08:00",
+  "last_updated": "2026-02-05T00:03:50.926126-08:00",
   "total_workshops": 15,
   "workshops": [
     {
-      "title": "Tableau Fundamentals",
-      "datetime_iso": "2026-02-04T13:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/tableaufu20260204",
-      "date": "Feb 04, 2026",
-      "time": "01:00 PM",
+      "title": "Python APIs for Large Language Models: Part 2",
+      "datetime_iso": "2026-02-05T14:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonapi20260205",
+      "date": "Feb 05, 2026",
+      "time": "02:00 PM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     },
