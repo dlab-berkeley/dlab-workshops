@@ -1,40 +1,13 @@
 {
-  "last_updated": "2026-02-11T00:07:00.147388-08:00",
-  "total_workshops": 10,
+  "last_updated": "2026-02-12T00:04:13.090572-08:00",
+  "total_workshops": 8,
   "workshops": [
-    {
-      "title": "R Data Visualization",
-      "datetime_iso": "2026-02-11T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rdatavis20260211",
-      "date": "Feb 11, 2026",
-      "time": "10:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
-    {
-      "title": "Qualtrics Fundamentals",
-      "datetime_iso": "2026-02-11T14:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/qualtrics20260211",
-      "date": "Feb 11, 2026",
-      "time": "02:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "AI-Assisted Coding In R",
       "datetime_iso": "2026-02-12T13:00:00+00:00",
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/aiassiste20260212",
       "date": "Feb 12, 2026",
       "time": "01:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
-    {
-      "title": "Python Fundamentals: Parts 4-6",
-      "datetime_iso": "2026-02-17T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonfun20260217",
-      "date": "Feb 17, 2026",
-      "time": "10:00 AM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     },
@@ -62,6 +35,15 @@
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythondat20260218",
       "date": "Feb 18, 2026",
       "time": "01:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Python Fundamentals: Parts 4-6",
+      "datetime_iso": "2026-02-19T10:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonfun20260219",
+      "date": "Feb 19, 2026",
+      "time": "10:00 AM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     },
