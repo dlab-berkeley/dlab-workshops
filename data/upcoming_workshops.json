@@ -1,16 +1,7 @@
 {
-  "last_updated": "2026-02-12T00:04:13.090572-08:00",
-  "total_workshops": 8,
+  "last_updated": "2026-02-13T00:04:46.493327-08:00",
+  "total_workshops": 19,
   "workshops": [
-    {
-      "title": "AI-Assisted Coding In R",
-      "datetime_iso": "2026-02-12T13:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/aiassiste20260212",
-      "date": "Feb 12, 2026",
-      "time": "01:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "Python GPT Fundamentals",
       "datetime_iso": "2026-02-17T15:00:00+00:00",
@@ -70,6 +61,114 @@
       "datetime_iso": "2026-02-23T14:00:00+00:00",
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rcensusd20260223",
       "date": "Feb 23, 2026",
+      "time": "02:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "R SQL Fundamentals",
+      "datetime_iso": "2026-02-24T10:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rsqlfund20260224",
+      "date": "Feb 24, 2026",
+      "time": "10:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Local LLMs for Research",
+      "datetime_iso": "2026-02-24T14:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/localllms20260224",
+      "date": "Feb 24, 2026",
+      "time": "02:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "D-Lab AI Pulse (In Person)",
+      "datetime_iso": "2026-02-24T15:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/dlabaip20260224",
+      "date": "Feb 24, 2026",
+      "time": "03:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Github Fundamentals",
+      "datetime_iso": "2026-02-25T10:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/githubfun20260225",
+      "date": "Feb 25, 2026",
+      "time": "10:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "R Data Wrangling with Tidyverse: Parts 1-2",
+      "datetime_iso": "2026-03-02T10:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rdatawra20260302",
+      "date": "Mar 02, 2026",
+      "time": "10:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Command Line Fundamentals",
+      "datetime_iso": "2026-03-02T11:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/commandli20260302",
+      "date": "Mar 02, 2026",
+      "time": "11:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Excel Data Analysis: Introduction",
+      "datetime_iso": "2026-03-02T14:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/exceldata20260302",
+      "date": "Mar 02, 2026",
+      "time": "02:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "R Machine Learning with tidymodels: Parts 1-2",
+      "datetime_iso": "2026-03-03T10:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rmachine20260303",
+      "date": "Mar 03, 2026",
+      "time": "10:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Python Fundamentals: Parts 1-3",
+      "datetime_iso": "2026-03-03T13:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonfun20260303",
+      "date": "Mar 03, 2026",
+      "time": "01:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Demystifying AI",
+      "datetime_iso": "2026-03-03T14:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/demystifyi20260303",
+      "date": "Mar 03, 2026",
+      "time": "02:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Institutional Review Board (IRB) Fundamentals",
+      "datetime_iso": "2026-03-04T10:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/institutio20260304",
+      "date": "Mar 04, 2026",
+      "time": "10:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Excel Data Analysis: Charts, Pivot Tables, and VLOOKUP",
+      "datetime_iso": "2026-03-04T14:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/exceldata20260304",
+      "date": "Mar 04, 2026",
       "time": "02:00 PM",
       "location": "Online",
       "instructor": "D-Lab Staff"
