@@ -1,25 +1,7 @@
 {
-  "last_updated": "2026-02-18T00:04:58.108260-08:00",
-  "total_workshops": 18,
+  "last_updated": "2026-02-19T00:04:10.804375-08:00",
+  "total_workshops": 16,
   "workshops": [
-    {
-      "title": "R Fundamentals: Parts 1-4",
-      "datetime_iso": "2026-02-18T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20260218",
-      "date": "Feb 18, 2026",
-      "time": "10:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
-    {
-      "title": "Python Data Visualization: Parts 1-2",
-      "datetime_iso": "2026-02-18T13:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythondat20260218",
-      "date": "Feb 18, 2026",
-      "time": "01:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "Python Fundamentals: Parts 4-6",
       "datetime_iso": "2026-02-19T10:00:00+00:00",
