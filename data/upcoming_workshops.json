@@ -1,25 +1,7 @@
 {
-  "last_updated": "2026-02-20T00:03:22.645726-08:00",
-  "total_workshops": 19,
+  "last_updated": "2026-02-20T23:53:12.137964-08:00",
+  "total_workshops": 17,
   "workshops": [
-    {
-      "title": "R Fundamentals: Part 2",
-      "datetime_iso": "2026-02-20T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20260220",
-      "date": "Feb 20, 2026",
-      "time": "10:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
-    {
-      "title": "Python Data Visualization: Part 2",
-      "datetime_iso": "2026-02-20T13:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythondat20260220",
-      "date": "Feb 20, 2026",
-      "time": "01:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "R Census Data Fundamentals",
       "datetime_iso": "2026-02-23T14:00:00+00:00",
@@ -66,18 +48,18 @@
       "instructor": "D-Lab Staff"
     },
     {
-      "title": "R Fundamentals: Part 3",
+      "title": "Github Fundamentals",
       "datetime_iso": "2026-02-25T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20260225",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/githubfun20260225",
       "date": "Feb 25, 2026",
       "time": "10:00 AM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     },
     {
-      "title": "Github Fundamentals",
+      "title": "R Fundamentals: Part 3",
       "datetime_iso": "2026-02-25T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/githubfun20260225",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20260225",
       "date": "Feb 25, 2026",
       "time": "10:00 AM",
       "location": "Online",
