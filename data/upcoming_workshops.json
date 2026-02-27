@@ -1,16 +1,7 @@
 {
-  "last_updated": "2026-02-26T00:06:19.283861-08:00",
-  "total_workshops": 21,
+  "last_updated": "2026-02-27T00:03:43.556932-08:00",
+  "total_workshops": 20,
   "workshops": [
-    {
-      "title": "Python Fundamentals: Part 6",
-      "datetime_iso": "2026-02-26T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonfun20260226",
-      "date": "Feb 26, 2026",
-      "time": "10:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "R Fundamentals: Part 4",
       "datetime_iso": "2026-02-27T10:00:00+00:00",
@@ -75,18 +66,18 @@
       "instructor": "D-Lab Staff"
     },
     {
-      "title": "Institutional Review Board (IRB) Fundamentals",
+      "title": "R Data Wrangling with Tidyverse: Part 2",
       "datetime_iso": "2026-03-04T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/institutio20260304",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rdatawra20260304",
       "date": "Mar 04, 2026",
       "time": "10:00 AM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     },
     {
-      "title": "R Data Wrangling with Tidyverse: Part 2",
+      "title": "Institutional Review Board (IRB) Fundamentals",
       "datetime_iso": "2026-03-04T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rdatawra20260304",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/institutio20260304",
       "date": "Mar 04, 2026",
       "time": "10:00 AM",
       "location": "Online",
