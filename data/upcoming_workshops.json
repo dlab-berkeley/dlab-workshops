@@ -1,16 +1,7 @@
 {
-  "last_updated": "2026-02-27T00:03:43.556932-08:00",
-  "total_workshops": 20,
+  "last_updated": "2026-02-27T23:48:21.775531-08:00",
+  "total_workshops": 19,
   "workshops": [
-    {
-      "title": "R Fundamentals: Part 4",
-      "datetime_iso": "2026-02-27T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20260227",
-      "date": "Feb 27, 2026",
-      "time": "10:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "R Data Wrangling with Tidyverse: Parts 1-2",
       "datetime_iso": "2026-03-02T10:00:00+00:00",
