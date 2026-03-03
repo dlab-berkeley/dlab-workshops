@@ -1,34 +1,7 @@
 {
-  "last_updated": "2026-03-02T00:02:47.178708-08:00",
-  "total_workshops": 19,
+  "last_updated": "2026-03-03T00:01:28.948906-08:00",
+  "total_workshops": 16,
   "workshops": [
-    {
-      "title": "R Data Wrangling with Tidyverse: Parts 1-2",
-      "datetime_iso": "2026-03-02T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rdatawra20260302",
-      "date": "Mar 02, 2026",
-      "time": "10:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
-    {
-      "title": "Command Line Fundamentals",
-      "datetime_iso": "2026-03-02T11:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/commandli20260302",
-      "date": "Mar 02, 2026",
-      "time": "11:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
-    {
-      "title": "Excel Data Analysis: Introduction",
-      "datetime_iso": "2026-03-02T14:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/exceldata20260302",
-      "date": "Mar 02, 2026",
-      "time": "02:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "R Machine Learning with tidymodels: Parts 1-2",
       "datetime_iso": "2026-03-03T10:00:00+00:00",
@@ -120,7 +93,7 @@
       "instructor": "D-Lab Staff"
     },
     {
-      "title": "D-Lab AI Pulse (In Person)",
+      "title": "D-Lab AI Pulse",
       "datetime_iso": "2026-03-10T15:00:00+00:00",
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/dlabaip20260310",
       "date": "Mar 10, 2026",
@@ -165,7 +138,7 @@
       "instructor": "D-Lab Staff"
     },
     {
-      "title": "D-Lab AI Pulse (In Person)",
+      "title": "D-Lab AI Pulse",
       "datetime_iso": "2026-03-17T15:00:00+00:00",
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/dlabaip20260317",
       "date": "Mar 17, 2026",
