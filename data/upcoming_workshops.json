@@ -1,34 +1,7 @@
 {
-  "last_updated": "2026-03-03T23:59:40.962839-08:00",
-  "total_workshops": 13,
+  "last_updated": "2026-03-05T00:01:07.504972-08:00",
+  "total_workshops": 10,
   "workshops": [
-    {
-      "title": "R Data Wrangling with Tidyverse: Part 2",
-      "datetime_iso": "2026-03-04T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rdatawra20260304",
-      "date": "Mar 04, 2026",
-      "time": "10:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
-    {
-      "title": "Institutional Review Board (IRB) Fundamentals",
-      "datetime_iso": "2026-03-04T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/institutio20260304",
-      "date": "Mar 04, 2026",
-      "time": "10:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
-    {
-      "title": "Excel Data Analysis: Charts, Pivot Tables, and VLOOKUP",
-      "datetime_iso": "2026-03-04T14:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/exceldata20260304",
-      "date": "Mar 04, 2026",
-      "time": "02:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "R Machine Learning with tidymodels: Part 2",
       "datetime_iso": "2026-03-05T10:00:00+00:00",
