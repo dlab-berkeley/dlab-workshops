@@ -1,25 +1,7 @@
 {
-  "last_updated": "2026-03-05T00:01:07.504972-08:00",
-  "total_workshops": 10,
+  "last_updated": "2026-03-05T23:59:13.794492-08:00",
+  "total_workshops": 13,
   "workshops": [
-    {
-      "title": "R Machine Learning with tidymodels: Part 2",
-      "datetime_iso": "2026-03-05T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rmachine20260305",
-      "date": "Mar 05, 2026",
-      "time": "10:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
-    {
-      "title": "Python Fundamentals: Part 2",
-      "datetime_iso": "2026-03-05T13:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonfun20260305",
-      "date": "Mar 05, 2026",
-      "time": "01:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "Python Geospatial Fundamentals: Parts 1-2",
       "datetime_iso": "2026-03-09T12:00:00+00:00",
@@ -89,6 +71,51 @@
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/dlabaip20260317",
       "date": "Mar 17, 2026",
       "time": "03:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Python Machine Learning Fundamentals: Parts 1-2",
+      "datetime_iso": "2026-04-06T13:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonmac20260406",
+      "date": "Apr 06, 2026",
+      "time": "01:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Python Web Scraping",
+      "datetime_iso": "2026-04-07T10:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonweb20260407",
+      "date": "Apr 07, 2026",
+      "time": "10:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "R SQL Fundamentals",
+      "datetime_iso": "2026-04-08T10:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rsqlfund20260408",
+      "date": "Apr 08, 2026",
+      "time": "10:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Python Machine Learning Fundamentals: Part 2",
+      "datetime_iso": "2026-04-08T13:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonmac20260408",
+      "date": "Apr 08, 2026",
+      "time": "01:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Python Data Wrangling with Pandas",
+      "datetime_iso": "2026-04-10T13:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythondat20260410",
+      "date": "Apr 10, 2026",
+      "time": "01:00 PM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     }
