@@ -1,16 +1,7 @@
 {
-  "last_updated": "2026-03-09T01:03:27.492885-07:00",
-  "total_workshops": 13,
+  "last_updated": "2026-03-10T01:01:32.447585-07:00",
+  "total_workshops": 12,
   "workshops": [
-    {
-      "title": "Python Geospatial Fundamentals: Parts 1-2",
-      "datetime_iso": "2026-03-09T12:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythongeo20260309",
-      "date": "Mar 09, 2026",
-      "time": "12:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "Python Fundamentals: Part 3",
       "datetime_iso": "2026-03-10T13:00:00+00:00",
