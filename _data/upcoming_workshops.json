@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-03-12T01:02:40.313992-07:00",
-  "total_workshops": 7,
+  "last_updated": "2026-03-13T01:01:51.545501-07:00",
+  "total_workshops": 10,
   "workshops": [
     {
       "title": "R Data Visualization",
@@ -12,10 +12,19 @@
       "instructor": "D-Lab Staff"
     },
     {
-      "title": "D-Lab AI Pulse",
+      "title": "AI Tools for Faculty & GSI Classroom support",
       "datetime_iso": "2026-03-17T15:00:00+00:00",
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/dlabaip20260317",
       "date": "Mar 17, 2026",
+      "time": "03:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "AI Pulse: 6 Case studies using AI in research",
+      "datetime_iso": "2026-03-31T15:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/dlabaip20260331",
+      "date": "Mar 31, 2026",
       "time": "03:00 PM",
       "location": "Online",
       "instructor": "D-Lab Staff"
@@ -26,6 +35,15 @@
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonmac20260406",
       "date": "Apr 06, 2026",
       "time": "01:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "R Geospatial Fundamentals: Parts 1-2",
+      "datetime_iso": "2026-04-06T14:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rgeospati20260406",
+      "date": "Apr 06, 2026",
+      "time": "02:00 PM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     },
@@ -53,6 +71,15 @@
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonmac20260408",
       "date": "Apr 08, 2026",
       "time": "01:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "R Geospatial Fundamentals: Part 2",
+      "datetime_iso": "2026-04-08T14:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rgeospati20260205",
+      "date": "Apr 08, 2026",
+      "time": "02:00 PM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     },
