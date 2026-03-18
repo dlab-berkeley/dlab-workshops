@@ -1,25 +1,7 @@
 {
-  "last_updated": "2026-03-17T01:07:54.201689-07:00",
-  "total_workshops": 11,
+  "last_updated": "2026-03-18T01:05:58.349895-07:00",
+  "total_workshops": 9,
   "workshops": [
-    {
-      "title": "R Data Visualization",
-      "datetime_iso": "2026-03-17T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rdatavis20260317",
-      "date": "Mar 17, 2026",
-      "time": "10:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
-    {
-      "title": "AI Tools for Faculty & GSI Classroom support",
-      "datetime_iso": "2026-03-17T15:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/dlabaip20260317",
-      "date": "Mar 17, 2026",
-      "time": "03:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "AI Pulse: 6 Case studies using AI in research",
       "datetime_iso": "2026-03-31T15:00:00+00:00",
