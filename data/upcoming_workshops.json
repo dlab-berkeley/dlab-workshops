@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-19T01:03:55.601373-07:00",
+  "last_updated": "2026-03-20T01:02:07.415031-07:00",
   "total_workshops": 9,
   "workshops": [
     {
@@ -14,7 +14,7 @@
     {
       "title": "Excel Data Analysis: Charts, Pivot Tables, and VLOOKUP",
       "datetime_iso": "2026-04-01T14:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/exceldata20260401",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/exceldatadepartmental",
       "date": "Apr 01, 2026",
       "time": "02:00 PM",
       "location": "Online",
