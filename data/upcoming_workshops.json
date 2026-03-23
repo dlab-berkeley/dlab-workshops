@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-03-22T00:57:33.461416-07:00",
-  "total_workshops": 9,
+  "last_updated": "2026-03-23T01:30:50.519315-07:00",
+  "total_workshops": 15,
   "workshops": [
     {
       "title": "AI Pulse: 6 Case studies using AI in research",
@@ -80,6 +80,60 @@
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythondat20260410",
       "date": "Apr 10, 2026",
       "time": "01:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Python NLP Fundamentals: Parts 1-3",
+      "datetime_iso": "2026-04-13T14:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonnlp20260413",
+      "date": "Apr 13, 2026",
+      "time": "02:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "AI Pulse",
+      "datetime_iso": "2026-04-14T15:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/dlabaip20260414",
+      "date": "Apr 14, 2026",
+      "time": "03:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Python Deep Learning",
+      "datetime_iso": "2026-04-14T15:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythondee20260414",
+      "date": "Apr 14, 2026",
+      "time": "03:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Python NLP Fundamentals: Part 2",
+      "datetime_iso": "2026-04-15T14:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonnlp20260415",
+      "date": "Apr 15, 2026",
+      "time": "02:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Python NLP Fundamentals: Part 3",
+      "datetime_iso": "2026-04-20T14:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonnlp20260420",
+      "date": "Apr 20, 2026",
+      "time": "02:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "D-Lab AI Pulse (In Person)",
+      "datetime_iso": "2026-04-28T15:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/dlabaip20260428",
+      "date": "Apr 28, 2026",
+      "time": "03:00 PM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     }
