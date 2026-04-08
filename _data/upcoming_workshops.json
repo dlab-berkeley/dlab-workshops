@@ -1,16 +1,7 @@
 {
-  "last_updated": "2026-04-07T01:43:20.984629-07:00",
-  "total_workshops": 10,
+  "last_updated": "2026-04-08T01:42:57.662904-07:00",
+  "total_workshops": 9,
   "workshops": [
-    {
-      "title": "Python Web Scraping",
-      "datetime_iso": "2026-04-07T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonweb20260407",
-      "date": "Apr 07, 2026",
-      "time": "10:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "R SQL Fundamentals",
       "datetime_iso": "2026-04-08T10:00:00+00:00",
