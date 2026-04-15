@@ -1,25 +1,7 @@
 {
-  "last_updated": "2026-04-14T02:04:06.792937-07:00",
-  "total_workshops": 11,
+  "last_updated": "2026-04-15T02:04:29.906763-07:00",
+  "total_workshops": 9,
   "workshops": [
-    {
-      "title": "Python Deep Learning",
-      "datetime_iso": "2026-04-14T15:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythondee20260414",
-      "date": "Apr 14, 2026",
-      "time": "03:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
-    {
-      "title": "AI Pulse: Running Local LLMs",
-      "datetime_iso": "2026-04-14T15:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/dlabaip20260414",
-      "date": "Apr 14, 2026",
-      "time": "03:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "Python NLP Fundamentals: Part 2",
       "datetime_iso": "2026-04-15T14:00:00+00:00",
