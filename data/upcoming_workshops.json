@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-17T02:03:09.476648-07:00",
-  "total_workshops": 8,
+  "last_updated": "2026-04-18T01:08:35.350021-07:00",
+  "total_workshops": 9,
   "workshops": [
     {
       "title": "Python NLP Fundamentals: Part 3",
@@ -8,6 +8,15 @@
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonnlp20260420",
       "date": "Apr 20, 2026",
       "time": "02:00 PM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "D-Lab AI Pulse",
+      "datetime_iso": "2026-04-28T15:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/dlabaip20260428",
+      "date": "Apr 28, 2026",
+      "time": "03:00 PM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     },
