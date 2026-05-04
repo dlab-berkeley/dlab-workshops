@@ -1,16 +1,7 @@
 {
-  "last_updated": "2026-05-03T02:04:57.374650-07:00",
-  "total_workshops": 7,
+  "last_updated": "2026-05-04T02:37:50.334835-07:00",
+  "total_workshops": 6,
   "workshops": [
-    {
-      "title": "R Fundamentals: Parts 1-4",
-      "datetime_iso": "2026-05-04T09:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20260504",
-      "date": "May 04, 2026",
-      "time": "09:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "Python Fundamentals: Parts 1-3",
       "datetime_iso": "2026-05-04T13:00:00+00:00",
