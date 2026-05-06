@@ -1,25 +1,7 @@
 {
-  "last_updated": "2026-05-05T02:28:29.980717-07:00",
-  "total_workshops": 4,
+  "last_updated": "2026-05-06T02:42:34.678896-07:00",
+  "total_workshops": 3,
   "workshops": [
-    {
-      "title": "Python Fundamentals: Part 2",
-      "datetime_iso": "2026-05-05T13:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonfun20260505",
-      "date": "May 05, 2026",
-      "time": "01:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
-    {
-      "title": "R Fundamentals: Part 3",
-      "datetime_iso": "2026-05-06T09:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20260506",
-      "date": "May 06, 2026",
-      "time": "09:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "Python Fundamentals: Part 3",
       "datetime_iso": "2026-05-06T13:00:00+00:00",
@@ -35,6 +17,15 @@
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rfundamen20260507",
       "date": "May 07, 2026",
       "time": "09:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Test Workshop",
+      "datetime_iso": "2026-07-13T08:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/testworks20260713",
+      "date": "Jul 13, 2026",
+      "time": "08:00 AM",
       "location": "Online",
       "instructor": "D-Lab Staff"
     }
