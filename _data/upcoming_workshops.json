@@ -1,16 +1,7 @@
 {
-  "last_updated": "2026-06-09T03:46:15.526202-07:00",
-  "total_workshops": 10,
+  "last_updated": "2026-06-10T04:09:03.625560-07:00",
+  "total_workshops": 9,
   "workshops": [
-    {
-      "title": "Python SQL Fundamentals",
-      "datetime_iso": "2026-06-09T13:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonsql20260609",
-      "date": "Jun 09, 2026",
-      "time": "01:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "R Fundamentals: Part 4",
       "datetime_iso": "2026-06-11T10:00:00+00:00",
