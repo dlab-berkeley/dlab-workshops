@@ -1,16 +1,7 @@
 {
-  "last_updated": "2026-06-14T03:38:03.795012-07:00",
-  "total_workshops": 8,
+  "last_updated": "2026-06-15T06:31:18.677944-07:00",
+  "total_workshops": 7,
   "workshops": [
-    {
-      "title": "R SQL Fundamentals",
-      "datetime_iso": "2026-06-15T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/rsqlfund20260615",
-      "date": "Jun 15, 2026",
-      "time": "10:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "Python APIs for Large Language Models: Parts 1-2",
       "datetime_iso": "2026-06-16T10:00:00+00:00",
