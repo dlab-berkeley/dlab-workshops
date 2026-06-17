@@ -1,16 +1,7 @@
 {
-  "last_updated": "2026-06-16T05:26:01.556107-07:00",
-  "total_workshops": 6,
+  "last_updated": "2026-06-17T05:05:25.479396-07:00",
+  "total_workshops": 5,
   "workshops": [
-    {
-      "title": "Command Line Fundamentals",
-      "datetime_iso": "2026-06-17T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/commandli20260617",
-      "date": "Jun 17, 2026",
-      "time": "10:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "Python APIs for Large Language Models: Part 2",
       "datetime_iso": "2026-06-18T10:00:00+00:00",
