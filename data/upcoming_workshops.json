@@ -1,16 +1,7 @@
 {
-  "last_updated": "2026-06-17T05:05:25.479396-07:00",
-  "total_workshops": 5,
+  "last_updated": "2026-06-18T04:36:06.417175-07:00",
+  "total_workshops": 4,
   "workshops": [
-    {
-      "title": "Python APIs for Large Language Models: Part 2",
-      "datetime_iso": "2026-06-18T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/pythonapi20260618",
-      "date": "Jun 18, 2026",
-      "time": "10:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "Git Fundamentals",
       "datetime_iso": "2026-06-18T13:00:00+00:00",
