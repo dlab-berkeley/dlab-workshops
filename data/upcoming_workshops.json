@@ -1,16 +1,7 @@
 {
-  "last_updated": "2026-06-18T04:36:06.417175-07:00",
-  "total_workshops": 4,
+  "last_updated": "2026-06-19T04:48:49.700222-07:00",
+  "total_workshops": 3,
   "workshops": [
-    {
-      "title": "Git Fundamentals",
-      "datetime_iso": "2026-06-18T13:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/gitfundam20260618",
-      "date": "Jun 18, 2026",
-      "time": "01:00 PM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "LLMs for Exploratory Research",
       "datetime_iso": "2026-06-23T10:00:00+00:00",
