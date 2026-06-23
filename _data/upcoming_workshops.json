@@ -1,16 +1,7 @@
 {
-  "last_updated": "2026-06-22T06:11:31.516515-07:00",
-  "total_workshops": 3,
+  "last_updated": "2026-06-23T03:46:53.603883-07:00",
+  "total_workshops": 2,
   "workshops": [
-    {
-      "title": "LLMs for Exploratory Research",
-      "datetime_iso": "2026-06-23T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/llmsfore20260623",
-      "date": "Jun 23, 2026",
-      "time": "10:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "Models Galore: A Field Guide to Model Specs",
       "datetime_iso": "2026-06-25T10:00:00+00:00",
