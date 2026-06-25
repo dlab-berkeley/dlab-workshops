@@ -1,16 +1,7 @@
 {
-  "last_updated": "2026-06-24T03:33:37.076089-07:00",
-  "total_workshops": 2,
+  "last_updated": "2026-06-25T03:24:59.357761-07:00",
+  "total_workshops": 1,
   "workshops": [
-    {
-      "title": "Models Galore: A Field Guide to Model Specs",
-      "datetime_iso": "2026-06-25T10:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/modelsgal20260625",
-      "date": "Jun 25, 2026",
-      "time": "10:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "Test Workshop",
       "datetime_iso": "2026-07-13T08:00:00+00:00",
