@@ -1,16 +1,7 @@
 {
-  "last_updated": "2026-07-12T02:27:30.969337-07:00",
-  "total_workshops": 2,
+  "last_updated": "2026-07-13T03:39:27.810428-07:00",
+  "total_workshops": 1,
   "workshops": [
-    {
-      "title": "Test Workshop",
-      "datetime_iso": "2026-07-13T08:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/testworks20260713",
-      "date": "Jul 13, 2026",
-      "time": "08:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
     {
       "title": "Prompt Engineering",
       "datetime_iso": "2026-09-11T16:00:00+00:00",
