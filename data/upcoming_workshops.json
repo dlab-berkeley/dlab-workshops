@@ -1,7 +1,25 @@
 {
-  "last_updated": "2026-07-22T03:00:35.826855-07:00",
-  "total_workshops": 4,
+  "last_updated": "2026-07-23T03:00:27.556698-07:00",
+  "total_workshops": 5,
   "workshops": [
+    {
+      "title": "Test Workshop: Part 1",
+      "datetime_iso": "2026-07-24T09:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/testworks20260724",
+      "date": "Jul 24, 2026",
+      "time": "09:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
+    {
+      "title": "Test Workshop: Part 2",
+      "datetime_iso": "2026-07-25T09:00:00+00:00",
+      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/testworks20260725",
+      "date": "Jul 25, 2026",
+      "time": "09:00 AM",
+      "location": "Online",
+      "instructor": "D-Lab Staff"
+    },
     {
       "title": "Prompt Engineering",
       "datetime_iso": "2026-09-11T16:00:00+00:00",
@@ -25,15 +43,6 @@
       "datetime_iso": "2026-12-27T09:00:00+00:00",
       "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/testworks20261227",
       "date": "Dec 27, 2026",
-      "time": "09:00 AM",
-      "location": "Online",
-      "instructor": "D-Lab Staff"
-    },
-    {
-      "title": "Test Workshop: Part 1 | 2026-12-29 | evt-2026-801",
-      "datetime_iso": "2026-12-29T09:00:00+00:00",
-      "registration_url": "https://dlab.my.salesforce-sites.com/events/event/home/testworks20261229",
-      "date": "Dec 29, 2026",
       "time": "09:00 AM",
       "location": "Online",
       "instructor": "D-Lab Staff"
