@@ -226,10 +226,10 @@ def parse_workshop_catalog(raw_data: List[Dict]) -> List[Dict]:
                 # Split by semicolon and clean up each prerequisite
                 prerequisites = [prereq.strip() for prereq in prerequisite_workshops_raw.split(';') if prereq.strip()]
             
-            # Handle duration
+            # Handle duration (Sheet may store as float, e.g. "120.00")
             if duration_min:
                 try:
-                    duration_num = int(duration_min)
+                    duration_num = int(float(duration_min))
                     duration = f'{duration_num} minutes'
                 except (ValueError, TypeError):
                     # Fallback to default pattern-based duration
