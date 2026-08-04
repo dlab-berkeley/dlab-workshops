@@ -67,11 +67,6 @@
             {% assign workshop_title_lower = workshop.title | downcase %}
             
             {% for upcoming in site.data.upcoming_workshops.workshops %}
-              {% comment %} Skip non-registrable workshop parts {% endcomment %}
-              {% if upcoming.title contains ": Part 2" or upcoming.title contains ": Part 3" or upcoming.title contains ": Part 4" or upcoming.title contains ": Part 5" or upcoming.title contains ": Part 6" %}
-                {% continue %}
-              {% endif %}
-              
               {% assign upcoming_title_lower = upcoming.title | downcase %}
               {% comment %} Use same flexible matching logic as before {% endcomment %}
               {% if upcoming_title_lower == workshop_title_lower or upcoming_title_lower contains workshop_title_lower or workshop_title_lower contains upcoming_title_lower %}

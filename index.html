@@ -19,15 +19,7 @@ title: D-Lab Workshop Catalog
 
 <div class="container">
   
-  {% if site.data.upcoming_workshops.workshops.size > 0 %}
-  {% comment %} Count only registrable workshops (Part 1 or no parts) {% endcomment %}
-  {% assign registrable_count = 0 %}
-  {% for workshop in site.data.upcoming_workshops.workshops %}
-    {% unless workshop.title contains ": Part 2" or workshop.title contains ": Part 3" or workshop.title contains ": Part 4" or workshop.title contains ": Part 5" or workshop.title contains ": Part 6" %}
-      {% assign registrable_count = registrable_count | plus: 1 %}
-    {% endunless %}
-  {% endfor %}
-  
+  {% assign registrable_count = site.data.upcoming_workshops.workshops.size %}
   {% if registrable_count > 0 %}
   <div class="row justify-content-center my-4">
     <div class="col-12">
@@ -45,8 +37,7 @@ title: D-Lab Workshop Catalog
     </div>
   </div>
   {% endif %}
-  {% endif %}
-  
+
   <div class="row justify-content-center mb-4 category-row">
     {% assign python_count = 0 %}
     {% assign r_count = 0 %}

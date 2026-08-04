@@ -23,14 +23,8 @@ permalink: /available-now
         <i class="fas fa-university"></i> <strong>UC Berkeley Affiliates Only:</strong> Registration is restricted to current UC Berkeley students, staff, and faculty with valid CalNet credentials.
       </div>
       
-      {% if site.data.upcoming_workshops.workshops.size > 0 %}
-        {% comment %} Count only registrable workshops (Part 1 or no parts) {% endcomment %}
-        {% assign registrable_count = 0 %}
-        {% for workshop in site.data.upcoming_workshops.workshops %}
-          {% unless workshop.title contains ": Part 2" or workshop.title contains ": Part 3" or workshop.title contains ": Part 4" or workshop.title contains ": Part 5" or workshop.title contains ": Part 6" %}
-            {% assign registrable_count = registrable_count | plus: 1 %}
-          {% endunless %}
-        {% endfor %}
+      {% assign registrable_count = site.data.upcoming_workshops.workshops.size %}
+      {% if registrable_count > 0 %}
         <div class="alert alert-success">
           <i class="fas fa-info-circle"></i> <strong>{{ registrable_count }} sessions</strong> currently available for registration.
         </div>
@@ -57,8 +51,6 @@ permalink: /available-now
             </thead>
             <tbody>
               {% for session in site.data.upcoming_workshops.workshops %}
-                {% comment %} Only show registrable workshops (Part 1 or no parts) in the schedule {% endcomment %}
-                {% unless session.title contains ": Part 2" or session.title contains ": Part 3" or session.title contains ": Part 4" or session.title contains ": Part 5" or session.title contains ": Part 6" %}
                   <tr>
                     <td><strong><a href="{{ session.title | slugify | prepend: '/workshop/' | relative_url }}" class="text-decoration-none">{{ session.title }}</a></strong></td>
                     <td>
@@ -76,7 +68,6 @@ permalink: /available-now
                       {% endif %}
                     </td>
                   </tr>
-                {% endunless %}
               {% endfor %}
             </tbody>
           </table>

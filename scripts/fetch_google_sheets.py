@@ -94,7 +94,18 @@ def parse_workshop_data(raw_data: List[Dict]) -> List[Dict]:
             
             # Get workshop title
             title = row.get('evsprk__Event_Title__c', '').strip()
-            
+
+            # Skip test/staging workshops
+            if title.lower().startswith('test workshop'):
+                print(f"Filtering out test workshop: {title}")
+                continue
+
+            # Skip individual parts of a multi-part series; keep umbrella entries
+            # like "Parts 1-4" (": Part " matches "Part 3" but not "Parts 1-4")
+            if ': Part ' in title:
+                print(f"Filtering out individual series part: {title}")
+                continue
+
             # Parse date (format: YYYY-MM-DD)
             date_str = row.get('evsprk__Start_Date__c', '')
             if not date_str:
