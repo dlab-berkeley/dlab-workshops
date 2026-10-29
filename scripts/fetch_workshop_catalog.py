@@ -13,7 +13,6 @@ from pathlib import Path
 from typing import List, Dict, Optional
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
 
 def get_google_sheets_service():
     """
@@ -43,16 +42,13 @@ def get_google_sheets_service():
         return service
         
     except Exception as e:
-        print(f"Error creating Google Sheets service: {e}")
-        return None
+        raise RuntimeError(f"Error creating Google Sheets service: {e}") from e
 
 def fetch_google_sheet_data(sheet_id: str, range_name: str = 'A:ZZ') -> List[Dict]:
     """
     Fetch data from a Google Sheet using service account authentication
     """
     service = get_google_sheets_service()
-    if not service:
-        return []
     
     try:
         # Call the Sheets API
@@ -61,11 +57,12 @@ def fetch_google_sheet_data(sheet_id: str, range_name: str = 'A:ZZ') -> List[Dic
         values = result.get('values', [])
         
         if not values:
-            print('No data found in sheet.')
-            return []
+            raise ValueError("The catalog Sheet is empty or has no header row")
         
         # First row contains headers
         headers = values[0]
+        if 'Workshop_Name__c' not in headers:
+            raise ValueError("The catalog Sheet is missing Workshop_Name__c")
         
         # Convert rows to dictionaries
         data = []
@@ -77,12 +74,8 @@ def fetch_google_sheet_data(sheet_id: str, range_name: str = 'A:ZZ') -> List[Dic
         
         return data
         
-    except HttpError as e:
-        print(f"An error occurred accessing Google Sheets: {e}")
-        return []
     except Exception as e:
-        print(f"Error fetching Google Sheet data: {e}")
-        return []
+        raise RuntimeError(f"Error fetching Google Sheet data: {e}") from e
 
 def create_short_description(full_description: str, max_length: int = 150) -> str:
     """
@@ -327,11 +320,13 @@ def main():
     print(f"Fetching workshop catalog from Google Sheet: {sheet_id}")
     
     # Fetch data
-    raw_data = fetch_google_sheet_data(sheet_id)
-    
-    if not raw_data:
-        print("No data fetched from Google Sheet")
-        return
+    try:
+        raw_data = fetch_google_sheet_data(sheet_id)
+        if not raw_data:
+            raise RuntimeError("The catalog Sheet contains no workshop rows")
+    except RuntimeError as e:
+        print(f"{e}. Existing catalog data was not changed.", file=sys.stderr)
+        sys.exit(1)
     
     print(f"Fetched {len(raw_data)} rows from Google Sheet")
     

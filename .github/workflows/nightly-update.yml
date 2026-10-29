@@ -2,7 +2,7 @@ name: Nightly Workshop Data Update and Site Rebuild
 
 on:
   schedule:
-    # Run daily at 7:30 AM UTC (12:30 AM PST) - 26 minutes after Google Sheets update
+    # Run daily at 7:30 AM UTC, after the source Sheets refresh.
     - cron: '30 7 * * *'
   workflow_dispatch:  # Allow manual triggering
 
@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   update-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     
     steps:
     # Checkout repository
@@ -37,6 +37,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+
+    - name: Test Google Sheets failure handling
+      run: python -m unittest discover -s tests -v
     
     # Step 1: Update workshop catalog from Google Sheets (fetch definitions first)
     - name: Fetch workshop catalog from Google Sheets

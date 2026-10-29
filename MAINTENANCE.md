@@ -213,3 +213,19 @@ else:
 
 **Last Updated**: $(date '+%Y-%m-%d')
 **Maintainer**: Tom v Nuenen
+
+## Website handoff and recovery — 29 October 2026
+
+Technical owner after Tom: **TBD**. These notes supersede the older runtime/maintainer details above.
+
+- Site: https://dlab-berkeley.github.io/dlab-workshops/
+- Nightly workflow: https://github.com/dlab-berkeley/dlab-workshops/actions/workflows/nightly-update.yml
+- Catalog source: https://docs.google.com/spreadsheets/d/1YrUknesHuNO1FnckHa6VexmomDoCxP6RXwOaF_DtvVs/edit
+- Upcoming-session source: https://docs.google.com/spreadsheets/d/18ZDs00wB67STWRband7CTraIfDDfaDwLQ-PoNP0LQzY/edit
+- Runtime: nightly runner pinned to Ubuntu 24.04 with Python 3.9; upgrade Python and its pinned packages together before moving to a newer runner. Workflows use Ruby 3.4; .ruby-version specifies 3.4.1.
+- Required repository secrets: GOOGLE_WORKSHOPS_SHEET_ID, GOOGLE_SHEET_ID, GOOGLE_SERVICE_ACCOUNT_KEY. Never print or commit the key.
+- Current blocker: the shared drive explicitly blocks dlab-workshop-reader@dlab-admin.iam.gserviceaccount.com as a non-member/outside UC Berkeley. A shared-drive manager or campus administrator must approve an allowed access method before nightly imports can resume.
+- Import failures now stop the workflow and preserve stored data. A valid schedule with no upcoming sessions can still publish an empty list. Run regression checks with: python -m unittest discover -s tests -v
+- After access is restored, manually run the nightly workflow and inspect both fetch logs, data/upcoming_workshops.json (last_updated and total_workshops), and registration links on the live site. A green badge alone was insufficient with the old scripts.
+- For manual recovery, an authorized maintainer can read the production Sheets and regenerate _data/workshops.yml and both upcoming_workshops.json files, then run scripts/generate_workshop_pages.py and build Jekyll before publishing. The 29 October snapshot contains six upcoming workshop listings.
+- The incoming maintainer should disable/re-enable the scheduled workflow or edit its cron using their own GitHub account to take over scheduled-run alerts. Tom has set this repository to Ignore.

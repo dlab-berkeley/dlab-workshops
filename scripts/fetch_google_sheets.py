@@ -12,7 +12,6 @@ from pathlib import Path
 from typing import List, Dict, Optional
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
 
 def get_google_sheets_service():
     """
@@ -34,16 +33,13 @@ def get_google_sheets_service():
         return service
         
     except Exception as e:
-        print(f"Error creating Google Sheets service: {e}")
-        return None
+        raise RuntimeError(f"Error creating Google Sheets service: {e}") from e
 
 def fetch_google_sheet_data(sheet_id: str, range_name: str = 'A:Z') -> List[Dict]:
     """
     Fetch data from a Google Sheet using service account authentication
     """
     service = get_google_sheets_service()
-    if not service:
-        return []
     
     try:
         # Call the Sheets API
@@ -52,11 +48,13 @@ def fetch_google_sheet_data(sheet_id: str, range_name: str = 'A:Z') -> List[Dict
         values = result.get('values', [])
         
         if not values:
-            print('No data found in sheet.')
-            return []
+            raise ValueError("The source Sheet is empty or has no header row")
         
         # First row contains headers
         headers = values[0]
+        required = {'evsprk__Event_Title__c', 'evsprk__Start_Date__c', 'evsprk__Stage__c'}
+        if not required.issubset(headers):
+            raise ValueError("The source Sheet is missing required workshop columns")
         
         # Convert rows to dictionaries
         data = []
@@ -68,12 +66,8 @@ def fetch_google_sheet_data(sheet_id: str, range_name: str = 'A:Z') -> List[Dict
         
         return data
         
-    except HttpError as e:
-        print(f"An error occurred accessing Google Sheets: {e}")
-        return []
     except Exception as e:
-        print(f"Error fetching Google Sheet data: {e}")
-        return []
+        raise RuntimeError(f"Error fetching Google Sheet data: {e}") from e
 
 def parse_workshop_data(raw_data: List[Dict]) -> List[Dict]:
     """
@@ -251,13 +245,11 @@ def main():
     print(f"Fetching data from Google Sheet: {sheet_id}")
     
     # Fetch data
-    raw_data = fetch_google_sheet_data(sheet_id)
-    
-    if not raw_data:
-        print("No data fetched from Google Sheet")
-        # Still update the file with empty data
-        update_upcoming_workshops([], output_path)
-        return
+    try:
+        raw_data = fetch_google_sheet_data(sheet_id)
+    except RuntimeError as e:
+        print(f"{e}. Existing workshop data was not changed.", file=sys.stderr)
+        sys.exit(1)
     
     print(f"Fetched {len(raw_data)} rows from Google Sheet")
     
